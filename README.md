@@ -2,6 +2,8 @@
 
 CodersMojo is an AI-based peer-to-peer interactive tech interview platform for Women to connect with great tech companies and prepare them well for their tech interview.
 
+documentation: https://documenter.getpostman.com/view/3827865/TVCjxmDv
+
 ## Requirement:
  - install yarn
  - install node (v12+)
