@@ -1,0 +1,508 @@
+{
+	"info": {
+		"_postman_id": "316d17c6-754b-4609-8f9d-322d10800fcc",
+		"name": "codersMojoBackend",
+		"description": "codersMojoBackend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "/signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"test@email.com\",\n\t\"password\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"signup"
+							]
+						},
+						"description": "/signup"
+					},
+					"response": [
+						{
+							"name": "/signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"test@email.com\",\n\t\"password\": \"test\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/user/signup",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jun 2020 08:37:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"signup\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"test@email.com\",\n\t\"password\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						},
+						"description": "/login"
+					},
+					"response": [
+						{
+							"name": "/login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"test@email.com\",\n\t\"password\": \"test\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/user/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "226"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jun 2020 08:37:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"login\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyODBmZDQxLTFlNzUtNDhlZi04YmUwLWJlNWE0YWU4NzdiNyIsImlhdCI6MTU5MjY0MjI1MiwiZXhwIjoxNTkyNzI4NjUyfQ.kVeIiWtq1SM9nB05SD9TPWEj3fI1R2ij2ry6uQJDi30\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyODBmZDQxLTFlNzUtNDhlZi04YmUwLWJlNWE0YWU4NzdiNyIsImlhdCI6MTU5MjY0MjI1MiwiZXhwIjoxNTkyNzI4NjUyfQ.kVeIiWtq1SM9nB05SD9TPWEj3fI1R2ij2ry6uQJDi30",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user"
+							]
+						},
+						"description": "/user"
+					},
+					"response": [
+						{
+							"name": "/user",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyODBmZDQxLTFlNzUtNDhlZi04YmUwLWJlNWE0YWU4NzdiNyIsImlhdCI6MTU5MjY0MjI1MiwiZXhwIjoxNTkyNzI4NjUyfQ.kVeIiWtq1SM9nB05SD9TPWEj3fI1R2ij2ry6uQJDi30",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/user",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "284"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jun 2020 08:37:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"get all user\",\n    \"users\": [\n        {\n            \"id\": 1,\n            \"email\": \"test@email.com\",\n            \"password\": \"$2b$10$pwmWP0hX74A1b2H0E.nktu/u62MTEMmXeUU.BD7UedusGN7m2c816\",\n            \"createdAt\": \"2020-06-20T08:37:25.728Z\",\n            \"updatedAt\": \"2020-06-20T08:37:25.728Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "/user/{id}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyODBmZDQxLTFlNzUtNDhlZi04YmUwLWJlNWE0YWU4NzdiNyIsImlhdCI6MTU5MjY0MjI1MiwiZXhwIjoxNTkyNzI4NjUyfQ.kVeIiWtq1SM9nB05SD9TPWEj3fI1R2ij2ry6uQJDi30"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"1"
+							]
+						},
+						"description": "/user/{id}"
+					},
+					"response": [
+						{
+							"name": "/user/{id}",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyODBmZDQxLTFlNzUtNDhlZi04YmUwLWJlNWE0YWU4NzdiNyIsImlhdCI6MTU5MjY0MjI1MiwiZXhwIjoxNTkyNzI4NjUyfQ.kVeIiWtq1SM9nB05SD9TPWEj3fI1R2ij2ry6uQJDi30"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/user/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "257"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 20 Jun 2020 08:37:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"get user\",\n    \"user\": {\n        \"id\": 1,\n        \"email\": \"test@email.com\",\n        \"password\": \"$2b$10$pwmWP0hX74A1b2H0E.nktu/u62MTEMmXeUU.BD7UedusGN7m2c816\",\n        \"createdAt\": \"2020-06-20T08:37:25.728Z\",\n        \"updatedAt\": \"2020-06-20T08:37:25.728Z\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "user",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4ed713d6-4527-41f6-8fcb-2d978362c769",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "23e6a7e4-440d-4c1b-84a7-abe2313a6b42",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
