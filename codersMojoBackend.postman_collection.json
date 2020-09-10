@@ -107,7 +107,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 20 Jun 2020 08:37:25 GMT"
+									"value": "Wed, 09 Sep 2020 08:02:17 GMT"
 								},
 								{
 									"key": "Connection",
@@ -217,7 +217,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 20 Jun 2020 08:37:31 GMT"
+									"value": "Wed, 09 Sep 2020 08:02:24 GMT"
 								},
 								{
 									"key": "Connection",
@@ -225,7 +225,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"login\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyODBmZDQxLTFlNzUtNDhlZi04YmUwLWJlNWE0YWU4NzdiNyIsImlhdCI6MTU5MjY0MjI1MiwiZXhwIjoxNTkyNzI4NjUyfQ.kVeIiWtq1SM9nB05SD9TPWEj3fI1R2ij2ry6uQJDi30\"\n}"
+							"body": "{\n    \"message\": \"login\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmMDQwZTI5LTYyZjktNDRlMi05Mzk1LTIwOThkZWI4Yzk0NiIsImlhdCI6MTU5OTYzODU0NCwiZXhwIjoxNTk5NzI0OTQ0fQ.NLeR7xo95UdNbZJlUS6U0o0J4Bd0jtFTogbPF3-3aOQ\"\n}"
 						}
 					]
 				},
@@ -239,7 +239,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyODBmZDQxLTFlNzUtNDhlZi04YmUwLWJlNWE0YWU4NzdiNyIsImlhdCI6MTU5MjY0MjI1MiwiZXhwIjoxNTkyNzI4NjUyfQ.kVeIiWtq1SM9nB05SD9TPWEj3fI1R2ij2ry6uQJDi30",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkNzZmMjE2LTU5YTAtNDA3NS1hZDc3LWNjMDA1MTQ4YjUxYiIsImlhdCI6MTU5OTYzODU1NCwiZXhwIjoxNTk5NzI0OTU0fQ.BlnNJ6Kk8P6ILEE9RpDRtdi8njdmhzRUwXjU9xrfWaQ",
 								"type": "text"
 							}
 						],
@@ -273,7 +273,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyODBmZDQxLTFlNzUtNDhlZi04YmUwLWJlNWE0YWU4NzdiNyIsImlhdCI6MTU5MjY0MjI1MiwiZXhwIjoxNTkyNzI4NjUyfQ.kVeIiWtq1SM9nB05SD9TPWEj3fI1R2ij2ry6uQJDi30",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkNzZmMjE2LTU5YTAtNDA3NS1hZDc3LWNjMDA1MTQ4YjUxYiIsImlhdCI6MTU5OTYzODU1NCwiZXhwIjoxNTk5NzI0OTU0fQ.BlnNJ6Kk8P6ILEE9RpDRtdi8njdmhzRUwXjU9xrfWaQ",
 										"type": "text"
 									}
 								],
@@ -336,11 +336,11 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "284"
+									"value": "537"
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 20 Jun 2020 08:37:43 GMT"
+									"value": "Wed, 09 Sep 2020 08:02:41 GMT"
 								},
 								{
 									"key": "Connection",
@@ -348,7 +348,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"get all user\",\n    \"users\": [\n        {\n            \"id\": 1,\n            \"email\": \"test@email.com\",\n            \"password\": \"$2b$10$pwmWP0hX74A1b2H0E.nktu/u62MTEMmXeUU.BD7UedusGN7m2c816\",\n            \"createdAt\": \"2020-06-20T08:37:25.728Z\",\n            \"updatedAt\": \"2020-06-20T08:37:25.728Z\"\n        }\n    ]\n}"
+							"body": "{\n    \"message\": \"get all user\",\n    \"users\": [\n        {\n            \"users_id\": 3,\n            \"email\": \"test@email.com\",\n            \"password\": \"$2b$10$AaEG154/mAeqXhLhOmRXqeI2fnm/890n0k6yaY2cx7j77yTWeXx8y\",\n            \"created_by\": \"2020-09-09T08:02:17.828Z\",\n            \"updated_by\": \"2020-09-09T08:02:17.828Z\"\n        },\n        {\n            \"users_id\": 4,\n            \"email\": \"test2@email.com\",\n            \"password\": \"$2b$10$JjJVHC3H4LgSFNlfkww1/.KC9AW/j7nvCUQHIdxPw8ReTxe.OfeqW\",\n            \"created_by\": \"2020-09-09T08:02:29.615Z\",\n            \"updated_by\": \"2020-09-09T08:02:29.615Z\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -363,7 +363,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyODBmZDQxLTFlNzUtNDhlZi04YmUwLWJlNWE0YWU4NzdiNyIsImlhdCI6MTU5MjY0MjI1MiwiZXhwIjoxNTkyNzI4NjUyfQ.kVeIiWtq1SM9nB05SD9TPWEj3fI1R2ij2ry6uQJDi30"
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkNzZmMjE2LTU5YTAtNDA3NS1hZDc3LWNjMDA1MTQ4YjUxYiIsImlhdCI6MTU5OTYzODU1NCwiZXhwIjoxNTk5NzI0OTU0fQ.BlnNJ6Kk8P6ILEE9RpDRtdi8njdmhzRUwXjU9xrfWaQ"
 							}
 						],
 						"body": {
@@ -398,7 +398,7 @@
 									{
 										"key": "Authorization",
 										"type": "text",
-										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImEyODBmZDQxLTFlNzUtNDhlZi04YmUwLWJlNWE0YWU4NzdiNyIsImlhdCI6MTU5MjY0MjI1MiwiZXhwIjoxNTkyNzI4NjUyfQ.kVeIiWtq1SM9nB05SD9TPWEj3fI1R2ij2ry6uQJDi30"
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkNzZmMjE2LTU5YTAtNDA3NS1hZDc3LWNjMDA1MTQ4YjUxYiIsImlhdCI6MTU5OTYzODU1NCwiZXhwIjoxNTk5NzI0OTU0fQ.BlnNJ6Kk8P6ILEE9RpDRtdi8njdmhzRUwXjU9xrfWaQ"
 									}
 								],
 								"body": {
@@ -461,11 +461,11 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "257"
+									"value": "265"
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 20 Jun 2020 08:37:55 GMT"
+									"value": "Wed, 09 Sep 2020 08:03:20 GMT"
 								},
 								{
 									"key": "Connection",
@@ -473,7 +473,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"get user\",\n    \"user\": {\n        \"id\": 1,\n        \"email\": \"test@email.com\",\n        \"password\": \"$2b$10$pwmWP0hX74A1b2H0E.nktu/u62MTEMmXeUU.BD7UedusGN7m2c816\",\n        \"createdAt\": \"2020-06-20T08:37:25.728Z\",\n        \"updatedAt\": \"2020-06-20T08:37:25.728Z\"\n    }\n}"
+							"body": "{\n    \"message\": \"get user\",\n    \"user\": {\n        \"users_id\": 1,\n        \"email\": \"test@email.com\",\n        \"password\": \"$2b$10$lVZ9YpouysNU7YJelnz25ut1MutmXao79Du0Xs.JrmU3jS2TpEoPy\",\n        \"created_by\": \"2020-09-09T08:03:18.183Z\",\n        \"updated_by\": \"2020-09-09T08:03:18.183Z\"\n    }\n}"
 						}
 					]
 				}
@@ -501,6 +501,346 @@
 					}
 				}
 			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "mailchimp",
+			"item": [
+				{
+					"name": "/add-contact-to-audience",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"yeukfei02@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/mailchimp/add-contact-to-audience",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"mailchimp",
+								"add-contact-to-audience"
+							]
+						},
+						"description": "/add-contact-to-audience"
+					},
+					"response": [
+						{
+							"name": "/add-contact-to-audience",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"yeukfei02@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/mailchimp/add-contact-to-audience",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"mailchimp",
+										"add-contact-to-audience"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Sep 2020 04:04:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"mailchimp add contact to audience\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/check-contact-subscription-status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"yeukfei02@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/mailchimp/check-contact-subscription-status",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"mailchimp",
+								"check-contact-subscription-status"
+							]
+						},
+						"description": "/check-contact-subscription-status"
+					},
+					"response": [
+						{
+							"name": "/check-contact-subscription-status",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"yeukfei02@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/mailchimp/check-contact-subscription-status",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"mailchimp",
+										"check-contact-subscription-status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Sep 2020 04:12:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"mailchimp check contact subscription status\",\n    \"subscriptionStatus\": \"subscribed\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/unsubscribe-contact",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"yeukfei02@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/mailchimp/unsubscribe-contact",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"mailchimp",
+								"unsubscribe-contact"
+							]
+						},
+						"description": "/unsubscribe-contact"
+					},
+					"response": [
+						{
+							"name": "/unsubscribe-contact",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"yeukfei02@gmail.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/mailchimp/unsubscribe-contact",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"mailchimp",
+										"unsubscribe-contact"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "88"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 10 Sep 2020 04:19:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"mailchimp unsubscripe contact\",\n    \"subscriptionStatus\": \"unsubscribed\"\n}"
+						}
+					]
+				}
+			],
+			"description": "mailchimp",
 			"protocolProfileBehavior": {}
 		}
 	],
