@@ -65,6 +65,30 @@ export const login = async (ctx: Koa.Context, next: () => Promise<any>): Promise
   }
 };
 
+export const forgotPassword = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+  const email = ctx.request.body.email;
+
+  if (email) {
+    const user = await userService.getUserByEmail(email);
+    if (user) {
+      ctx.response.status = 200;
+      ctx.body = {
+        message: 'forgotPassword',
+      };
+    } else {
+      ctx.response.status = 400;
+      ctx.body = {
+        message: 'forgotPassword error, no this user',
+      };
+    }
+  } else {
+    ctx.response.status = 400;
+    ctx.body = {
+      message: 'forgotPassword error, no email',
+    };
+  }
+};
+
 export const getAllUser = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const userList = await userService.getAllUser();
 
