@@ -8,13 +8,15 @@ import * as userService from '../service/user';
 import { sendForgotPasswordEmail } from '../common/common';
 
 export const signup = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+  const firstName = ctx.request.body.firstName;
+  const lastName = ctx.request.body.lastName;
   const email = ctx.request.body.email;
   const password = bcrypt.hashSync(ctx.request.body.password, 10);
 
   if (email && password) {
     const record = await userService.getUserByEmail(email);
     if (!record) {
-      await userService.createUser(email, password);
+      await userService.createUser(firstName, lastName, email, password);
 
       ctx.response.status = 201;
       ctx.body = {
@@ -49,6 +51,8 @@ export const login = async (ctx: Koa.Context, next: () => Promise<any>): Promise
 
         const userData = {
           users_id: user.users_id,
+          firstName: user.first_name,
+          lastName: user.last_name,
           email: user.email,
         };
 

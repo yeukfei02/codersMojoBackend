@@ -9,6 +9,8 @@ datasource db {
 
 model users {
   users_id   Int      @default(autoincrement()) @id
+  first_name String
+  last_name  String
   email      String
   password   String
   created_by DateTime @default(now())
