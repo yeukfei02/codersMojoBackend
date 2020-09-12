@@ -213,11 +213,11 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "226"
+									"value": "292"
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 09 Sep 2020 08:02:24 GMT"
+									"value": "Sat, 12 Sep 2020 02:44:42 GMT"
 								},
 								{
 									"key": "Connection",
@@ -225,7 +225,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"login\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNmMDQwZTI5LTYyZjktNDRlMi05Mzk1LTIwOThkZWI4Yzk0NiIsImlhdCI6MTU5OTYzODU0NCwiZXhwIjoxNTk5NzI0OTQ0fQ.NLeR7xo95UdNbZJlUS6U0o0J4Bd0jtFTogbPF3-3aOQ\"\n}"
+							"body": "{\n    \"message\": \"login\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIzZTFjNjI3LTUwNTgtNDJlMy1iYjdjLTc2Y2NjOTg3NGU4OCIsImlhdCI6MTU5OTg3ODY4MiwiZXhwIjoxNTk5OTY1MDgyfQ.KzxlGX49lJTxiVCM_ggtbLyXlp0T0BQgMO77GBnHOeU\",\n    \"user\": {\n        \"users_id\": 1,\n        \"email\": \"test@email.com\"\n    }\n}"
 						}
 					]
 				},
@@ -336,6 +336,118 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": \"forgotPassword\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/change-password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"oldPassword\": \"4021fd9c50016e34617563b00e9d880b381294a8\",\n    \"newPassword\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/change-password/3",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"change-password",
+								"3"
+							]
+						},
+						"description": "/change-password"
+					},
+					"response": [
+						{
+							"name": "/change-password",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"oldPassword\": \"f53a7c2d15dd35e59cd2d5d719d8dadf5e1bc56d\",\n    \"newPassword\": \"test\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/user/change-password/3",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"change-password",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Sep 2020 02:48:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"changePassword\"\n}"
 						}
 					]
 				},

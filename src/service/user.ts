@@ -34,3 +34,15 @@ export const getUserById = async (id: number): Promise<users> => {
   });
   return user;
 };
+
+export const updateUserPassword = async (id: number, newPasswordHash: string): Promise<users> => {
+  const updatedUser = await prisma.users.update({
+    data: {
+      password: newPasswordHash,
+    },
+    where: {
+      users_id: id,
+    },
+  });
+  return updatedUser;
+};
