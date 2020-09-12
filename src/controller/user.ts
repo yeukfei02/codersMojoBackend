@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 import * as crypto from 'crypto';
 
 import * as userService from '../service/user';
+import { sendForgotPasswordEmail } from '../common/common';
 
 export const signup = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const email = ctx.request.body.email;
@@ -81,6 +82,8 @@ export const forgotPassword = async (ctx: Koa.Context, next: () => Promise<any>)
       const id = user.users_id;
       const newPassword = crypto.randomBytes(20).toString('hex');
       const newPasswordHash = bcrypt.hashSync(newPassword, 10);
+
+      sendForgotPasswordEmail(email, newPassword);
 
       const result = await userService.updateUserPassword(id, newPasswordHash);
       if (result) {
