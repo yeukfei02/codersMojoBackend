@@ -2,6 +2,7 @@ import * as Koa from 'koa';
 import * as jwt from 'jsonwebtoken';
 import * as bcrypt from 'bcrypt';
 import { v4 as uuidv4 } from 'uuid';
+import * as crypto from 'crypto';
 
 import * as userService from '../service/user';
 
@@ -45,10 +46,16 @@ export const login = async (ctx: Koa.Context, next: () => Promise<any>): Promise
           { expiresIn: '1d' },
         );
 
+        const userData = {
+          users_id: user.users_id,
+          email: user.email,
+        };
+
         ctx.response.status = 200;
         ctx.body = {
           message: 'login',
           token: token,
+          user: userData,
         };
       } else {
         ctx.response.status = 400;
@@ -71,10 +78,17 @@ export const forgotPassword = async (ctx: Koa.Context, next: () => Promise<any>)
   if (email) {
     const user = await userService.getUserByEmail(email);
     if (user) {
-      ctx.response.status = 200;
-      ctx.body = {
-        message: 'forgotPassword',
-      };
+      const id = user.users_id;
+      const newPassword = crypto.randomBytes(20).toString('hex');
+      const newPasswordHash = bcrypt.hashSync(newPassword, 10);
+
+      const result = await userService.updateUserPassword(id, newPasswordHash);
+      if (result) {
+        ctx.response.status = 200;
+        ctx.body = {
+          message: 'forgotPassword',
+        };
+      }
     } else {
       ctx.response.status = 400;
       ctx.body = {
@@ -85,6 +99,44 @@ export const forgotPassword = async (ctx: Koa.Context, next: () => Promise<any>)
     ctx.response.status = 400;
     ctx.body = {
       message: 'forgotPassword error, no email',
+    };
+  }
+};
+
+export const changePassword = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+  const id = parseInt(ctx.params.id, 10);
+  const oldPassword = ctx.request.body.oldPassword;
+  const newPassword = ctx.request.body.newPassword;
+
+  if (id) {
+    const user = await userService.getUserById(id);
+    if (user) {
+      const userPasswordFromDB = user.password;
+      if (bcrypt.compareSync(oldPassword, userPasswordFromDB)) {
+        const newPasswordHash = bcrypt.hashSync(newPassword, 10);
+        const result = await userService.updateUserPassword(id, newPasswordHash);
+        if (result) {
+          ctx.response.status = 200;
+          ctx.body = {
+            message: 'changePassword',
+          };
+        }
+      } else {
+        ctx.response.status = 400;
+        ctx.body = {
+          message: 'changePassword error, wrong old password',
+        };
+      }
+    } else {
+      ctx.response.status = 400;
+      ctx.body = {
+        message: 'changePassword error, no this user',
+      };
+    }
+  } else {
+    ctx.response.status = 400;
+    ctx.body = {
+      message: 'changePassword error, no id',
     };
   }
 };
