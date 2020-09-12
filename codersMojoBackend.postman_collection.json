@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"test@email.com\",\n\t\"password\": \"test\"\n}",
+							"raw": "{\n    \"firstName\": \"test\",\n    \"lastName\": \"test2\",\n\t\"email\": \"test@email.com\",\n\t\"password\": \"test\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -45,7 +45,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"email\": \"test@email.com\",\n\t\"password\": \"test\"\n}",
+									"raw": "{\n    \"firstName\": \"test\",\n    \"lastName\": \"test2\",\n\t\"email\": \"test@email.com\",\n\t\"password\": \"test\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -107,7 +107,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 09 Sep 2020 08:02:17 GMT"
+									"value": "Sat, 12 Sep 2020 06:46:59 GMT"
 								},
 								{
 									"key": "Connection",
@@ -213,11 +213,11 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "292"
+									"value": "342"
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 12 Sep 2020 02:44:42 GMT"
+									"value": "Sat, 12 Sep 2020 07:27:04 GMT"
 								},
 								{
 									"key": "Connection",
@@ -225,7 +225,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"login\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIzZTFjNjI3LTUwNTgtNDJlMy1iYjdjLTc2Y2NjOTg3NGU4OCIsImlhdCI6MTU5OTg3ODY4MiwiZXhwIjoxNTk5OTY1MDgyfQ.KzxlGX49lJTxiVCM_ggtbLyXlp0T0BQgMO77GBnHOeU\",\n    \"user\": {\n        \"users_id\": 1,\n        \"email\": \"test@email.com\"\n    }\n}"
+							"body": "{\n    \"message\": \"login\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk3MTE2YWJjLWVmZDgtNGIzMy1hODA0LTY2NDA4MWNiN2Y2MiIsImlhdCI6MTU5OTg5NTYyNCwiZXhwIjoxNTk5OTgyMDI0fQ.Yc6ehlSGaP-6GO3YFsCererH6RFPr4cI7JkmsIX7xVQ\",\n    \"user\": {\n        \"users_id\": 1,\n        \"firstName\": \"test\",\n        \"lastName\": \"test2\",\n        \"email\": \"test@email.com\"\n    }\n}"
 						}
 					]
 				},
@@ -486,13 +486,7 @@
 							"name": "/user",
 							"originalRequest": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkNzZmMjE2LTU5YTAtNDA3NS1hZDc3LWNjMDA1MTQ4YjUxYiIsImlhdCI6MTU5OTYzODU1NCwiZXhwIjoxNTk5NzI0OTU0fQ.BlnNJ6Kk8P6ILEE9RpDRtdi8njdmhzRUwXjU9xrfWaQ",
-										"type": "text"
-									}
-								],
+								"header": [],
 								"body": {
 									"mode": "raw",
 									"raw": "",
@@ -552,11 +546,11 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "537"
+									"value": "1879"
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 09 Sep 2020 08:02:41 GMT"
+									"value": "Sat, 12 Sep 2020 06:48:15 GMT"
 								},
 								{
 									"key": "Connection",
@@ -564,7 +558,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"get all user\",\n    \"users\": [\n        {\n            \"users_id\": 3,\n            \"email\": \"test@email.com\",\n            \"password\": \"$2b$10$AaEG154/mAeqXhLhOmRXqeI2fnm/890n0k6yaY2cx7j77yTWeXx8y\",\n            \"created_by\": \"2020-09-09T08:02:17.828Z\",\n            \"updated_by\": \"2020-09-09T08:02:17.828Z\"\n        },\n        {\n            \"users_id\": 4,\n            \"email\": \"test2@email.com\",\n            \"password\": \"$2b$10$JjJVHC3H4LgSFNlfkww1/.KC9AW/j7nvCUQHIdxPw8ReTxe.OfeqW\",\n            \"created_by\": \"2020-09-09T08:02:29.615Z\",\n            \"updated_by\": \"2020-09-09T08:02:29.615Z\"\n        }\n    ]\n}"
+							"body": "{\n    \"message\": \"get all user\",\n    \"users\": [\n        {\n            \"users_id\": 1,\n            \"first_name\": \"test\",\n            \"last_name\": \"test2\",\n            \"email\": \"test@email.com\",\n            \"password\": \"$2b$10$mLJ2FDCltRkqp7K7G/KNU.O7V5ZSJj5vAPGEFUDaXdM15j7DRdVZm\",\n            \"created_by\": \"2020-09-12T06:46:59.747Z\",\n            \"updated_by\": \"2020-09-12T06:46:59.747Z\"\n        },\n        {\n            \"users_id\": 2,\n            \"first_name\": \"test22\",\n            \"last_name\": \"test33\",\n            \"email\": \"test2@email.com\",\n            \"password\": \"$2b$10$6Y6s2wam5cji/tff5zJ/EOd61hpYaImSE4zi00cumk3rHdtdmHxD.\",\n            \"created_by\": \"2020-09-12T06:47:19.132Z\",\n            \"updated_by\": \"2020-09-12T06:47:19.132Z\"\n        },\n        {\n            \"users_id\": 3,\n            \"first_name\": \"donald\",\n            \"last_name\": \"wu\",\n            \"email\": \"yeukfei02@email.com\",\n            \"password\": \"$2b$10$C/z4/aTu8vf5se8oXuv1WOVgaMEk7Z3WvCsF1Qp3Y10xEBdFgUpW6\",\n            \"created_by\": \"2020-09-12T06:47:28.042Z\",\n            \"updated_by\": \"2020-09-12T06:47:28.042Z\"\n        },\n        {\n            \"users_id\": 4,\n            \"first_name\": \"donald\",\n            \"last_name\": \"wu\",\n            \"email\": \"yeukfei05@email.com\",\n            \"password\": \"$2b$10$GR/TawyGW7SZPu0OeY4MwOcDf0SdMEPW3mejQrxZrdGBNwAXs5O/a\",\n            \"created_by\": \"2020-09-12T06:47:34.647Z\",\n            \"updated_by\": \"2020-09-12T06:47:34.647Z\"\n        },\n        {\n            \"users_id\": 5,\n            \"first_name\": \"donald\",\n            \"last_name\": \"wu\",\n            \"email\": \"yeukfei08@email.com\",\n            \"password\": \"$2b$10$8ER39tTZvuaOnpDfAv3O2Ox/3iMBTQYMfsoRN4GGCRJVry4UVs2OW\",\n            \"created_by\": \"2020-09-12T06:47:39.045Z\",\n            \"updated_by\": \"2020-09-12T06:47:39.045Z\"\n        },\n        {\n            \"users_id\": 6,\n            \"first_name\": \"coders\",\n            \"last_name\": \"mojo\",\n            \"email\": \"codersmojoplatform@email.com\",\n            \"password\": \"$2b$10$OZYzQ5ulR7JvtYEU2gDO0ucEBWTtx8oannWabenZbwVLaFpvcamOm\",\n            \"created_by\": \"2020-09-12T06:47:48.215Z\",\n            \"updated_by\": \"2020-09-12T06:47:48.215Z\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -604,13 +598,7 @@
 							"name": "/user/{id}",
 							"originalRequest": {
 								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"type": "text",
-										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRkNzZmMjE2LTU5YTAtNDA3NS1hZDc3LWNjMDA1MTQ4YjUxYiIsImlhdCI6MTU5OTYzODU1NCwiZXhwIjoxNTk5NzI0OTU0fQ.BlnNJ6Kk8P6ILEE9RpDRtdi8njdmhzRUwXjU9xrfWaQ"
-									}
-								],
+								"header": [],
 								"body": {
 									"mode": "raw",
 									"raw": "",
@@ -671,11 +659,11 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "265"
+									"value": "317"
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 09 Sep 2020 08:03:20 GMT"
+									"value": "Sat, 12 Sep 2020 06:48:25 GMT"
 								},
 								{
 									"key": "Connection",
@@ -683,7 +671,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"get user\",\n    \"user\": {\n        \"users_id\": 1,\n        \"email\": \"test@email.com\",\n        \"password\": \"$2b$10$lVZ9YpouysNU7YJelnz25ut1MutmXao79Du0Xs.JrmU3jS2TpEoPy\",\n        \"created_by\": \"2020-09-09T08:03:18.183Z\",\n        \"updated_by\": \"2020-09-09T08:03:18.183Z\"\n    }\n}"
+							"body": "{\n    \"message\": \"get user\",\n    \"user\": {\n        \"users_id\": 1,\n        \"first_name\": \"test\",\n        \"last_name\": \"test2\",\n        \"email\": \"test@email.com\",\n        \"password\": \"$2b$10$mLJ2FDCltRkqp7K7G/KNU.O7V5ZSJj5vAPGEFUDaXdM15j7DRdVZm\",\n        \"created_by\": \"2020-09-12T06:46:59.747Z\",\n        \"updated_by\": \"2020-09-12T06:46:59.747Z\"\n    }\n}"
 						}
 					]
 				}
