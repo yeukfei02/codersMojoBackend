@@ -27,6 +27,15 @@ $ yarn run lint
 ```
 
 ```
+// create db migration
+$ yarn run migrate:prisma:create
+
+// migrate up
+$ yarn run migrate:prisma:up
+
+// rollback a migration
+$ yarn run migrate:prisma:down
+
 every time table change needs to run:
 
 // update schema.prisma from existing database, generate artifacts (e.g. Prisma Client)

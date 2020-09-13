@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"test\",\n    \"lastName\": \"test2\",\n\t\"email\": \"test@email.com\",\n\t\"password\": \"test\"\n}",
+							"raw": "{\n    \"firstName\": \"test\",\n    \"lastName\": \"test2\",\n\t\"email\": \"codersmojoplatform@email.com\",\n\t\"password\": \"test\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -126,7 +126,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"test@email.com\",\n\t\"password\": \"test\"\n}",
+							"raw": "{\n\t\"email\": \"codersmojoplatform@email.com\",\n\t\"password\": \"test\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -236,7 +236,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"test@email.com\"\n}",
+							"raw": "{\n\t\"email\": \"codersmojoplatform@email.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -360,7 +360,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/user/change-password/3",
+							"raw": "localhost:3000/api/user/change-password/1",
 							"host": [
 								"localhost"
 							],
@@ -369,7 +369,7 @@
 								"api",
 								"user",
 								"change-password",
-								"3"
+								"1"
 							]
 						},
 						"description": "/change-password"
@@ -1074,7 +1074,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"yeukfei02@gmail.com\"\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1082,7 +1082,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/mailchimp/check-contact-subscription-status",
+							"raw": "localhost:3000/api/mailchimp/check-contact-subscription-status?email=yeukfei02@gmail.com",
 							"host": [
 								"localhost"
 							],
@@ -1091,6 +1091,12 @@
 								"api",
 								"mailchimp",
 								"check-contact-subscription-status"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "yeukfei02@gmail.com"
+								}
 							]
 						},
 						"description": "/check-contact-subscription-status"
