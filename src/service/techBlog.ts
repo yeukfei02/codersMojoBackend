@@ -24,6 +24,11 @@ export const createTechBlog = async (
   });
 };
 
+export const getTechBlog = async (): Promise<tech_blog[]> => {
+  const techBlogList = await prisma.tech_blog.findMany();
+  return techBlogList;
+};
+
 export const getTechBlogByTag = async (tag: string): Promise<tech_blog[]> => {
   const techBlogList = await prisma.tech_blog.findMany({
     where: {

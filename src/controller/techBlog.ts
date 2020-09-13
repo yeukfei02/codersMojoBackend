@@ -21,18 +21,16 @@ export const createTechBlog = async (ctx: Koa.Context, next: () => Promise<any>)
 export const getTechBlog = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const tag = ctx.query.tag;
 
-  if (tag) {
-    const techBlogList = await techBlogService.getTechBlogByTag(tag);
-
-    ctx.response.status = 200;
-    ctx.body = {
-      message: 'getTechBlog',
-      result: techBlogList,
-    };
+  let techBlogList = [];
+  if (!tag) {
+    techBlogList = await techBlogService.getTechBlog();
   } else {
-    ctx.response.status = 400;
-    ctx.body = {
-      message: 'getTechBlog error, no users id',
-    };
+    techBlogList = await techBlogService.getTechBlogByTag(tag);
   }
+
+  ctx.response.status = 200;
+  ctx.body = {
+    message: 'getTechBlog',
+    result: techBlogList,
+  };
 };
