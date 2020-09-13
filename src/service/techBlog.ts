@@ -24,19 +24,9 @@ export const createTechBlog = async (
   });
 };
 
-export const getTechBlogByUsersId = async (users_id: number): Promise<tech_blog[]> => {
+export const getTechBlogByTag = async (tag: string): Promise<tech_blog[]> => {
   const techBlogList = await prisma.tech_blog.findMany({
     where: {
-      users_id: users_id,
-    },
-  });
-  return techBlogList;
-};
-
-export const getTechBlogByUsersIdAndTag = async (users_id: number, tag: string): Promise<tech_blog[]> => {
-  const techBlogList = await prisma.tech_blog.findMany({
-    where: {
-      users_id: users_id,
       tag: tag,
     },
   });

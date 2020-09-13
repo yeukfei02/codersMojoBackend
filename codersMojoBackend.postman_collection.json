@@ -831,13 +831,7 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNhZjEwMDUxLTkxNzUtNDRkYy1hZDc2LTU4OGJhOGVkYWMyZSIsImlhdCI6MTU5OTk3NTQzNSwiZXhwIjoxNjAwMDYxODM1fQ.RgnQzCgXe2LFFXTufFnpiGnp_90T_TWQZI3zsxnWcXU",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -848,7 +842,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/tech-blog?users_id=1&tag=Tech Interview Experiences",
+							"raw": "localhost:3000/api/tech-blog?tag=Programming",
 							"host": [
 								"localhost"
 							],
@@ -859,18 +853,99 @@
 							],
 							"query": [
 								{
-									"key": "users_id",
-									"value": "1"
-								},
-								{
 									"key": "tag",
-									"value": "Tech Interview Experiences"
+									"value": "Programming"
 								}
 							]
 						},
 						"description": "/tech-blog"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "/tech-blog",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/tech-blog?tag=Programming",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"tech-blog"
+									],
+									"query": [
+										{
+											"key": "tag",
+											"value": "Programming"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1234"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Sep 2020 06:22:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"getTechBlog\",\n    \"result\": [\n        {\n            \"tech_blog_id\": 1,\n            \"image\": \"https://images.unsplash.com/photo-1561736778-92e52a7769ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80\",\n            \"title\": \"test title\",\n            \"description\": \"test description\",\n            \"tag\": \"Programming\",\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-13T04:14:50.943Z\",\n            \"updated_by\": \"2020-09-13T04:14:50.943Z\"\n        },\n        {\n            \"tech_blog_id\": 4,\n            \"image\": \"https://images.unsplash.com/photo-1561736778-92e52a7769ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80\",\n            \"title\": \"test title\",\n            \"description\": \"test description\",\n            \"tag\": \"Programming\",\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-13T05:37:26.325Z\",\n            \"updated_by\": \"2020-09-13T05:37:26.325Z\"\n        },\n        {\n            \"tech_blog_id\": 5,\n            \"image\": \"https://images.unsplash.com/photo-1561736778-92e52a7769ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80\",\n            \"title\": \"aaa\",\n            \"description\": \"bbb\",\n            \"tag\": \"Programming\",\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-13T06:03:25.178Z\",\n            \"updated_by\": \"2020-09-13T06:03:25.179Z\"\n        }\n    ]\n}"
+						}
+					]
 				}
 			],
 			"description": "tech-blog",

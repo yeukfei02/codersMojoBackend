@@ -19,16 +19,10 @@ export const createTechBlog = async (ctx: Koa.Context, next: () => Promise<any>)
 };
 
 export const getTechBlog = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
-  const users_id = parseInt(ctx.query.users_id, 10);
   const tag = ctx.query.tag;
 
-  if (users_id) {
-    let techBlogList = [];
-    if (!tag) {
-      techBlogList = await techBlogService.getTechBlogByUsersId(users_id);
-    } else {
-      techBlogList = await techBlogService.getTechBlogByUsersIdAndTag(users_id, tag);
-    }
+  if (tag) {
+    const techBlogList = await techBlogService.getTechBlogByTag(tag);
 
     ctx.response.status = 200;
     ctx.body = {

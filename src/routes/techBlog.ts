@@ -7,6 +7,6 @@ import * as techBlogController from '../controller/techBlog';
 import { isUserLoggedIn } from '../middleware/middleware';
 
 router.post('/api/tech-blog', isUserLoggedIn, techBlogController.createTechBlog);
-router.get('/api/tech-blog', isUserLoggedIn, techBlogController.getTechBlog);
+router.get('/api/tech-blog', techBlogController.getTechBlog);
 
 export default router;
