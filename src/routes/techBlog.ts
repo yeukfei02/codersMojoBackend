@@ -4,7 +4,9 @@ const router = new Router();
 
 import * as techBlogController from '../controller/techBlog';
 
-router.post('/api/tech-blog', techBlogController.createTechBlog);
-router.get('/api/tech-blog', techBlogController.getTechBlog);
+import { isUserLoggedIn } from '../middleware/middleware';
+
+router.post('/api/tech-blog', isUserLoggedIn, techBlogController.createTechBlog);
+router.get('/api/tech-blog', isUserLoggedIn, techBlogController.getTechBlog);
 
 export default router;

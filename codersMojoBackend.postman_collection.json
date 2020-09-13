@@ -343,7 +343,13 @@
 					"name": "/change-password",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNhZjEwMDUxLTkxNzUtNDRkYy1hZDc2LTU4OGJhOGVkYWMyZSIsImlhdCI6MTU5OTk3NTQzNSwiZXhwIjoxNjAwMDYxODM1fQ.RgnQzCgXe2LFFXTufFnpiGnp_90T_TWQZI3zsxnWcXU",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"oldPassword\": \"4021fd9c50016e34617563b00e9d880b381294a8\",\n    \"newPassword\": \"test\"\n}",
@@ -699,6 +705,175 @@
 					}
 				}
 			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "tech-blog",
+			"item": [
+				{
+					"name": "/tech-blog",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNhZjEwMDUxLTkxNzUtNDRkYy1hZDc2LTU4OGJhOGVkYWMyZSIsImlhdCI6MTU5OTk3NTQzNSwiZXhwIjoxNjAwMDYxODM1fQ.RgnQzCgXe2LFFXTufFnpiGnp_90T_TWQZI3zsxnWcXU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"test title\",\n\t\"description\": \"test description\",\n\t\"tag\": \"Programming\",\n    \"users_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/tech-blog",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tech-blog"
+							]
+						},
+						"description": "/tech-blog"
+					},
+					"response": [
+						{
+							"name": "/tech-blog",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"test title3\",\n\t\"description\": \"test description3\",\n\t\"tag\": \"Tech Interview Experiences\",\n    \"users_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/tech-blog",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"tech-blog"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Sep 2020 04:18:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"createTechBlog\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/tech-blog",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNhZjEwMDUxLTkxNzUtNDRkYy1hZDc2LTU4OGJhOGVkYWMyZSIsImlhdCI6MTU5OTk3NTQzNSwiZXhwIjoxNjAwMDYxODM1fQ.RgnQzCgXe2LFFXTufFnpiGnp_90T_TWQZI3zsxnWcXU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/tech-blog?users_id=1&tag=Tech Interview Experiences",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tech-blog"
+							],
+							"query": [
+								{
+									"key": "users_id",
+									"value": "1"
+								},
+								{
+									"key": "tag",
+									"value": "Tech Interview Experiences"
+								}
+							]
+						},
+						"description": "/tech-blog"
+					},
+					"response": []
+				}
+			],
+			"description": "tech-blog",
 			"protocolProfileBehavior": {}
 		},
 		{
