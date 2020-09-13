@@ -29,7 +29,7 @@ export const addContactToAudience = async (ctx: Koa.Context, next: () => Promise
 
 export const checkContactSubscriptionStatus = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const listId = process.env.MAILCHIMP_AUDIENCE_ID;
-  const subscriberHash = md5(ctx.request.body.email.toLowerCase());
+  const subscriberHash = md5(ctx.query.email.toLowerCase());
 
   const response = await mailchimp.lists.getListMember(listId, subscriberHash);
 
