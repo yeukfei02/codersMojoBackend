@@ -29,3 +29,24 @@ model tech_blog {
   updated_by   DateTime @default(now())
   users        users?   @relation(fields: [users_id], references: [users_id])
 }
+
+model jobs {
+  jobs_id    Int      @default(autoincrement()) @id
+  type       String
+  department String
+  location   String
+  created_by DateTime @default(now())
+  updated_by DateTime @default(now())
+}
+
+model country {
+  country_id Int      @default(autoincrement()) @id
+  iso        String
+  name       String
+  nicename   String
+  iso3       String?  @default("NULL")
+  numcode    Int?
+  phonecode  Int
+  created_by DateTime @default(now())
+  updated_by DateTime @default(now())
+}
