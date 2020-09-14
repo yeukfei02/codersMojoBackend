@@ -6,9 +6,11 @@ export const createJobs = async (ctx: Koa.Context, next: () => Promise<any>): Pr
   const type = ctx.request.body.type;
   const department = ctx.request.body.department;
   const location = ctx.request.body.location;
+  const title = ctx.request.body.title;
+  const description = ctx.request.body.description;
 
-  if (type && department && location) {
-    await jobsService.createJobs(type, department, location);
+  if (type && department && location && title && description) {
+    await jobsService.createJobs(type, department, location, title, description);
 
     ctx.response.status = 201;
     ctx.body = {
