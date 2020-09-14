@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_HEROKU_URL")
+  url      = env("DATABASE_URL")
 }
 
 model users {
@@ -31,12 +31,14 @@ model tech_blog {
 }
 
 model jobs {
-  jobs_id    Int      @default(autoincrement()) @id
-  type       String
-  department String
-  location   String
-  created_by DateTime @default(now())
-  updated_by DateTime @default(now())
+  jobs_id     Int      @default(autoincrement()) @id
+  type        String
+  department  String
+  location    String
+  title       String
+  description String
+  created_by  DateTime @default(now())
+  updated_by  DateTime @default(now())
 }
 
 model country {
