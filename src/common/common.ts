@@ -28,7 +28,7 @@ export const sendForgotPasswordEmail = async (email: string, newPassword: string
           <td align="center">
               <div style="background: lightgray; padding: 3em">
                   <div style="background: white; padding: 3em; border-radius: 0.5em">
-                    <img src="${logoBase64Str}" width="180" height="180" alt="" />
+                    <img src="${logoBase64Str}" width="200" height="65" alt="" />
                     <h2 style="margin-top: 1em; color: black;">
                       <b>Coders Mojo</b>
                     </h2>
