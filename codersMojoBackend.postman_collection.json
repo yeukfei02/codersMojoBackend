@@ -958,16 +958,10 @@
 					"name": "/jobs",
 					"request": {
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNhZjEwMDUxLTkxNzUtNDRkYy1hZDc2LTU4OGJhOGVkYWMyZSIsImlhdCI6MTU5OTk3NTQzNSwiZXhwIjoxNjAwMDYxODM1fQ.RgnQzCgXe2LFFXTufFnpiGnp_90T_TWQZI3zsxnWcXU"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"type\": \"Full time\",\n\t\"department\": \"Backend Developer\",\n\t\"location\": \"Singapore\"\n}",
+							"raw": "{\n    \"type\": \"Full time\",\n\t\"department\": \"Backend Developer\",\n\t\"location\": \"Singapore\",\n    \"title\": \"Senior software developer\",\n    \"description\": \"it is a start here\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1230,6 +1224,268 @@
 				}
 			],
 			"description": "jobs",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "/posts",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ0YjQzM2JmLTQxNjMtNDNlNi04ZmQ1LTVjNzViMGFhMDczNCIsImlhdCI6MTYwMDE1NTc2MywiZXhwIjoxNjAwMjQyMTYzfQ.T7KsqbKqYSUxNj-TbenLYjg6-kl_0sQxJQVOYHMw_Q4"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"post title\",\n\t\"description\": \"post description\",\n\t\"tag\": \"Career\",\n    \"users_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/posts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts"
+							]
+						},
+						"description": "/posts"
+					},
+					"response": [
+						{
+							"name": "/posts",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ0YjQzM2JmLTQxNjMtNDNlNi04ZmQ1LTVjNzViMGFhMDczNCIsImlhdCI6MTYwMDE1NTc2MywiZXhwIjoxNjAwMjQyMTYzfQ.T7KsqbKqYSUxNj-TbenLYjg6-kl_0sQxJQVOYHMw_Q4"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"post title222\",\n\t\"description\": \"post description222\",\n\t\"tag\": \"Jobs\",\n    \"users_id\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/posts",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 07:43:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"createPosts\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/posts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ0YjQzM2JmLTQxNjMtNDNlNi04ZmQ1LTVjNzViMGFhMDczNCIsImlhdCI6MTYwMDE1NTc2MywiZXhwIjoxNjAwMjQyMTYzfQ.T7KsqbKqYSUxNj-TbenLYjg6-kl_0sQxJQVOYHMw_Q4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/posts?tag=Career",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts"
+							],
+							"query": [
+								{
+									"key": "tag",
+									"value": "Career"
+								}
+							]
+						},
+						"description": "/posts"
+					},
+					"response": [
+						{
+							"name": "/posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ0YjQzM2JmLTQxNjMtNDNlNi04ZmQ1LTVjNzViMGFhMDczNCIsImlhdCI6MTYwMDE1NTc2MywiZXhwIjoxNjAwMjQyMTYzfQ.T7KsqbKqYSUxNj-TbenLYjg6-kl_0sQxJQVOYHMw_Q4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/posts?tag=Career",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"posts"
+									],
+									"query": [
+										{
+											"key": "tag",
+											"value": "Career"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "288"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 07:43:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"getPosts\",\n    \"result\": [\n        {\n            \"posts_id\": 1,\n            \"title\": \"post title\",\n            \"description\": \"post description\",\n            \"tag\": \"Career\",\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-15T07:42:52.168Z\",\n            \"updated_by\": \"2020-09-15T07:42:52.169Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "posts",
 			"protocolProfileBehavior": {}
 		},
 		{
