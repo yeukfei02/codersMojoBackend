@@ -2075,6 +2075,343 @@
 			],
 			"description": "mailchimp",
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "firebase",
+			"item": [
+				{
+					"name": "/add-token-to-firebase-details",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"currentToken\": \"test\",\n    \"refreshedToken\": \"\",\n    \"users_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/firebase/add-token-to-firebase-details",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"firebase",
+								"add-token-to-firebase-details"
+							]
+						},
+						"description": "/add-token-to-firebase-details"
+					},
+					"response": [
+						{
+							"name": "/add-token-to-firebase-details",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"currentToken\": \"test\",\n    \"refreshedToken\": \"\",\n    \"users_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/firebase/add-token-to-firebase-details",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"firebase",
+										"add-token-to-firebase-details"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 17 Sep 2020 12:10:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"addTokenToFirebaseDetails\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/subscribe-topic",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"registrationTokenList\": [\"f6ltdfQc5Gs6SkLhHQCSCM:APA91bFmNfwAIt8syUjFMM1wZV_dJ2QlCscPlFM0VDfsVyjlhbDgf0xRvJN88CAlZ3FRT0lSrpCxuqcX1-_ywXlocZ5jipinIWLLTm6KPuSGuORqxuXRRWSz14pXqnoNj-3aQNR32XWI\"],\n    \"topic\": \"all\",\n    \"users_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/firebase/subscribe-topic",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"firebase",
+								"subscribe-topic"
+							]
+						},
+						"description": "/subscribe-topic"
+					},
+					"response": [
+						{
+							"name": "/subscribe-topic",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"registrationTokenList\": [\"f6ltdfQc5Gs6SkLhHQCSCM:APA91bFmNfwAIt8syUjFMM1wZV_dJ2QlCscPlFM0VDfsVyjlhbDgf0xRvJN88CAlZ3FRT0lSrpCxuqcX1-_ywXlocZ5jipinIWLLTm6KPuSGuORqxuXRRWSz14pXqnoNj-3aQNR32XWI\"],\n    \"topic\": \"all\",\n    \"users_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/firebase/subscribe-topic",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"firebase",
+										"subscribe-topic"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 17 Sep 2020 12:44:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"subscribeTopic\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/unsubscribe-topic",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"registrationTokenList\": [\"f6ltdfQc5Gs6SkLhHQCSCM:APA91bFmNfwAIt8syUjFMM1wZV_dJ2QlCscPlFM0VDfsVyjlhbDgf0xRvJN88CAlZ3FRT0lSrpCxuqcX1-_ywXlocZ5jipinIWLLTm6KPuSGuORqxuXRRWSz14pXqnoNj-3aQNR32XWI\"],\n    \"topic\": \"all\",\n    \"users_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/firebase/unsubscribe-topic",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"firebase",
+								"unsubscribe-topic"
+							]
+						},
+						"description": "/unsubscribe-topic"
+					},
+					"response": [
+						{
+							"name": "/unsubscribe-topic",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"registrationTokenList\": [\"f6ltdfQc5Gs6SkLhHQCSCM:APA91bFmNfwAIt8syUjFMM1wZV_dJ2QlCscPlFM0VDfsVyjlhbDgf0xRvJN88CAlZ3FRT0lSrpCxuqcX1-_ywXlocZ5jipinIWLLTm6KPuSGuORqxuXRRWSz14pXqnoNj-3aQNR32XWI\"],\n    \"topic\": \"all\",\n    \"users_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/firebase/unsubscribe-topic",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"firebase",
+										"unsubscribe-topic"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 17 Sep 2020 12:44:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"unsubscribeTopic\"\n}"
+						}
+					]
+				}
+			],
+			"description": "firebase",
+			"protocolProfileBehavior": {}
 		}
 	],
 	"protocolProfileBehavior": {}
