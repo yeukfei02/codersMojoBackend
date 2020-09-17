@@ -1,5 +1,6 @@
 import * as Koa from 'koa';
 import * as admin from 'firebase-admin';
+import * as _ from 'lodash';
 
 import * as userService from '../service/user';
 import * as firebaseService from '../service/firebase';
@@ -27,11 +28,19 @@ export const addTokenToFirebaseDetails = async (ctx: Koa.Context, next: () => Pr
   const users_id = parseInt(ctx.request.body.users_id, 10);
 
   if (users_id) {
-    await firebaseService.addTokenToFirebaseDetails(currentToken, refreshedToken, users_id);
-    ctx.response.status = 201;
-    ctx.body = {
-      message: 'addTokenToFirebaseDetails',
-    };
+    const firebaseDetails = await firebaseService.getFirebaseDetailsByCurrentToken(currentToken);
+    if (_.isEmpty(firebaseDetails)) {
+      await firebaseService.addTokenToFirebaseDetails(currentToken, refreshedToken, users_id);
+      ctx.response.status = 201;
+      ctx.body = {
+        message: 'addTokenToFirebaseDetails',
+      };
+    } else {
+      ctx.response.status = 201;
+      ctx.body = {
+        message: 'addTokenToFirebaseDetails, this firebase current token already added',
+      };
+    }
   }
 };
 

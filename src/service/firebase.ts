@@ -19,3 +19,13 @@ export const addTokenToFirebaseDetails = async (
     },
   });
 };
+
+export const getFirebaseDetailsByCurrentToken = async (currentToken: string): Promise<firebase_details[]> => {
+  const fireBaseDetails = await prisma.firebase_details.findMany({
+    where: {
+      current_token: currentToken,
+    },
+    take: 1,
+  });
+  return fireBaseDetails;
+};
