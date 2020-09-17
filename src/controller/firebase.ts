@@ -27,19 +27,11 @@ export const addTokenToFirebaseDetails = async (ctx: Koa.Context, next: () => Pr
   const users_id = parseInt(ctx.request.body.users_id, 10);
 
   if (users_id) {
-    const user = await userService.getUserById(users_id);
-    if (!user) {
-      await firebaseService.addTokenToFirebaseDetails(currentToken, refreshedToken, users_id);
-      ctx.response.status = 201;
-      ctx.body = {
-        message: 'addTokenToFirebaseDetails',
-      };
-    } else {
-      ctx.response.status = 201;
-      ctx.body = {
-        message: 'addTokenToFirebaseDetails, this user firebase current token alreday added',
-      };
-    }
+    await firebaseService.addTokenToFirebaseDetails(currentToken, refreshedToken, users_id);
+    ctx.response.status = 201;
+    ctx.body = {
+      message: 'addTokenToFirebaseDetails',
+    };
   }
 };
 
