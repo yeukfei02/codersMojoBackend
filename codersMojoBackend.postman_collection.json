@@ -458,6 +458,130 @@
 					]
 				},
 				{
+					"name": "/change-user-credentials",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU1YTk0MGJmLTEyMWItNGU0NS04NWJiLTM0NGRlNmI2NmIwYyIsImlhdCI6MTYwMDMyNjUxNiwiZXhwIjoxNjAwNDEyOTE2fQ.Pej4RHoN2QuWjuQYR94m1yv7MPC5JjW-1hxhTYhmFSI"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firstName\": \"ok\",\n    \"lastName\": \"okok\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/change-user-credentials/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"change-user-credentials",
+								"1"
+							]
+						},
+						"description": "/change-user-credentials"
+					},
+					"response": [
+						{
+							"name": "/change-user-credentials",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU1YTk0MGJmLTEyMWItNGU0NS04NWJiLTM0NGRlNmI2NmIwYyIsImlhdCI6MTYwMDMyNjUxNiwiZXhwIjoxNjAwNDEyOTE2fQ.Pej4RHoN2QuWjuQYR94m1yv7MPC5JjW-1hxhTYhmFSI"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"firstName\": \"ok\",\n    \"lastName\": \"okok\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/user/change-user-credentials/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"change-user-credentials",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 17 Sep 2020 07:09:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"changeUesrCredentials\"\n}"
+						}
+					]
+				},
+				{
 					"name": "/user",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true

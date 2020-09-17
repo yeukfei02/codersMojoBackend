@@ -53,3 +53,16 @@ export const updateUserPassword = async (id: number, newPasswordHash: string): P
   });
   return updatedUser;
 };
+
+export const changeUesrCredentials = async (id: number, firstName: string, lastName: string): Promise<users> => {
+  const updatedUser = await prisma.users.update({
+    data: {
+      first_name: firstName,
+      last_name: lastName,
+    },
+    where: {
+      users_id: id,
+    },
+  });
+  return updatedUser;
+};
