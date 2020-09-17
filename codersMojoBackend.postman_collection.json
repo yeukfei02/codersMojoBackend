@@ -340,124 +340,6 @@
 					]
 				},
 				{
-					"name": "/change-password",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNhZjEwMDUxLTkxNzUtNDRkYy1hZDc2LTU4OGJhOGVkYWMyZSIsImlhdCI6MTU5OTk3NTQzNSwiZXhwIjoxNjAwMDYxODM1fQ.RgnQzCgXe2LFFXTufFnpiGnp_90T_TWQZI3zsxnWcXU",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"oldPassword\": \"4021fd9c50016e34617563b00e9d880b381294a8\",\n    \"newPassword\": \"test\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "localhost:3000/api/user/change-password/1",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"user",
-								"change-password",
-								"1"
-							]
-						},
-						"description": "/change-password"
-					},
-					"response": [
-						{
-							"name": "/change-password",
-							"originalRequest": {
-								"method": "PUT",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"oldPassword\": \"f53a7c2d15dd35e59cd2d5d719d8dadf5e1bc56d\",\n    \"newPassword\": \"test\"\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "localhost:3000/api/user/change-password/3",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"user",
-										"change-password",
-										"3"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Vary",
-									"value": "Origin, Accept-Encoding"
-								},
-								{
-									"key": "X-DNS-Prefetch-Control",
-									"value": "off"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "SAMEORIGIN"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=15552000; includeSubDomains"
-								},
-								{
-									"key": "X-Download-Options",
-									"value": "noopen"
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "33"
-								},
-								{
-									"key": "Date",
-									"value": "Sat, 12 Sep 2020 02:48:47 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"message\": \"changePassword\"\n}"
-						}
-					]
-				},
-				{
 					"name": "/change-user-credentials",
 					"request": {
 						"method": "PUT",
@@ -578,6 +460,124 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": \"changeUesrCredentials\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/change-password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNhZjEwMDUxLTkxNzUtNDRkYy1hZDc2LTU4OGJhOGVkYWMyZSIsImlhdCI6MTU5OTk3NTQzNSwiZXhwIjoxNjAwMDYxODM1fQ.RgnQzCgXe2LFFXTufFnpiGnp_90T_TWQZI3zsxnWcXU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"oldPassword\": \"4021fd9c50016e34617563b00e9d880b381294a8\",\n    \"newPassword\": \"test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/user/change-password/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"user",
+								"change-password",
+								"1"
+							]
+						},
+						"description": "/change-password"
+					},
+					"response": [
+						{
+							"name": "/change-password",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"oldPassword\": \"f53a7c2d15dd35e59cd2d5d719d8dadf5e1bc56d\",\n    \"newPassword\": \"test\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/user/change-password/3",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"user",
+										"change-password",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Sep 2020 02:48:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"changePassword\"\n}"
 						}
 					]
 				},
