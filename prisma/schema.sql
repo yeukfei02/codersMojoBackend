@@ -41,6 +41,15 @@ create table posts (
     updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
+create table firebase_details (
+    firebase_details_id serial PRIMARY KEY,
+    current_token text NOT NULL,
+    refreshed_token text NOT NULL,
+    users_id integer REFERENCES users (users_id),
+    created_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
+
 create table country (
     country_id serial PRIMARY KEY,
     iso char(2) NOT NULL,

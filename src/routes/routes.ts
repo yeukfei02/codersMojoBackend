@@ -7,6 +7,7 @@ import jobsRoutes from '../routes/jobs';
 import postsRoutes from '../routes/posts';
 import countryRoutes from '../routes/country';
 import mailchimpRoutes from '../routes/mailchimp';
+import firebaseRoutes from '../routes/firebase';
 
 const router = combineRouters(
   mainRoutes,
@@ -16,6 +17,7 @@ const router = combineRouters(
   postsRoutes,
   countryRoutes,
   mailchimpRoutes,
+  firebaseRoutes,
 );
 
 export default router;
