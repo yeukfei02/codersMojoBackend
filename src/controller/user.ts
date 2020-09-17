@@ -148,6 +148,35 @@ export const changePassword = async (ctx: Koa.Context, next: () => Promise<any>)
   }
 };
 
+export const changeUesrCredentials = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+  const id = parseInt(ctx.params.id, 10);
+  const firstName = ctx.request.body.firstName;
+  const lastName = ctx.request.body.lastName;
+
+  if (id) {
+    const user = await userService.getUserById(id);
+    if (user) {
+      const result = await userService.changeUesrCredentials(id, firstName, lastName);
+      if (result) {
+        ctx.response.status = 200;
+        ctx.body = {
+          message: 'changeUesrCredentials',
+        };
+      }
+    } else {
+      ctx.response.status = 400;
+      ctx.body = {
+        message: 'changePassword error, no this user',
+      };
+    }
+  } else {
+    ctx.response.status = 400;
+    ctx.body = {
+      message: 'changePassword error, no id',
+    };
+  }
+};
+
 export const getAllUser = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const userList = await userService.getAllUser();
 
