@@ -79,7 +79,7 @@ export const uploadFileToS3 = async (filePath: any, fileName: string): Promise<s
     Body: fileContent,
   };
 
-  const s3UploadResult: any = new Promise((resolve, reject) => {
+  const s3UploadResult: Promise<any> = new Promise((resolve, reject) => {
     s3.upload(params, (error: any, data: any) => {
       if (!error) {
         if (data) {
