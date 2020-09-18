@@ -835,6 +835,140 @@
 			"name": "tech-blog",
 			"item": [
 				{
+					"name": "/tech-blog/upload-file",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNTFlZWMxLTI5ZmMtNDk3ZS05YmI3LTNkMTZjZjJlZWIwNiIsImlhdCI6MTYwMDQyODY4MCwiZXhwIjoxNjAwNTE1MDgwfQ.tWw_UVqwYKN-Cq72weZkPpgodxTXVT82E_4-iOGCeN8"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/donaldwu/Downloads/posts.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/tech-blog/upload-file",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tech-blog",
+								"upload-file"
+							]
+						},
+						"description": "/tech-blog/upload-file"
+					},
+					"response": [
+						{
+							"name": "/tech-blog/upload-file",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNTFlZWMxLTI5ZmMtNDk3ZS05YmI3LTNkMTZjZjJlZWIwNiIsImlhdCI6MTYwMDQyODY4MCwiZXhwIjoxNjAwNTE1MDgwfQ.tWw_UVqwYKN-Cq72weZkPpgodxTXVT82E_4-iOGCeN8"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/donaldwu/Downloads/posts.jpg"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/tech-blog/upload-file",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"tech-blog",
+										"upload-file"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "152"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 18 Sep 2020 13:10:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"uploadTechBlogFile\",\n    \"imageUrl\": \"https://codersmojo.s3.ap-southeast-1.amazonaws.com/52203773-8da6-4a59-a11a-9d1e081226ee-posts.jpg\"\n}"
+						}
+					]
+				},
+				{
 					"name": "/tech-blog",
 					"request": {
 						"method": "POST",
