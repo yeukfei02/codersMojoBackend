@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"test\",\n    \"lastName\": \"test2\",\n\t\"email\": \"codersmojoplatform@email.com\",\n\t\"password\": \"test\"\n}",
+							"raw": "{\n    \"firstName\": \"test\",\n    \"lastName\": \"test2\",\n\t\"email\": \"codersmojoplatform@gmail.com\",\n\t\"password\": \"test\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -126,7 +126,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"codersmojoplatform@email.com\",\n\t\"password\": \"test\"\n}",
+							"raw": "{\n\t\"email\": \"codersmojoplatform@gmail.com\",\n\t\"password\": \"test\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1610,6 +1610,278 @@
 				}
 			],
 			"description": "posts",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "hackathons",
+			"item": [
+				{
+					"name": "/hackathons",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"hackathon 1\",\n\t\"mode\": \"test mode\",\n\t\"prize\": \"$10000 - 1st, $20000 - 2nd\",\n    \"details\": \"test details\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/hackathons",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hackathons"
+							]
+						},
+						"description": "/hackathons"
+					},
+					"response": [
+						{
+							"name": "/hackathons",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"hackathon 1\",\n\t\"mode\": \"test mode\",\n\t\"prize\": \"$10000 - 1st, $20000 - 2nd\",\n    \"details\": \"test details\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/hackathons",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"hackathons"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 18 Sep 2020 04:45:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"createHackathons\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/hackathons",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiZDM5MDU4LWIzZmUtNDc1My1hNWExLTUwZTJhMTQ5MGI5MiIsImlhdCI6MTYwMDQwNDM5MSwiZXhwIjoxNjAwNDkwNzkxfQ.3U0thEY5F1m25vaEDMEyLkcA0sl09kAbR3QnHJzTgkc"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/hackathons?name=hackathon 1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"hackathons"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "hackathon 1"
+								}
+							]
+						},
+						"description": "/hackathons"
+					},
+					"response": [
+						{
+							"name": "/hackathons",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJiZDM5MDU4LWIzZmUtNDc1My1hNWExLTUwZTJhMTQ5MGI5MiIsImlhdCI6MTYwMDQwNDM5MSwiZXhwIjoxNjAwNDkwNzkxfQ.3U0thEY5F1m25vaEDMEyLkcA0sl09kAbR3QnHJzTgkc"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/hackathons?name=hackathon 1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"hackathons"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "hackathon 1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "586"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 18 Sep 2020 04:47:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"getHackathons\",\n    \"result\": [\n        {\n            \"hackathons_id\": 1,\n            \"name\": \"hackathon 1\",\n            \"mode\": \"test mode\",\n            \"prize\": \"$10000 - 1st, $20000 - 2nd\",\n            \"details\": \"test details\",\n            \"created_by\": \"2020-09-18T04:45:18.690Z\",\n            \"updated_by\": \"2020-09-18T04:45:18.690Z\"\n        },\n        {\n            \"hackathons_id\": 2,\n            \"name\": \"hackathon 1\",\n            \"mode\": \"test mode\",\n            \"prize\": \"$10000 - 1st, $20000 - 2nd\",\n            \"details\": \"test details\",\n            \"created_by\": \"2020-09-18T04:45:20.501Z\",\n            \"updated_by\": \"2020-09-18T04:45:20.501Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "hackathons",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c98a4f2b-b0d1-4357-a0f7-b44c771e655d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "509f8547-68fc-4cdc-825f-abce43894142",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
 			"protocolProfileBehavior": {}
 		},
 		{

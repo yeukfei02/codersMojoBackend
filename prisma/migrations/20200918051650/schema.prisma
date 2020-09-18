@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_HEROKU_URL")
+  url = "***"
 }
 
 model users {
@@ -78,7 +78,6 @@ model firebase_details {
 
 model hackathons {
   hackathons_id Int      @default(autoincrement()) @id
-  image         String
   name          String
   mode          String
   prize         String
