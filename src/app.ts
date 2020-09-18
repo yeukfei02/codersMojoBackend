@@ -5,6 +5,7 @@ import * as helmet from 'koa-helmet';
 import * as logger from 'koa-logger';
 import * as compress from 'koa-compress';
 import * as bodyParser from 'koa-bodyparser';
+import * as koaBody from 'koa-body';
 import * as json from 'koa-json';
 
 import * as env from 'dotenv';
@@ -34,6 +35,7 @@ app.use(
   }),
 );
 app.use(bodyParser());
+app.use(koaBody({ multipart: true }));
 app.use(json());
 
 app.use(router());

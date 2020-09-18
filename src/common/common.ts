@@ -1,6 +1,8 @@
 import * as mailgun from 'mailgun-js';
 import * as fs from 'fs';
 import * as path from 'path';
+import * as AWS from 'aws-sdk';
+import { v4 as uuidv4 } from 'uuid';
 
 const getMailgun = () => {
   const MAILGUN_API_KEY = process.env.MAILGUN_API_KEY;
@@ -58,4 +60,37 @@ export const sendForgotPasswordEmail = async (email: string, newPassword: string
   } catch (e) {
     console.log('sendForgotPasswordEmail error = ', e.message);
   }
+};
+
+export const uploadFileToS3 = async (filePath: any, fileName: string): Promise<string> => {
+  const fileContent = fs.readFileSync(filePath);
+
+  const s3 = new AWS.S3({
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    region: 'ap-southeast-1',
+  });
+
+  const BUCKET_NAME = 'codersmojo';
+
+  const params = {
+    Bucket: BUCKET_NAME,
+    Key: `${uuidv4()}-${fileName}`,
+    Body: fileContent,
+  };
+
+  const s3UploadResult: any = new Promise((resolve, reject) => {
+    s3.upload(params, (error: any, data: any) => {
+      if (!error) {
+        if (data) {
+          resolve(data.Location);
+        }
+      } else {
+        reject('error = ' + error);
+      }
+    });
+  });
+
+  const imageUrl = await s3UploadResult;
+  return imageUrl;
 };
