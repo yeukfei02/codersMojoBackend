@@ -41,6 +41,17 @@ create table posts (
     updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
+create table hackathons (
+    hackathons_id serial PRIMARY KEY,
+    image text NOT NULL,
+    name varchar(255) NOT NULL,
+    mode varchar(255) NOT NULL,
+    prize text NOT NULL,
+    details text NOT NULL,
+    created_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
+
 create table firebase_details (
     firebase_details_id serial PRIMARY KEY,
     current_token text NOT NULL,
