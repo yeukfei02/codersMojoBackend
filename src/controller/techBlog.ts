@@ -21,13 +21,21 @@ export const uploadTechBlogFile = async (ctx: Koa.Context, next: () => Promise<a
 };
 
 export const createTechBlog = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+  const image = ctx.request.body.image;
   const title = ctx.request.body.title;
   const description = ctx.request.body.description;
   const tag = ctx.request.body.tag;
   const users_id = parseInt(ctx.request.body.users_id, 10);
 
   if (title && description && tag && users_id) {
-    await techBlogService.createTechBlog('', title, description, tag, users_id);
+    await techBlogService.createTechBlog(
+      image ||
+        'https://images.unsplash.com/photo-1509966756634-9c23dd6e6815?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1010&q=80',
+      title,
+      description,
+      tag,
+      users_id,
+    );
 
     ctx.response.status = 201;
     ctx.body = {
