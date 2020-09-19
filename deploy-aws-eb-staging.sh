@@ -14,9 +14,6 @@ docker tag codersmojobackend_web:latest 151708502202.dkr.ecr.ap-southeast-1.amaz
 # docker push
 docker push 151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backend-staging-web:latest
 
-# eb deploy
-eb deploy --message="deploy new version"
-
 # docker-compose down
 docker-compose down
 
@@ -26,3 +23,6 @@ docker rmi codersmojobackend_web:latest codersmojobackend_prisma-studio:latest 1
 # docker clear system, clear volume
 docker system prune
 docker volume prune
+
+# eb deploy
+eb deploy --message="deploy new version"
