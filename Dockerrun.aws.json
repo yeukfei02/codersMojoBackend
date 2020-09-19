@@ -25,6 +25,7 @@
                 }
             ],
             "name": "db",
+            "memory": 128,
             "portMappings": [
                 {
                     "containerPort": 5432,
@@ -56,6 +57,8 @@
                 }
             ],
             "name": "prisma-studio",
+            "image": "151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backend-staging-prisma-studio:latest",
+            "memory": 128,
             "portMappings": [
                 {
                     "containerPort": 5555,
@@ -82,6 +85,8 @@
                 }
             ],
             "name": "web",
+            "image": "151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backend-staging-web:latest",
+            "memory": 128,
             "portMappings": [
                 {
                     "containerPort": 3000,
