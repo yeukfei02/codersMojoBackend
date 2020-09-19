@@ -3,7 +3,7 @@
 eb init
 
 # docker login
-aws --region ap-southeast-1 ecr get-login-password | docker login --username AWS --password-stdin https://151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backend-staging
+aws --region ap-southeast-1 ecr get-login-password | docker login --username AWS --password-stdin https://151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backend-staging-web
 
 # run docker-compose
 docker-compose up -d --build
