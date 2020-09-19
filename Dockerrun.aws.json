@@ -1,0 +1,113 @@
+{
+    "containerDefinitions": [
+        {
+            "environment": [
+                {
+                    "name": "POSTGRES_USER",
+                    "value": "codersmojo"
+                },
+                {
+                    "name": "POSTGRES_PASSWORD",
+                    "value": "codersmojo"
+                },
+                {
+                    "name": "POSTGRES_DB",
+                    "value": "codersmojo"
+                }
+            ],
+            "essential": true,
+            "image": "postgres:12.1",
+            "mountPoints": [
+                {
+                    "containerPath": "/docker-entrypoint-initdb.d/dump.sql",
+                    "sourceVolume": "_PrismaSchema_Sql"
+                }
+            ],
+            "name": "db",
+            "portMappings": [
+                {
+                    "containerPort": 5432,
+                    "hostPort": 5432
+                }
+            ]
+        },
+        {
+            "command": [
+                "yarn",
+                "run",
+                "prisma-studio"
+            ],
+            "environment": [
+                {
+                    "name": "NODE_ENV",
+                    "value": "production"
+                }
+            ],
+            "essential": true,
+            "mountPoints": [
+                {
+                    "containerPath": "/usr/src/app",
+                    "sourceVolume": "_"
+                },
+                {
+                    "containerPath": "/usr/src/app/node_modules",
+                    "sourceVolume": "UsrSrcAppNode_Modules"
+                }
+            ],
+            "name": "prisma-studio",
+            "portMappings": [
+                {
+                    "containerPort": 5555,
+                    "hostPort": 5555
+                }
+            ]
+        },
+        {
+            "environment": [
+                {
+                    "name": "NODE_ENV",
+                    "value": "production"
+                }
+            ],
+            "essential": true,
+            "mountPoints": [
+                {
+                    "containerPath": "/usr/src/app",
+                    "sourceVolume": "_"
+                },
+                {
+                    "containerPath": "/usr/src/app/node_modules",
+                    "sourceVolume": "UsrSrcAppNode_Modules"
+                }
+            ],
+            "name": "web",
+            "portMappings": [
+                {
+                    "containerPort": 3000,
+                    "hostPort": 3000
+                }
+            ]
+        }
+    ],
+    "family": "",
+    "volumes": [
+        {
+            "host": {
+                "sourcePath": "."
+            },
+            "name": "_"
+        },
+        {
+            "host": {
+                "sourcePath": "/usr/src/app/node_modules"
+            },
+            "name": "UsrSrcAppNode_Modules"
+        },
+        {
+            "host": {
+                "sourcePath": "./prisma/schema.sql"
+            },
+            "name": "_PrismaSchema_Sql"
+        }
+    ]
+}
