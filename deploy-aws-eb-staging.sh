@@ -18,3 +18,9 @@ docker push 151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backen
 
 # deploy command
 eb deploy --message="deploy new version"
+
+# docker-compose down
+docker-compose down
+
+# docker rmi images
+docker rmi codersmojobackend_web:latest codersmojobackend_prisma-studio:latest 151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backend-staging-web:latest 151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backend-staging-prisma-studio:latest
