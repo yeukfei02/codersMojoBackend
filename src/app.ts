@@ -4,6 +4,7 @@ import * as cors from '@koa/cors';
 import * as helmet from 'koa-helmet';
 import * as logger from 'koa-logger';
 import * as compress from 'koa-compress';
+const formidable = require('koa2-formidable');
 import * as bodyParser from 'koa-bodyparser';
 import * as json from 'koa-json';
 
@@ -33,6 +34,7 @@ app.use(
     br: false, // disable brotli
   }),
 );
+app.use(formidable());
 app.use(bodyParser());
 app.use(json());
 

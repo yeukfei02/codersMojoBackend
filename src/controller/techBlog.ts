@@ -1,15 +1,14 @@
 import * as Koa from 'koa';
-import * as asyncBusboy from 'async-busboy';
 
 import { uploadFileToS3 } from '../common/common';
 
 import * as techBlogService from '../service/techBlog';
 
 export const uploadTechBlogFile = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
-  const { files, fields } = await asyncBusboy(ctx.req);
+  const files = (ctx.request as any).files;
 
-  const filePath = files[0].path;
-  const fileName = (files[0] as any).filename;
+  const filePath = files.file.path;
+  const fileName = files.file.name;
 
   const imageUrl = await uploadFileToS3(filePath, fileName);
 
