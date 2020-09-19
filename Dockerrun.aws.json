@@ -34,39 +34,6 @@
             ]
         },
         {
-            "command": [
-                "yarn",
-                "run",
-                "prisma-studio"
-            ],
-            "environment": [
-                {
-                    "name": "NODE_ENV",
-                    "value": "production"
-                }
-            ],
-            "essential": true,
-            "mountPoints": [
-                {
-                    "containerPath": "/usr/src/app",
-                    "sourceVolume": "_"
-                },
-                {
-                    "containerPath": "/usr/src/app/node_modules",
-                    "sourceVolume": "UsrSrcAppNode_Modules"
-                }
-            ],
-            "name": "prisma-studio",
-            "image": "151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backend-staging-prisma-studio:latest",
-            "memory": 128,
-            "portMappings": [
-                {
-                    "containerPort": 5555,
-                    "hostPort": 5555
-                }
-            ]
-        },
-        {
             "environment": [
                 {
                     "name": "NODE_ENV",
