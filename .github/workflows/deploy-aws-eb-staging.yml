@@ -1,7 +1,7 @@
-name: deploy aws eb prod CI
+name: deploy aws eb staging CI
 
 on:
-  push:
+  pull_request:
     branches: [ master ]
 
 jobs:
@@ -37,8 +37,8 @@ jobs:
       with:
         aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        application_name: coders-mojo-backend-prod
-        environment_name: coders-mojo-backend-prod-env
+        application_name: coders-mojo-backend-staging
+        environment_name: coders-mojo-backend-staging-env
         version_label: "coders-mojo-backend-${{ steps.format-time.outputs.replaced }}"
         region: ap-southeast-1
         deployment_package: deploy.zip
