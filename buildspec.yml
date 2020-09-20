@@ -13,8 +13,8 @@ phases:
   build:
     commands:
       - echo Building the Docker image...
-      - docker tag codersmojobackend_web:latest $REPOSITORY_URI:$IMAGE_TAG
-      - docker tag codersmojobackend_prisma-studio:latest $REPOSITORY_URI2:$IMAGE_TAG
+      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+      - docker tag $REPOSITORY_URI2:latest $REPOSITORY_URI2:$IMAGE_TAG
   post_build:
     commands:
       - echo Pushing the Docker images...
