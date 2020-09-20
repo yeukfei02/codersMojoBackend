@@ -79,9 +79,7 @@
     "migrate:prisma:up": "npx prisma migrate up --experimental",
     "migrate:prisma:down": "npx prisma migrate down 1 --experimental",
     "prisma-studio": "npx prisma studio --experimental",
-    "commit": "npx git-cz",
-    "generate:aws-eb-file": "cat docker-compose.yml | container-transform -v",
-    "deploy:staging": "sh deploy-aws-eb-staging.sh"
+    "commit": "npx git-cz"
   },
   "husky": {
     "hooks": {
