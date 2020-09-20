@@ -1,38 +1,6 @@
 {
-    "AWSEBDockerrunVersion": "2",
+    "AWSEBDockerrunVersion": "1",
     "containerDefinitions": [
-        {
-            "environment": [
-                {
-                    "name": "POSTGRES_USER",
-                    "value": "codersmojo"
-                },
-                {
-                    "name": "POSTGRES_PASSWORD",
-                    "value": "codersmojo"
-                },
-                {
-                    "name": "POSTGRES_DB",
-                    "value": "codersmojo"
-                }
-            ],
-            "essential": true,
-            "image": "postgres:12.1",
-            "mountPoints": [
-                {
-                    "containerPath": "/docker-entrypoint-initdb.d/dump.sql",
-                    "sourceVolume": "_PrismaSchema_Sql"
-                }
-            ],
-            "name": "db",
-            "memory": 128,
-            "portMappings": [
-                {
-                    "containerPort": 5432,
-                    "hostPort": 5432
-                }
-            ]
-        },
         {
             "environment": [
                 {
@@ -75,12 +43,6 @@
                 "sourcePath": "/usr/src/app/node_modules"
             },
             "name": "UsrSrcAppNode_Modules"
-        },
-        {
-            "host": {
-                "sourcePath": "./prisma/schema.sql"
-            },
-            "name": "_PrismaSchema_Sql"
         }
     ]
 }
