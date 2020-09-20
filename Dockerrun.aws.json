@@ -17,6 +17,9 @@
                 }
             ],
             "essential": true,
+            "links": [
+                "web"
+            ],
             "image": "postgres:12.1",
             "name": "db",
             "memory": 128,
@@ -40,6 +43,10 @@
                 }
             ],
             "essential": true,
+            "links": [
+                "web",
+                "db"
+            ],
             "mountPoints": [
                 {
                     "containerPath": "/usr/src/app",
@@ -95,7 +102,7 @@
             "host": {
                 "sourcePath": "."
             },
-            "name": "_"
+            "name": "__"
         },
         {
             "host": {
