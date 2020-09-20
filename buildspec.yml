@@ -1,0 +1,36 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - $(aws ecr get-login --no-include-email --region ap-southeast-1)
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - REPOSITORY_STAGING_URI=151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backend-staging
+      - REPOSITORY_PROD_URI=151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backend-prod
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
+  build:
+    commands:
+      - echo Building the Docker image...
+
+      # staging
+      - docker build -t $REPOSITORY_STAGING_URI:latest .
+      - docker tag $REPOSITORY_STAGING_URI:latest $REPOSITORY_STAGING_URI:$IMAGE_TAG
+
+      # production
+      - docker build -t $REPOSITORY_PROD_URI:latest .
+      - docker tag $REPOSITORY_PROD_URI:latest $REPOSITORY_PROD_URI:$IMAGE_TAG
+  post_build:
+    commands:
+      - echo Pushing the Docker images...
+
+      # staging
+      - docker push $REPOSITORY_STAGING_URI:$IMAGE_TAG
+
+      # production
+      - docker push $REPOSITORY_PROD_URI:$IMAGE_TAG
+
+artifacts:
+  files:
+    - '**/*'
