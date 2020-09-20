@@ -6,13 +6,17 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --no-include-email --region ap-southeast-1)
+      - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+      - REPOSITORY_URI=151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backend-staging-web
+      - REPOSITORY_URI2=151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backend-staging-prisma-studio
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
     commands:
       - echo Building the Docker image...
-      - docker tag codersmojobackend_web:latest 151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backend-staging-web:latest
-      - docker tag codersmojobackend_prisma-studio:latest 151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backend-staging-prisma-studio:latest
+      - docker tag codersmojobackend_web:latest $REPOSITORY_URI:$IMAGE_TAG
+      - docker tag codersmojobackend_prisma-studio:latest $REPOSITORY_URI2:$IMAGE_TAG
   post_build:
     commands:
       - echo Pushing the Docker images...
-      - docker push 151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backend-staging-web:latest
-      - docker push 151708502202.dkr.ecr.ap-southeast-1.amazonaws.com/coders-mojo-backend-staging-prisma-studio:latest
+      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - docker push $REPOSITORY_URI2:$IMAGE_TAG
