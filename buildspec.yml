@@ -30,3 +30,7 @@ phases:
 
       # production
       - docker push $REPOSITORY_PROD_URI:$IMAGE_TAG
+
+artifacts:
+  files:
+    - '**/*'
