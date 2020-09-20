@@ -102,7 +102,7 @@
             "host": {
                 "sourcePath": "."
             },
-            "name": "__"
+            "name": "_"
         },
         {
             "host": {
