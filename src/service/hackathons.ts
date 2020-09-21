@@ -2,7 +2,14 @@ import { PrismaClient, hackathons } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export const createHackathons = async (name: string, mode: string, prize: string, details: string): Promise<void> => {
+export const createHackathons = async (
+  name: string,
+  mode: string,
+  prize: string,
+  details: string,
+  dateTime: string,
+  link: string,
+): Promise<void> => {
   await prisma.hackathons.create({
     data: {
       image:
@@ -11,6 +18,8 @@ export const createHackathons = async (name: string, mode: string, prize: string
       mode: mode,
       prize: prize,
       details: details,
+      date_time: dateTime,
+      link: link,
     },
   });
 };
@@ -34,4 +43,14 @@ export const getHackathonsByFilter = async (name: string): Promise<hackathons[]>
     },
   });
   return hackathonsList;
+};
+
+export const getHackathonsByName = async (name: string): Promise<hackathons[]> => {
+  const hackathons = await prisma.hackathons.findMany({
+    where: {
+      name: name,
+    },
+    take: 1,
+  });
+  return hackathons;
 };

@@ -83,6 +83,8 @@ model hackathons {
   mode          String
   prize         String
   details       String
+  date_time     String
+  link          String
   created_by    DateTime @default(now())
   updated_by    DateTime @default(now())
 }

@@ -11,6 +11,8 @@ import * as json from 'koa-json';
 import * as env from 'dotenv';
 env.config();
 
+import * as cron from './cron/cron';
+
 import router from './routes/routes';
 
 const app = new Koa();
@@ -39,6 +41,9 @@ app.use(bodyParser());
 app.use(json());
 
 app.use(router());
+
+// cron job
+cron.init();
 
 app.listen(port, () => {
   console.log(`server is listening on port: ${port}`);

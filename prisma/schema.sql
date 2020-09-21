@@ -48,6 +48,8 @@ create table hackathons (
     mode varchar(255) NOT NULL,
     prize text NOT NULL,
     details text NOT NULL,
+    date_time text NOT NULL,
+    link text NOT NULL,
     created_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
     updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
