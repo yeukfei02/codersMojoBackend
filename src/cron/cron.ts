@@ -41,8 +41,8 @@ const scheduleJob = (scheduleTime: string) => {
 };
 
 export const init = (): void => {
-  // fetch hackathons data from google sheet every 3 hours
-  scheduleJob('0 */3 * * *');
+  // fetch hackathons data from google sheet every 1 hour
+  scheduleJob('0 * * * *');
 };
 
 export default cron;
