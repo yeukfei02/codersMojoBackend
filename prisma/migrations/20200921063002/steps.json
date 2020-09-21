@@ -1,0 +1,19 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateField",
+      "model": "hackathons",
+      "field": "date_time",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "hackathons",
+      "field": "link",
+      "type": "String",
+      "arity": "Required"
+    }
+  ]
+}
