@@ -44,3 +44,13 @@ export const getHackathonsByFilter = async (name: string): Promise<hackathons[]>
   });
   return hackathonsList;
 };
+
+export const getHackathonsByName = async (name: string): Promise<hackathons[]> => {
+  const hackathons = await prisma.hackathons.findMany({
+    where: {
+      name: name,
+    },
+    take: 1,
+  });
+  return hackathons;
+};
