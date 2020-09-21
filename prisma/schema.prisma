@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_AWS_STAGING_URL")
+  url      = env("DATABASE_URL")
 }
 
 model users {
@@ -83,6 +83,8 @@ model hackathons {
   mode          String
   prize         String
   details       String
+  date_time     String
+  link          String
   created_by    DateTime @default(now())
   updated_by    DateTime @default(now())
 }
