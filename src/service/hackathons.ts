@@ -14,12 +14,12 @@ export const createHackathons = async (
     data: {
       image:
         'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80',
-      name: name,
-      mode: mode,
-      prize: prize,
-      details: details,
-      date_time: dateTime,
-      link: link,
+      name: name ? name : '',
+      mode: mode ? mode : '',
+      prize: prize ? prize : '',
+      details: details ? details : '',
+      date_time: dateTime ? dateTime : '',
+      link: link ? link : '',
     },
   });
 };
