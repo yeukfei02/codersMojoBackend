@@ -1219,7 +1219,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"type\": \"Full time\",\n\t\"department\": \"Backend Developer\",\n\t\"location\": \"Singapore\",\n    \"title\": \"Senior software developer\",\n    \"description\": \"it is a start here\"\n}",
+							"raw": "{\n    \"type\": \"Full time\",\n    \"company\": \"test\",\n    \"companyUrl\": \"test\",\n\t\"department\": \"Backend Developer\",\n\t\"location\": \"Singapore\",\n    \"title\": \"Senior software developer\",\n    \"description\": \"it is a start here\",\n    \"url\": \"test\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1337,7 +1337,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYzYmY1Y2Q0LTY1MTUtNDUwOS1hMGEzLTA0YzE1YWRmNDI3YSIsImlhdCI6MTYwMDA2NDY3NSwiZXhwIjoxNjAwMTUxMDc1fQ.1GVzLS3s74Mv9KmBpOKjJuwNGjPeazOyDxXsEwTl9u0"
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIxYTE5Zjg2LWJkZWMtNDMzOC1iZGU5LWRiNjcyY2M3YjBkZSIsImlhdCI6MTYwMDg1OTA4NCwiZXhwIjoxNjAwOTQ1NDg0fQ.kCHdnw-f7bL10Tt-6dw8I30ihZUz5Q2o-9ps8B1S8m4"
 							}
 						],
 						"body": {
@@ -1350,7 +1350,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/jobs?type=Full time&department=Backend Developer&location=Singapore",
+							"raw": "localhost:3000/api/jobs?type=Full Time&location=US",
 							"host": [
 								"localhost"
 							],
@@ -1362,15 +1362,11 @@
 							"query": [
 								{
 									"key": "type",
-									"value": "Full time"
-								},
-								{
-									"key": "department",
-									"value": "Backend Developer"
+									"value": "Full Time"
 								},
 								{
 									"key": "location",
-									"value": "Singapore"
+									"value": "US"
 								}
 							]
 						},
@@ -1385,7 +1381,7 @@
 									{
 										"key": "Authorization",
 										"type": "text",
-										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImYzYmY1Y2Q0LTY1MTUtNDUwOS1hMGEzLTA0YzE1YWRmNDI3YSIsImlhdCI6MTYwMDA2NDY3NSwiZXhwIjoxNjAwMTUxMDc1fQ.1GVzLS3s74Mv9KmBpOKjJuwNGjPeazOyDxXsEwTl9u0"
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIxYTE5Zjg2LWJkZWMtNDMzOC1iZGU5LWRiNjcyY2M3YjBkZSIsImlhdCI6MTYwMDg1OTA4NCwiZXhwIjoxNjAwOTQ1NDg0fQ.kCHdnw-f7bL10Tt-6dw8I30ihZUz5Q2o-9ps8B1S8m4"
 									}
 								],
 								"body": {
@@ -1398,7 +1394,7 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:3000/api/jobs",
+									"raw": "localhost:3000/api/jobs?type=Full Time&location=US",
 									"host": [
 										"localhost"
 									],
@@ -1410,18 +1406,11 @@
 									"query": [
 										{
 											"key": "type",
-											"value": "Full time",
-											"disabled": true
-										},
-										{
-											"key": "department",
-											"value": "Backend Developer",
-											"disabled": true
+											"value": "Full Time"
 										},
 										{
 											"key": "location",
-											"value": "Singapore",
-											"disabled": true
+											"value": "US"
 										}
 									]
 								}
@@ -1464,11 +1453,11 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "499"
+									"value": "3255"
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 14 Sep 2020 06:26:00 GMT"
+									"value": "Wed, 23 Sep 2020 11:05:13 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1476,7 +1465,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"getJobs\",\n    \"result\": [\n        {\n            \"jobs_id\": 1,\n            \"type\": \"Full time\",\n            \"department\": \"Backend Developer\",\n            \"location\": \"Singapore\",\n            \"created_by\": \"2020-09-14T06:06:14.644Z\",\n            \"updated_by\": \"2020-09-14T06:06:14.644Z\"\n        },\n        {\n            \"jobs_id\": 2,\n            \"type\": \"Full time\",\n            \"department\": \"Frontend Developer\",\n            \"location\": \"Hong Kong\",\n            \"created_by\": \"2020-09-14T06:25:25.779Z\",\n            \"updated_by\": \"2020-09-14T06:25:25.779Z\"\n        }\n    ]\n}"
+							"body": "{\n    \"message\": \"getJobs\",\n    \"result\": [\n        {\n            \"jobs_id\": 1,\n            \"type\": \"Full Time\",\n            \"company\": \"Very\",\n            \"company_url\": \"https://www.verypossible.com\",\n            \"department\": \"\",\n            \"location\": \"US\",\n            \"title\": \"Senior Software Engineer - React & React Native\",\n            \"description\": \"We value well-tested, reusable code and expect our engineers and data scientists to be as good of practitioners as they are leaders and teachers.\\nAbout This Role\\nVery is a remote-first company, meaning we don’t have a physical office, and you can work from anywhere in the continental United States. Your home,  a co-working space, on the road, you name it. If you feel like moving, you don’t have to change jobs.\\nAs a Senior Software Engineer, you will be working across multiple technologies developing data centric-solutions. This requires an interest in API engineering, DevOps, SQL and NoSQL databases, cloud infrastructure and everything in between...\\nIn this role, you will be exposed to each of the following technologies in order of importance:\\n\\nJavascript, Typescript, React\\nMobile: iOS, Android, React Native\\nPython: Flask, Django, SciKit-Learn, Pandas\\nRuby on Rails\\nElixir, Phoenix, and Nerves\\nAWS: AWS Lambda and the Serverless Framework\\n\\nWe value well-tested, reusable code and expect our engineers to be as good of practitioners as they are leaders and teachers.\\nEngineers who apply for this job should be excellent practitioners at both React and JavaScript along with an interest and willingness to become proficient with the React Native platform.\\nWhat You’ll Be Working On\\nVery is a fully-distributed IoT engineering firm, partnering with our clients to build systems for smart manufacturing, smart energy &amp; utilities, consumer electronics, and connected wellness. Learn more at verypossible.com\\nCurrently, we have a long-running client with needs matching this specific job description, and you will be hired into this project. You’ll spend the majority of your time working on this project, and the remainder of your time can be spent improving Very. These internal contributions often include working on open source projects, building internal products, improving your craft, educating others, and more.\\nUpon completion of this project, you will move on to other client projects for Very.\\nHow You’ll Be Compensated\\nWe believe in a transparent, fair compensation structure and have developed our own open salary formula. Depending on your skill and experience, you can expect your base compensation to be somewhere between $90,100 and $109,750 upon joining the company. We also offer performance bonuses, a generous maternity/paternity leave policy, 401K matching, and numerous other employee benefits including reimbursement for home office equipment and gym memberships.\\nThis is a full-time employment opportunity for a single individual. We’re not looking for contractors, part-time individuals, or agencies of any kind. Applicants must be located in the continental United States. Thanks!\\n\",\n            \"url\": \"https://jobs.github.com/positions/45e3cba3-39fe-42de-9472-fd4c99748106\",\n            \"created_by\": \"2020-09-23T11:00:28.716Z\",\n            \"updated_by\": \"2020-09-23T11:00:28.716Z\"\n        }\n    ]\n}"
 						}
 					]
 				}

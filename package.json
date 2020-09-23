@@ -1,6 +1,6 @@
 {
   "name": "codersMojoBackend",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "app.js",
   "repository": "https://github.com/yeukfei02/codersMojoBackend.git",
   "author": "Donald Wu <yeukfei02@gmail.com>",

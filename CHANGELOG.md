@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.4...v0.0.5) (2020-09-23)
+
+
+### Features
+
+* 🎸 add github jobs in cron job ([604ef10](https://github.com/yeukfei02/codersMojoBackend/commit/604ef109915f2f9650ddf49d2407bc1440687caf))
+
 ### [0.0.4](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.3...v0.0.4) (2020-09-23)
 
 ### [0.0.3](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.2...v0.0.3) (2020-09-23)
