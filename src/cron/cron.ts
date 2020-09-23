@@ -1,8 +1,10 @@
 import * as cron from 'node-cron';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
+import axios from 'axios';
 import * as _ from 'lodash';
 
 import * as hackathonsService from '../service/hackathons';
+import * as jobsService from '../service/jobs';
 
 const fetchHackathonsDataFromGoogleSheet = async () => {
   const doc = new GoogleSpreadsheet('13869Q8PPsqLkfVCuQkgu091E0NPf0zlpY4ZU-CIZJms');
@@ -32,17 +34,90 @@ const fetchHackathonsDataFromGoogleSheet = async () => {
   }
 };
 
-const scheduleJob = (scheduleTime: string) => {
+const fetchJobsDataFromGithubJobs = async () => {
+  const keywordList = [
+    'javascript',
+    'typescript',
+    'react',
+    'react native',
+    'node',
+    'python',
+    'java',
+    'ios',
+    'android',
+    'data science',
+    'machine learning',
+    'frontend',
+    'backend',
+    'front end',
+    'back end',
+    'full stack',
+    'mobile',
+    'developer',
+    'software developer',
+    'software engineer',
+    'senior software developer',
+    'senior software engineer',
+  ];
+
+  if (keywordList) {
+    keywordList.forEach(async (keywords: string, i: number) => {
+      const response = await axios.get(`https://jobs.github.com/positions.json`, {
+        params: {
+          description: keywords,
+        },
+      });
+      if (response) {
+        const responseData = response.data;
+        if (responseData) {
+          const regex = /(<([^>]+)>)/gi;
+
+          responseData.forEach(async (item: any, i: number) => {
+            const type = item.type;
+            const company = item.company;
+            const companyUrl = item.company_url;
+            const department = '';
+            const location = item.location;
+            const title = item.title;
+
+            const formattedDescription = item.description.replace(regex, '');
+            const description = formattedDescription;
+
+            const url = item.url;
+
+            const existingJobs = await jobsService.getJobsByCompanyAndTitle(company, title);
+            if (_.isEmpty(existingJobs)) {
+              await jobsService.createJobs(type, company, companyUrl, department, location, title, description, url);
+            }
+          });
+        }
+      }
+    });
+  }
+};
+
+const scheduleFetchHackathons = (scheduleTime: string) => {
   cron.schedule(scheduleTime, () => {
-    console.log('### cron fetchHackathonsDataFromGoogleSheet ###');
+    console.log('### cron scheduleFetchHackathons ###');
 
     fetchHackathonsDataFromGoogleSheet();
   });
 };
 
+const scheduleFetchJobs = (scheduleTime: string) => {
+  cron.schedule(scheduleTime, () => {
+    console.log('### cron scheduleFetchJobs ###');
+
+    fetchJobsDataFromGithubJobs();
+  });
+};
+
 export const init = (): void => {
   // fetch hackathons data from google sheet every 1 hour
-  scheduleJob('0 * * * *');
+  scheduleFetchHackathons('0 * * * *');
+
+  // fetch jobs data from github jobs every 1 hour
+  scheduleFetchJobs('0 * * * *');
 };
 
 export default cron;

@@ -23,10 +23,13 @@ create table tech_blog (
 create table jobs (
     jobs_id serial PRIMARY KEY,
     type varchar(255) NOT NULL,
+    company varchar(255) NOT NULL,
+    company_url text NOT NULL,
     department varchar(255) NOT NULL,
     location text NOT NULL,
     title varchar(255) NOT NULL,
     description text NOT NULL,
+    url text NOT NULL,
     created_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
     updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
