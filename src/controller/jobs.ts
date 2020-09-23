@@ -4,13 +4,16 @@ import * as jobsService from '../service/jobs';
 
 export const createJobs = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const type = ctx.request.body.type;
+  const company = ctx.request.body.company;
+  const companyUrl = ctx.request.body.companyUrl;
   const department = ctx.request.body.department;
   const location = ctx.request.body.location;
   const title = ctx.request.body.title;
   const description = ctx.request.body.description;
+  const url = ctx.request.body.url;
 
   if (type && department && location && title && description) {
-    await jobsService.createJobs(type, department, location, title, description);
+    await jobsService.createJobs(type, company, companyUrl, department, location, title, description, url);
 
     ctx.response.status = 201;
     ctx.body = {
