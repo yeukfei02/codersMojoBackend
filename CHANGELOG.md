@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.2...v0.0.3) (2020-09-23)
+
+
+### Features
+
+* 🎸 add standard-version lib ([84c218c](https://github.com/yeukfei02/codersMojoBackend/commit/84c218c74573cb114160b670ed5928dcbf5c24aa))
+
 ### 0.0.2 (2020-09-23)
 
 
