@@ -76,7 +76,7 @@ const fetchJobsDataFromGithubJobs = async () => {
             const type = item.type;
             const company = item.company;
             const companyUrl = item.company_url;
-            const department = '';
+            const department = item.title;
             const location = item.location;
             const title = item.title;
 
