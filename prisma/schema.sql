@@ -57,6 +57,14 @@ create table hackathons (
     updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
+create table invite_friends (
+    invite_friends_id serial PRIMARY KEY,
+    invite_link text NOT NULL,
+    users_id integer REFERENCES users (users_id),
+    created_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
+
 create table firebase_details (
     firebase_details_id serial PRIMARY KEY,
     current_token text NOT NULL,

@@ -236,7 +236,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\": \"codersmojoplatform@email.com\"\n}",
+							"raw": "{\n\t\"email\": \"codersmojoplatform@gmail.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2005,6 +2005,259 @@
 					}
 				}
 			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "invite-friends",
+			"item": [
+				{
+					"name": "/invite-friends",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJhM2Q1YjYwLWEzMjItNDQ2Zi1hZmRkLTY1ODE5NTBiMmE4MyIsImlhdCI6MTYwMTAzNDY4OSwiZXhwIjoxNjAxMTIxMDg5fQ.-eWUsU0XRoK7eE_4O8lz5Dpa17KGZY_PayPc1cuj0cA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"codersmojoplatform@gmail.com\",\n    \"users_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/invite-friends",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"invite-friends"
+							]
+						},
+						"description": "/invite-friends"
+					},
+					"response": [
+						{
+							"name": "/invite-friends",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJhM2Q1YjYwLWEzMjItNDQ2Zi1hZmRkLTY1ODE5NTBiMmE4MyIsImlhdCI6MTYwMTAzNDY4OSwiZXhwIjoxNjAxMTIxMDg5fQ.-eWUsU0XRoK7eE_4O8lz5Dpa17KGZY_PayPc1cuj0cA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\": \"codersmojoplatform@gmail.com\",\n    \"users_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/invite-friends",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"invite-friends"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Sep 2020 11:52:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"sendInviteFriendsEmail\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/invite-friends/get-share-your-invite-link",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJhM2Q1YjYwLWEzMjItNDQ2Zi1hZmRkLTY1ODE5NTBiMmE4MyIsImlhdCI6MTYwMTAzNDY4OSwiZXhwIjoxNjAxMTIxMDg5fQ.-eWUsU0XRoK7eE_4O8lz5Dpa17KGZY_PayPc1cuj0cA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/invite-friends/get-share-your-invite-link/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"invite-friends",
+								"get-share-your-invite-link",
+								"1"
+							]
+						},
+						"description": "/invite-friends/get-share-your-invite-link"
+					},
+					"response": [
+						{
+							"name": "/invite-friends/get-share-your-invite-link",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJhM2Q1YjYwLWEzMjItNDQ2Zi1hZmRkLTY1ODE5NTBiMmE4MyIsImlhdCI6MTYwMTAzNDY4OSwiZXhwIjoxNjAxMTIxMDg5fQ.-eWUsU0XRoK7eE_4O8lz5Dpa17KGZY_PayPc1cuj0cA"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"users_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/invite-friends/get-share-your-invite-link",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"invite-friends",
+										"get-share-your-invite-link"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "141"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 25 Sep 2020 12:12:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"getShareYourInviteLink\",\n    \"inviteLink\": \"https://coders-mojo-frontend.vercel.app/8e969162edaa088c45f63ef7335d5913e4ce8830\"\n}"
+						}
+					]
+				}
+			],
+			"description": "invite-friends",
 			"protocolProfileBehavior": {}
 		},
 		{
