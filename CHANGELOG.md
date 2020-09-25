@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.9...v0.0.10) (2020-09-25)
+
+
+### Features
+
+* 🎸 add invite friends api ([80004ea](https://github.com/yeukfei02/codersMojoBackend/commit/80004eaae044f5d6d8639a6d345d5503b6ac5956))
+
 ### [0.0.9](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.8...v0.0.9) (2020-09-25)
 
 ### [0.0.8](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.7...v0.0.8) (2020-09-24)
