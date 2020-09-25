@@ -51,14 +51,54 @@ export const sendForgotPasswordEmail = async (email: string, newPassword: string
     const data = {
       from: 'CodersMojo <codersmojo@sandboxae2edae4c5f04857a60f1620256b4c4f.mailgun.org>',
       to: email,
-      subject: 'CodersMojo Forgot Password',
-      // text: `This is your new password: ${newPassword}`,
+      subject: `CodersMojo - Forgot Password`,
+      // text: `some email message`,
       html: html,
     };
     const result = await mg.messages().send(data);
     console.log('sendForgotPasswordEmail result = ', result);
   } catch (e) {
     console.log('sendForgotPasswordEmail error = ', e.message);
+  }
+};
+
+export const sendInviteFriendsEmail = async (email: string, username: string): Promise<void> => {
+  const mg = getMailgun();
+
+  const logoBase64Str = getLogoBase64Str();
+
+  const html = `
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+          <td align="center">
+              <div style="background: lightgray; padding: 3em">
+                  <div style="background: white; padding: 3em; border-radius: 0.5em">
+                    <img src="${logoBase64Str}" width="200" height="65" alt="" />
+                    <h2 style="margin-top: 1em; color: black;">
+                      <b>Coders Mojo</b>
+                    </h2>
+                    <div style="margin-top: 3em; color: black;">
+                      ${username} - invited you to try CodersMojo
+                    </div>
+                  </div>
+              </div>
+          </td>
+      </tr>
+    </table>
+  `;
+
+  try {
+    const data = {
+      from: 'CodersMojo <codersmojo@sandboxae2edae4c5f04857a60f1620256b4c4f.mailgun.org>',
+      to: email,
+      subject: `CodersMojo - ${username} invite you to try CodersMojo`,
+      // text: `some email message`,
+      html: html,
+    };
+    const result = await mg.messages().send(data);
+    console.log('sendInviteFriendsEmail result = ', result);
+  } catch (e) {
+    console.log('sendInviteFriendsEmail error = ', e.message);
   }
 };
 
