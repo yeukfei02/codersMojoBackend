@@ -10,7 +10,10 @@ const fetchHackathonsDataFromGoogleSheet = async () => {
   const doc = new GoogleSpreadsheet('13869Q8PPsqLkfVCuQkgu091E0NPf0zlpY4ZU-CIZJms');
   await doc.useServiceAccountAuth({
     client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-    private_key: process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n'),
+    private_key: '-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDTCYM94UeoovTj\nTNkH+R3QbgXYHbrz5Va9NMNiIRBOwZYEKbrq6HOa3P/RLLALISCBtRdhrJZlBdo9\nn2MmuGXBXunTLj0mt2rateQzBjhxNVbQCw4ado6BKsmD0tjhGDeTbFvOkv5+GMta\nd3jIBErPfbJjtxGstFMnwTH06cI2cXlZ3smmZFRG0nc5DbeRXmg2RdpKgRFneUKO\nAiL+geA5erZHpLp7NX9S50RyjjI4PLBtA5UjSWeskW0iJLaMpWreoA5tCR94gotT\n0Xg7FEqClPLZsaCPWe6Ax5RBEm4kwTyM2N1OLGBvSZFmjdyiadEFXBbTomkEVpAh\nfLM69QCFAgMBAAECggEAE1mxJQCXfeKWd19zTwQ/ZzGPa5+RctrTUNbNS4QiM9zg\nRB8N1CUR5JNH1m0CJbyyqr7PsNV1MAVdweS8rK8GKLlROChQ0+n7H3UqKKhbW7xu\nUPX48K6j2aG/IU05NODv+tHAVHkTlYnxRQ9+jaiHGFUINGINRtUWz6bEgLAM1MnF\nyMWcSYH/gsfgWREH0iucSw54GGgFUEYJrSNHTVzduRiEINDvmLl4RkkXajvX+LbC\nqEq0RRW93kQbVpddDIscZWcIAmXUQQAOen/wraZgGzJRN/+gohiZJkQznkM2ciMk\nogD+IvMjgukXGxjxnn3PwytuSD+O/76zW0C60Fo6yQKBgQDw/nVf+JL2rla+InY9\nYT/EDcfRzd83qmg+iRK0c9tW5Yh+b3AeUaY0xf2zUqzeb54o6jADGK03GF8wQZBB\nSAhkwZyWnY+/b5fmaLU0lY2b8b6xmXCTnetNytD+JrInDc2e4vemLGEmeVboK7UA\nmQbPGrCtc6PTahZpTdUUqONwzwKBgQDgLYfEnFsuHyEwjanTg7GUP3tKq0jGSGIq\nNUorxDks1WA7F/ob+xiLVPpuyFLKnh+AesbEIfAotLGQhD3OI226/mqFKRSEvSh9\nTz1kWQmQSTKQFYgQzlgmPNmFJRw9HVNEA/0wn/4szafNIFR1Ra7yRAfLcJ2jhS8q\nnJwzDMAGawKBgAjrwniNARO0nG1pZSscgHnHcNApaMvsuPMnq9OWPlZXJNhZU7Mr\nnpVxhtSuiMurIhWtpZ1XuoHBmzR0GNzxx63DJQLGTl3tyZez5JFPv/A34LE+VtaA\nEAfPLDFcSVf8wNHS4Qv7tJTyBO+PPqIJCCF+gW/KShQ3ZyD6ypp7LgAtAoGAW2/W\nv8fynOZPmEk/6qj9hnU6KaOhhFbDy2l+/kkD9Rh3LsNB3aXWRgZ8OzF0K3bBbJsn\ndZpOJZxGDKcTun/S4wGgmv29g8LPwATRCpwSfYqNmB1gKVKwu6/4HQmc8gSDEOv7\nmpi3iLi9Z7p3GHo6uFAtSbp+YdMSAPRt9ZiOvk8CgYEAlq5Su9wKClAR89r5EAVK\nR15xiArAlDCxFnZZTPU6EkhIDlCxUq4QXr2nOr0Y5MwmKATGKvwmE0e12EPI9gAs\nrVWr7NWZG7eqqqcHUguwterkXCCcQRsLKd3y6aCV6q6rrH/pYR67G2w+TkkNmPKb\n8K/4huEUmr7DuauQfMCDU/w=\n-----END PRIVATE KEY-----\n'.replace(
+      /\\n/g,
+      '\n',
+    ),
   });
 
   await doc.loadInfo();
