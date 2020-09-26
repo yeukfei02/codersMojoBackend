@@ -2532,7 +2532,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"dateTime\": \"Friday, September 25th, 12:00 am\",\n    \"type\": \"Data Structures and Algorithms\",\n    \"status\": \"scheduled\",\n    \"users_id\": \"1\"\n}",
+							"raw": "{\n    \"dateTime\": \"Friday, September 25th, 12:00 am\",\n    \"type\": \"Data Structures and Algorithms\",\n    \"upcomingInterviewStatus\": \"scheduled\",\n    \"users_id\": \"1\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
