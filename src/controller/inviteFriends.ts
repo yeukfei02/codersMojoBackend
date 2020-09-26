@@ -32,9 +32,9 @@ export const getShareYourInviteLink = async (ctx: Koa.Context, next: () => Promi
 
     let inviteLink = '';
     if (_.isEmpty(existingInviteFriends)) {
-      const randomStr = crypto.randomBytes(20).toString('hex');
-      inviteLink = `${hostname}${randomStr}`;
-      await inviteFriendsService.createInviteFriends(inviteLink, users_id);
+      const generatedText = crypto.randomBytes(20).toString('hex');
+      inviteLink = `${hostname}${generatedText}`;
+      await inviteFriendsService.createInviteFriends(inviteLink, generatedText, users_id);
     } else {
       inviteLink = existingInviteFriends[0].invite_link;
     }

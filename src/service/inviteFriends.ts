@@ -2,10 +2,15 @@ import { PrismaClient, invite_friends } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export const createInviteFriends = async (inviteLink: string, users_id: number): Promise<void> => {
+export const createInviteFriends = async (
+  inviteLink: string,
+  generatedText: string,
+  users_id: number,
+): Promise<void> => {
   await prisma.invite_friends.create({
     data: {
       invite_link: inviteLink,
+      generated_text: generatedText,
       users: {
         connect: {
           users_id: users_id,
