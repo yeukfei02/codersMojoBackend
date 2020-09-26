@@ -4,22 +4,21 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_AWS_PROD_URL")
+  url = "***"
 }
 
 model users {
-  users_id           Int                  @default(autoincrement()) @id
-  first_name         String
-  last_name          String
-  email              String
-  password           String
-  created_by         DateTime             @default(now())
-  updated_by         DateTime             @default(now())
-  firebase_details   firebase_details[]
-  invite_friends     invite_friends[]
-  posts              posts[]
-  tech_blog          tech_blog[]
-  upcoming_interview upcoming_interview[]
+  users_id         Int                @default(autoincrement()) @id
+  first_name       String
+  last_name        String
+  email            String
+  password         String
+  created_by       DateTime           @default(now())
+  updated_by       DateTime           @default(now())
+  firebase_details firebase_details[]
+  invite_friends   invite_friends[]
+  posts            posts[]
+  tech_blog        tech_blog[]
 }
 
 model tech_blog {
@@ -102,27 +101,4 @@ model invite_friends {
   created_by        DateTime @default(now())
   updated_by        DateTime @default(now())
   users             users?   @relation(fields: [users_id], references: [users_id])
-}
-
-model mock_interview_question {
-  mock_interview_question_id Int                  @default(autoincrement()) @id
-  question_title             String
-  question_description       String
-  type                       String
-  created_by                 DateTime             @default(now())
-  updated_by                 DateTime             @default(now())
-  upcoming_interview         upcoming_interview[]
-}
-
-model upcoming_interview {
-  upcoming_interview_id      Int                      @default(autoincrement()) @id
-  datetime                   String
-  type                       String
-  status                     String
-  mock_interview_question_id Int?
-  users_id                   Int?
-  created_by                 DateTime                 @default(now())
-  updated_by                 DateTime                 @default(now())
-  mock_interview_question    mock_interview_question? @relation(fields: [mock_interview_question_id], references: [mock_interview_question_id])
-  users                      users?                   @relation(fields: [users_id], references: [users_id])
 }
