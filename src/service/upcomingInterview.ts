@@ -29,7 +29,11 @@ export const createUpcomingInterview = async (
 };
 
 export const getUpcomingInterview = async (): Promise<upcoming_interview[]> => {
-  const upcomingInterviewList = await prisma.upcoming_interview.findMany({});
+  const upcomingInterviewList = await prisma.upcoming_interview.findMany({
+    orderBy: {
+      datetime: 'desc',
+    },
+  });
   return upcomingInterviewList;
 };
 
@@ -37,6 +41,9 @@ export const getUpcomingInterviewByUsersId = async (users_id: number): Promise<u
   const upcomingInterviewList = await prisma.upcoming_interview.findMany({
     where: {
       users_id: users_id,
+    },
+    orderBy: {
+      datetime: 'desc',
     },
   });
   return upcomingInterviewList;

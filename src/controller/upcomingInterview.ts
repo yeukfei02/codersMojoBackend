@@ -41,9 +41,29 @@ export const getUpcomingInterview = async (ctx: Koa.Context, next: () => Promise
     upcomingInterviewList = await upcomingInterviewService.getUpcomingInterviewByUsersId(users_id);
   }
 
+  let result = [];
+  if (upcomingInterviewList) {
+    const mockInterviewQuestionList: any[] = [];
+    for (let i = 0; i < upcomingInterviewList.length; i++) {
+      const item = upcomingInterviewList[i];
+      const mockInterviewQuestion = await mockInterviewQuestionService.getMockInterviewQuestionById(
+        item.mock_interview_question_id,
+      );
+      mockInterviewQuestionList.push(mockInterviewQuestion);
+    }
+
+    if (mockInterviewQuestionList) {
+      result = upcomingInterviewList.map((item: any, i: number) => {
+        const mockInterviewQuestion = mockInterviewQuestionList[i];
+        item.mock_interview_question = mockInterviewQuestion;
+        return item;
+      });
+    }
+  }
+
   ctx.response.status = 200;
   ctx.body = {
     message: 'getUpcomingInterview',
-    result: upcomingInterviewList,
+    result: result,
   };
 };
