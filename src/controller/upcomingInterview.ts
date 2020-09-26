@@ -7,15 +7,21 @@ import * as upcomingInterviewService from '../service/upcomingInterview';
 export const createUpcomingInterview = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const dateTime = ctx.request.body.dateTime;
   const type = ctx.request.body.type;
-  const status = ctx.request.body.status;
+  const upcomingInterviewStatus = ctx.request.body.upcomingInterviewStatus;
   const users_id = parseInt(ctx.request.body.users_id, 10);
 
-  if (dateTime && type && status && users_id) {
+  if (dateTime && type && upcomingInterviewStatus && users_id) {
     const mockInterviewQuestionList = await mockInterviewQuestionService.getMockInterviewQuestionByType(type);
     if (mockInterviewQuestionList) {
       const randomMockInterviewQuestion = _.sample(mockInterviewQuestionList);
       const mockInterviewQuestionId = randomMockInterviewQuestion.mock_interview_question_id;
-      await upcomingInterviewService.createUpcomingInterview(dateTime, type, status, mockInterviewQuestionId, users_id);
+      await upcomingInterviewService.createUpcomingInterview(
+        dateTime,
+        type,
+        upcomingInterviewStatus,
+        mockInterviewQuestionId,
+        users_id,
+      );
     }
 
     ctx.response.status = 201;

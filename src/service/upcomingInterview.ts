@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 export const createUpcomingInterview = async (
   datetime: string,
   type: string,
-  status: string,
+  upcomingInterviewStatus: string,
   mock_interview_question_id: number,
   users_id: number,
 ): Promise<void> => {
@@ -13,7 +13,7 @@ export const createUpcomingInterview = async (
     data: {
       datetime: datetime ? datetime : '',
       type: type ? type : '',
-      status: status ? status : '',
+      status: upcomingInterviewStatus ? upcomingInterviewStatus : '',
       mock_interview_question: {
         connect: {
           mock_interview_question_id: mock_interview_question_id,
