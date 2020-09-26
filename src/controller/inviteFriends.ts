@@ -24,6 +24,7 @@ export const sendInviteFriendsEmailFunc = async (ctx: Koa.Context, next: () => P
 };
 
 export const getShareYourInviteLink = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+  const hostname = ctx.query.hostname;
   const users_id = parseInt(ctx.params.users_id, 10);
 
   if (users_id) {
@@ -32,7 +33,7 @@ export const getShareYourInviteLink = async (ctx: Koa.Context, next: () => Promi
     let inviteLink = '';
     if (_.isEmpty(existingInviteFriends)) {
       const randomStr = crypto.randomBytes(20).toString('hex');
-      inviteLink = `https://coders-mojo-frontend.vercel.app/${randomStr}`;
+      inviteLink = `${hostname}${randomStr}`;
       await inviteFriendsService.createInviteFriends(inviteLink, users_id);
     } else {
       inviteLink = existingInviteFriends[0].invite_link;
