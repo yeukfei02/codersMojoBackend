@@ -2267,6 +2267,540 @@
 			"protocolProfileBehavior": {}
 		},
 		{
+			"name": "mock-interview-question",
+			"item": [
+				{
+					"name": "/mock-interview-question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"questionTitle\": \"test\",\n    \"questionDescription\": \"test2\",\n    \"type\": \"Data Structures and Algorithms\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/mock-interview-question",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"mock-interview-question"
+							]
+						},
+						"description": "/mock-interview-question"
+					},
+					"response": [
+						{
+							"name": "/mock-interview-question",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"questionTitle\": \"test2\",\n    \"questionDescription\": \"test3\",\n    \"type\": \"Data Structures and Algorithms\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/mock-interview-question",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"mock-interview-question"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Sep 2020 09:23:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"createMockInterviewQuestion\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/mock-interview-question",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMwOGQyMmMxLTRmODQtNDZhZi1iYTkzLWY1ODAyMzk0ODJhNSIsImlhdCI6MTYwMTExMjI0MSwiZXhwIjoxNjAxMTk4NjQxfQ.WheKfFbg2Z_fL1kS3NSa8amyXeMveW7x6I6eC6NXckA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/mock-interview-question?type=Data Structures and Algorithms",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"mock-interview-question"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "Data Structures and Algorithms"
+								}
+							]
+						},
+						"description": "/mock-interview-question"
+					},
+					"response": [
+						{
+							"name": "/mock-interview-question",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMwOGQyMmMxLTRmODQtNDZhZi1iYTkzLWY1ODAyMzk0ODJhNSIsImlhdCI6MTYwMTExMjI0MSwiZXhwIjoxNjAxMTk4NjQxfQ.WheKfFbg2Z_fL1kS3NSa8amyXeMveW7x6I6eC6NXckA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/mock-interview-question?type=Data Structures and Algorithms",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"mock-interview-question"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "Data Structures and Algorithms"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "594"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Sep 2020 09:24:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"getMockInterviewQuestion\",\n    \"result\": [\n        {\n            \"mock_interview_question_id\": 1,\n            \"question_title\": \"test\",\n            \"question_description\": \"test2\",\n            \"type\": \"Data Structures and Algorithms\",\n            \"created_by\": \"2020-09-26T09:23:15.620Z\",\n            \"updated_by\": \"2020-09-26T09:23:15.620Z\"\n        },\n        {\n            \"mock_interview_question_id\": 2,\n            \"question_title\": \"test2\",\n            \"question_description\": \"test3\",\n            \"type\": \"Data Structures and Algorithms\",\n            \"created_by\": \"2020-09-26T09:23:22.494Z\",\n            \"updated_by\": \"2020-09-26T09:23:22.494Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "mock-interview-question",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "upcoming-interview",
+			"item": [
+				{
+					"name": "/upcoming-interview",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMwOGQyMmMxLTRmODQtNDZhZi1iYTkzLWY1ODAyMzk0ODJhNSIsImlhdCI6MTYwMTExMjI0MSwiZXhwIjoxNjAxMTk4NjQxfQ.WheKfFbg2Z_fL1kS3NSa8amyXeMveW7x6I6eC6NXckA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dateTime\": \"Friday, September 25th, 12:00 am\",\n    \"type\": \"Data Structures and Algorithms\",\n    \"status\": \"scheduled\",\n    \"users_id\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/upcoming-interview",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"upcoming-interview"
+							]
+						},
+						"description": "/upcoming-interview"
+					},
+					"response": [
+						{
+							"name": "/upcoming-interview",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMwOGQyMmMxLTRmODQtNDZhZi1iYTkzLWY1ODAyMzk0ODJhNSIsImlhdCI6MTYwMTExMjI0MSwiZXhwIjoxNjAxMTk4NjQxfQ.WheKfFbg2Z_fL1kS3NSa8amyXeMveW7x6I6eC6NXckA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"dateTime\": \"Friday, September 25th, 12:00 am\",\n    \"type\": \"Data Structures and Algorithms\",\n    \"status\": \"scheduled\",\n    \"users_id\": \"1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/upcoming-interview",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"upcoming-interview"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Sep 2020 09:32:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"createUpcomingInterview\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/upcoming-interview",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMwOGQyMmMxLTRmODQtNDZhZi1iYTkzLWY1ODAyMzk0ODJhNSIsImlhdCI6MTYwMTExMjI0MSwiZXhwIjoxNjAxMTk4NjQxfQ.WheKfFbg2Z_fL1kS3NSa8amyXeMveW7x6I6eC6NXckA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/upcoming-interview?users_id=1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"upcoming-interview"
+							],
+							"query": [
+								{
+									"key": "users_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "/upcoming-interview"
+					},
+					"response": [
+						{
+							"name": "/upcoming-interview",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMwOGQyMmMxLTRmODQtNDZhZi1iYTkzLWY1ODAyMzk0ODJhNSIsImlhdCI6MTYwMTExMjI0MSwiZXhwIjoxNjAxMTk4NjQxfQ.WheKfFbg2Z_fL1kS3NSa8amyXeMveW7x6I6eC6NXckA"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/upcoming-interview?users_id=1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"upcoming-interview"
+									],
+									"query": [
+										{
+											"key": "users_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1056"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Sep 2020 09:33:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"getUpcomingInterview\",\n    \"result\": [\n        {\n            \"upcoming_interview_id\": 1,\n            \"datetime\": \"Friday, September 25th, 12:00 am\",\n            \"type\": \"Data Structures and Algorithms\",\n            \"status\": \"scheduled\",\n            \"mock_interview_question_id\": 2,\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-26T09:32:16.959Z\",\n            \"updated_by\": \"2020-09-26T09:32:16.959Z\"\n        },\n        {\n            \"upcoming_interview_id\": 2,\n            \"datetime\": \"Friday, September 25th, 12:00 am\",\n            \"type\": \"Data Structures and Algorithms\",\n            \"status\": \"scheduled\",\n            \"mock_interview_question_id\": 1,\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-26T09:32:17.455Z\",\n            \"updated_by\": \"2020-09-26T09:32:17.455Z\"\n        },\n        {\n            \"upcoming_interview_id\": 3,\n            \"datetime\": \"Friday, September 25th, 12:00 am\",\n            \"type\": \"Data Structures and Algorithms\",\n            \"status\": \"scheduled\",\n            \"mock_interview_question_id\": 1,\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-26T09:32:17.978Z\",\n            \"updated_by\": \"2020-09-26T09:32:17.978Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "upcoming-interview",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e144e068-e95d-474c-87d8-1c55cdf40778",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe6486c7-af3c-4a26-a337-df0d4f125fcf",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "country",
 			"item": [
 				{

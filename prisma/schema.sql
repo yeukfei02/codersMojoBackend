@@ -66,6 +66,26 @@ create table invite_friends (
     updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
+create table mock_interview_question (
+    mock_interview_question_id serial PRIMARY KEY,
+    question_title text NOT NULL,
+    question_description text NOT NULL,
+    type text NOT NULL,
+    created_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
+
+create table upcoming_interview (
+    upcoming_interview_id serial PRIMARY KEY,
+    dateTime text NOT NULL,
+    type text NOT NULL,
+    status text NOT NULL,
+    mock_interview_question_id integer REFERENCES mock_interview_question (mock_interview_question_id),
+    users_id integer REFERENCES users (users_id),
+    created_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
+
 create table firebase_details (
     firebase_details_id serial PRIMARY KEY,
     current_token text NOT NULL,
@@ -86,6 +106,13 @@ create table country (
     created_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
     updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
+
+INSERT INTO users (users_id, first_name, last_name, email, password) VALUES
+(1, 'test', 'test2', 'test@email.com', '$2b$10$5ssPBLSsOl7V1uIs59K.X.zQ2aKX6EyvtZNFX7vBlJSPSg61Z3dmW');
+(2, 'coders', 'mojo', 'codersmojoplatform@gmail.com', '$2b$10$5ssPBLSsOl7V1uIs59K.X.zQ2aKX6EyvtZNFX7vBlJSPSg61Z3dmW');
+
+INSERT INTO mock_interview_question (mock_interview_question_id, question_title, question_description, type) VALUES
+(1, 'test', 'test2', 'Data Structures and Algorithms');
 
 INSERT INTO country (country_id, iso, name, nicename, iso3, numcode, phonecode) VALUES
 (1, 'AF', 'AFGHANISTAN', 'Afghanistan', 'AFG', 4, 93),
