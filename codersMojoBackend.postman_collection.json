@@ -2511,6 +2511,131 @@
 							"body": "{\n    \"message\": \"getMockInterviewQuestion\",\n    \"result\": [\n        {\n            \"mock_interview_question_id\": 1,\n            \"question_title\": \"test\",\n            \"question_description\": \"test2\",\n            \"type\": \"Data Structures and Algorithms\",\n            \"created_by\": \"2020-09-26T09:23:15.620Z\",\n            \"updated_by\": \"2020-09-26T09:23:15.620Z\"\n        },\n        {\n            \"mock_interview_question_id\": 2,\n            \"question_title\": \"test2\",\n            \"question_description\": \"test3\",\n            \"type\": \"Data Structures and Algorithms\",\n            \"created_by\": \"2020-09-26T09:23:22.494Z\",\n            \"updated_by\": \"2020-09-26T09:23:22.494Z\"\n        }\n    ]\n}"
 						}
 					]
+				},
+				{
+					"name": "/mock-interview-question/:id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMwOGQyMmMxLTRmODQtNDZhZi1iYTkzLWY1ODAyMzk0ODJhNSIsImlhdCI6MTYwMTExMjI0MSwiZXhwIjoxNjAxMTk4NjQxfQ.WheKfFbg2Z_fL1kS3NSa8amyXeMveW7x6I6eC6NXckA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/mock-interview-question/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"mock-interview-question",
+								"1"
+							]
+						},
+						"description": "/mock-interview-question/:id"
+					},
+					"response": [
+						{
+							"name": "/mock-interview-question/:id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMwOGQyMmMxLTRmODQtNDZhZi1iYTkzLWY1ODAyMzk0ODJhNSIsImlhdCI6MTYwMTExMjI0MSwiZXhwIjoxNjAxMTk4NjQxfQ.WheKfFbg2Z_fL1kS3NSa8amyXeMveW7x6I6eC6NXckA"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/mock-interview-question/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"mock-interview-question",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "960"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 26 Sep 2020 13:31:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"getMockInterviewQuestion\",\n    \"result\": {\n        \"mock_interview_question_id\": 1,\n        \"question_title\": \"Two Sum\",\n        \"question_description\": \"Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.\\n\\nYou may assume that each input would have exactly one solution, and you may not use the same element twice.\\n\\nYou can return the answer in any order.\\n\\n \\n\\nExample 1:\\n\\nInput: nums = [2,7,11,15], target = 9\\nOutput: [0,1]\\nOutput: Because nums[0] + nums[1] == 9, we return [0, 1].\\nExample 2:\\n\\nInput: nums = [3,2,4], target = 6\\nOutput: [1,2]\\nExample 3:\\n\\nInput: nums = [3,3], target = 6\\nOutput: [0,1]\\n \\n\\nConstraints:\\n\\n2 <= nums.length <= 105\\n-109 <= nums[i] <= 109\\n-109 <= target <= 109\\nOnly one valid answer exists.\",\n        \"type\": \"Data Structures and Algorithms\",\n        \"created_by\": \"2020-09-26T21:24:19.980Z\",\n        \"updated_by\": \"2020-09-26T21:24:19.980Z\"\n    }\n}"
+						}
+					]
 				}
 			],
 			"description": "mock-interview-question",
@@ -2566,7 +2691,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"dateTime\": \"Friday, September 25th, 12:00 am\",\n    \"type\": \"Data Structures and Algorithms\",\n    \"status\": \"scheduled\",\n    \"users_id\": \"1\"\n}",
+									"raw": "{\n    \"dateTime\": \"Friday, September 25th, 12:00 am\",\n    \"type\": \"Data Structures and Algorithms\",\n    \"upcomingInterviewStatus\": \"scheduled\",\n    \"users_id\": \"1\"\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2623,11 +2748,11 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "42"
+									"value": "75"
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 26 Sep 2020 09:32:17 GMT"
+									"value": "Sat, 26 Sep 2020 13:32:22 GMT"
 								},
 								{
 									"key": "Connection",
@@ -2635,7 +2760,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"createUpcomingInterview\"\n}"
+							"body": "{\n    \"message\": \"createUpcomingInterview\",\n    \"mockInterviewQuestionId\": 27\n}"
 						}
 					]
 				},

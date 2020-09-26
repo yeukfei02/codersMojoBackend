@@ -33,3 +33,16 @@ export const getMockInterviewQuestion = async (ctx: Koa.Context, next: () => Pro
     result: mockInterviewQuestionList,
   };
 };
+
+export const getMockInterviewQuestionById = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+  const id = parseInt(ctx.params.id, 10);
+
+  if (id) {
+    const mockInterviewQuestion = await mockInterviewQuestionService.getMockInterviewQuestionById(id);
+    ctx.response.status = 200;
+    ctx.body = {
+      message: 'getMockInterviewQuestion',
+      result: mockInterviewQuestion,
+    };
+  }
+};

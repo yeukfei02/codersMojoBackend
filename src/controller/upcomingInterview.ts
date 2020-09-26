@@ -12,9 +12,11 @@ export const createUpcomingInterview = async (ctx: Koa.Context, next: () => Prom
 
   if (dateTime && type && upcomingInterviewStatus && users_id) {
     const mockInterviewQuestionList = await mockInterviewQuestionService.getMockInterviewQuestionByType(type);
+
+    let mockInterviewQuestionId = null;
     if (mockInterviewQuestionList) {
       const randomMockInterviewQuestion = _.sample(mockInterviewQuestionList);
-      const mockInterviewQuestionId = randomMockInterviewQuestion.mock_interview_question_id;
+      mockInterviewQuestionId = randomMockInterviewQuestion.mock_interview_question_id;
       await upcomingInterviewService.createUpcomingInterview(
         dateTime,
         type,
@@ -27,6 +29,7 @@ export const createUpcomingInterview = async (ctx: Koa.Context, next: () => Prom
     ctx.response.status = 201;
     ctx.body = {
       message: 'createUpcomingInterview',
+      mockInterviewQuestionId: mockInterviewQuestionId,
     };
   }
 };
