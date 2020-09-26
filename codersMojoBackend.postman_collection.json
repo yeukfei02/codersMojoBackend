@@ -2154,7 +2154,7 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/invite-friends/get-share-your-invite-link/1",
+							"raw": "localhost:3000/api/invite-friends/get-share-your-invite-link/1?hostname=http://localhost:5000/",
 							"host": [
 								"localhost"
 							],
@@ -2164,6 +2164,12 @@
 								"invite-friends",
 								"get-share-your-invite-link",
 								"1"
+							],
+							"query": [
+								{
+									"key": "hostname",
+									"value": "http://localhost:5000/"
+								}
 							]
 						},
 						"description": "/invite-friends/get-share-your-invite-link"
