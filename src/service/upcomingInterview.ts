@@ -50,3 +50,18 @@ export const getUpcomingInterviewByUsersId = async (users_id: number): Promise<u
   });
   return upcomingInterviewList;
 };
+
+export const cancelUpcomingInterview = async (
+  upcomingInterviewId: number,
+  upcomingInterviewStatus: string,
+): Promise<upcoming_interview> => {
+  const result = await prisma.upcoming_interview.update({
+    data: {
+      status: upcomingInterviewStatus,
+    },
+    where: {
+      upcoming_interview_id: upcomingInterviewId,
+    },
+  });
+  return result;
+};

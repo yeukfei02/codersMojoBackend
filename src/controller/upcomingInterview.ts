@@ -72,3 +72,17 @@ export const getUpcomingInterview = async (ctx: Koa.Context, next: () => Promise
     result: result,
   };
 };
+
+export const cancelUpcomingInterview = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+  const upcomingInterviewId = parseInt(ctx.params.upcomingInterviewId, 10);
+  const upcomingInterviewStatus = ctx.request.body.upcomingInterviewStatus;
+
+  if (upcomingInterviewId) {
+    const result = await upcomingInterviewService.cancelUpcomingInterview(upcomingInterviewId, upcomingInterviewStatus);
+    ctx.response.status = 200;
+    ctx.body = {
+      message: 'cancelUpcomingInterview',
+      result: result,
+    };
+  }
+};
