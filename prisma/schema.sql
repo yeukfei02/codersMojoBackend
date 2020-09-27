@@ -746,7 +746,273 @@ Example 2:
 Input: 8
 Output: 2
 Explanation: The square root of 8 is 2.82842..., and since 
-             the decimal part is truncated, 2 is returned.', 'Data Structures and Algorithms');
+             the decimal part is truncated, 2 is returned.', 'Data Structures and Algorithms'),
+(31, 'Jump Game', 'Given an array of non-negative integers, you are initially positioned at the first index of the array.
+
+Each element in the array represents your maximum jump length at that position.
+
+Determine if you are able to reach the last index.
+
+ 
+
+Example 1:
+
+Input: nums = [2,3,1,1,4]
+Output: true
+Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
+Example 2:
+
+Input: nums = [3,2,1,0,4]
+Output: false
+Explanation: You will always arrive at index 3 no matter what. Its maximum jump length is 0, which makes it impossible to reach the last index.
+ 
+
+Constraints:
+
+1 <= nums.length <= 3 * 10^4
+0 <= nums[i][j] <= 10^5', 'Data Structures and Algorithms'),
+(32, 'Word Break', 'Given a non-empty string s and a dictionary wordDict containing a list of non-empty words, determine if s can be segmented into a space-separated sequence of one or more dictionary words.
+
+Note:
+
+The same word in the dictionary may be reused multiple times in the segmentation.
+You may assume the dictionary does not contain duplicate words.
+Example 1:
+
+Input: s = "leetcode", wordDict = ["leet", "code"]
+Output: true
+Explanation: Return true because "leetcode" can be segmented as "leet code".
+Example 2:
+
+Input: s = "applepenapple", wordDict = ["apple", "pen"]
+Output: true
+Explanation: Return true because "applepenapple" can be segmented as "apple pen apple".
+             Note that you are allowed to reuse a dictionary word.
+Example 3:
+
+Input: s = "catsandog", wordDict = ["cats", "dog", "sand", "and", "cat"]
+Output: false', 'Data Structures and Algorithms'),
+(33, 'Longest Common Subsequence', 'Given two strings text1 and text2, return the length of their longest common subsequence.
+
+A subsequence of a string is a new string generated from the original string with some characters(can be none) deleted without changing the relative order of the remaining characters. (eg, "ace" is a subsequence of "abcde" while "aec" is not). A common subsequence of two strings is a subsequence that is common to both strings.
+
+ 
+
+If there is no common subsequence, return 0.
+
+ 
+
+Example 1:
+
+Input: text1 = "abcde", text2 = "ace" 
+Output: 3  
+Explanation: The longest common subsequence is "ace" and its length is 3.
+Example 2:
+
+Input: text1 = "abc", text2 = "abc"
+Output: 3
+Explanation: The longest common subsequence is "abc" and its length is 3.
+Example 3:
+
+Input: text1 = "abc", text2 = "def"
+Output: 0
+Explanation: There is no such common subsequence, so the result is 0.', 'Data Structures and Algorithms'),
+(34, 'Coin Change', 'You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
+
+You may assume that you have an infinite number of each kind of coin.
+
+ 
+
+Example 1:
+
+Input: coins = [1,2,5], amount = 11
+Output: 3
+Explanation: 11 = 5 + 5 + 1
+Example 2:
+
+Input: coins = [2], amount = 3
+Output: -1
+Example 3:
+
+Input: coins = [1], amount = 0
+Output: 0
+Example 4:
+
+Input: coins = [1], amount = 1
+Output: 1
+Example 5:
+
+Input: coins = [1], amount = 2
+Output: 2
+ 
+
+Constraints:
+
+1 <= coins.length <= 12
+1 <= coins[i] <= 231 - 1
+0 <= amount <= 231 - 1', 'Data Structures and Algorithms'),
+(35, 'Find Median from Data Stream', 'Median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value. So the median is the mean of the two middle value.
+
+For example,
+[2,3,4], the median is 3
+
+[2,3], the median is (2 + 3) / 2 = 2.5
+
+Design a data structure that supports the following two operations:
+
+void addNum(int num) - Add a integer number from the data stream to the data structure.
+double findMedian() - Return the median of all elements so far.
+ 
+
+Example:
+
+addNum(1)
+addNum(2)
+findMedian() -> 1.5
+addNum(3) 
+findMedian() -> 2
+ 
+
+Follow up:
+
+If all integer numbers from the stream are between 0 and 100, how would you optimize it?
+If 99% of all integer numbers from the stream are between 0 and 100, how would you optimize it?', 'Data Structures and Algorithms'),
+(36, 'Top K Frequent Elements', 'Given a non-empty array of integers, return the k most frequent elements.
+
+Example 1:
+
+Input: nums = [1,1,1,2,2,3], k = 2
+Output: [1,2]
+Example 2:
+
+Input: nums = [1], k = 1
+Output: [1]
+Note:
+
+You may assume k is always valid, 1 ≤ k ≤ number of unique elements.
+Your algorithms time complexity must be better than O(n log n), where n is the arrays size.
+Its guaranteed that the answer is unique, in other words the set of the top k frequent elements is unique.
+You can return the answer in any order.
+', 'Data Structures and Algorithms'),
+(37, 'Insert Interval', 'Given a set of non-overlapping intervals, insert a new interval into the intervals (merge if necessary).
+
+You may assume that the intervals were initially sorted according to their start times.
+
+ 
+
+Example 1:
+
+Input: intervals = [[1,3],[6,9]], newInterval = [2,5]
+Output: [[1,5],[6,9]]
+Example 2:
+
+Input: intervals = [[1,2],[3,5],[6,7],[8,10],[12,16]], newInterval = [4,8]
+Output: [[1,2],[3,10],[12,16]]
+Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
+Example 3:
+
+Input: intervals = [], newInterval = [5,7]
+Output: [[5,7]]
+Example 4:
+
+Input: intervals = [[1,5]], newInterval = [2,3]
+Output: [[1,5]]
+Example 5:
+
+Input: intervals = [[1,5]], newInterval = [2,7]
+Output: [[1,7]]
+ 
+
+Constraints:
+
+0 <= intervals.length <= 104
+intervals[i].length == 2
+0 <= intervals[i][0] <= intervals[i][1] <= 105
+intervals is sorted by intervals[i][0] in ascending order.
+newInterval.length == 2
+0 <= newInterval[0] <= newInterval[1] <= 105', 'Data Structures and Algorithms'),
+(38, 'Merge Intervals', 'Given a collection of intervals, merge all overlapping intervals.
+
+Example 1:
+
+Input: intervals = [[1,3],[2,6],[8,10],[15,18]]
+Output: [[1,6],[8,10],[15,18]]
+Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].
+Example 2:
+
+Input: intervals = [[1,4],[4,5]]
+Output: [[1,5]]
+Explanation: Intervals [1,4] and [4,5] are considered overlapping.
+NOTE: input types have been changed on April 15, 2019. Please reset to default code definition to get new method signature.
+
+ 
+
+Constraints:
+
+intervals[i][0] <= intervals[i][1]', 'Data Structures and Algorithms'),
+(39, 'Non-overlapping Intervals', 'Given a collection of intervals, find the minimum number of intervals you need to remove to make the rest of the intervals non-overlapping.
+
+ 
+
+Example 1:
+
+Input: [[1,2],[2,3],[3,4],[1,3]]
+Output: 1
+Explanation: [1,3] can be removed and the rest of intervals are non-overlapping.
+Example 2:
+
+Input: [[1,2],[1,2],[1,2]]
+Output: 2
+Explanation: You need to remove two [1,2] to make the rest of intervals non-overlapping.
+Example 3:
+
+Input: [[1,2],[2,3]]
+Output: 0
+Explanation: You dont need to remove any of the intervals since they are already non-overlapping.
+ 
+
+Note:
+
+You may assume the intervals end point is always bigger than its start point.
+Intervals like [1,2] and [2,3] have borders "touching" but they dont overlap each other.', 'Data Structures and Algorithms'),
+(40, 'Spiral Matrix', 'Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.
+
+Example 1:
+
+Input:
+[
+ [ 1, 2, 3 ],
+ [ 4, 5, 6 ],
+ [ 7, 8, 9 ]
+]
+Output: [1,2,3,6,9,8,7,4,5]
+Example 2:
+
+Input:
+[
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9,10,11,12]
+]
+Output: [1,2,3,4,8,12,11,10,9,5,6,7]', 'Data Structures and Algorithms'),
+(41, 'Subsets', 'Given a set of distinct integers, nums, return all possible subsets (the power set).
+
+Note: The solution set must not contain duplicate subsets.
+
+Example:
+
+Input: nums = [1,2,3]
+Output:
+[
+  [3],
+  [1],
+  [2],
+  [1,2,3],
+  [1,3],
+  [2,3],
+  [1,2],
+  []
+]', 'Data Structures and Algorithms');
 
 INSERT INTO country (country_id, iso, name, nicename, iso3, numcode, phonecode) VALUES
 (1, 'AF', 'AFGHANISTAN', 'Afghanistan', 'AFG', 4, 93),
