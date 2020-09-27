@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.15](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.14...v0.0.15) (2020-09-27)
+
+
+### Features
+
+* 🎸 add reschedule upcoming interview api ([ecc1654](https://github.com/yeukfei02/codersMojoBackend/commit/ecc1654d1efedd8e28c86cd8a983e882d5010cee))
+
 ### [0.0.14](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.13...v0.0.14) (2020-09-27)
 
 
