@@ -5,6 +5,7 @@ import * as mockInterviewQuestionService from '../service/mockInterviewQuestion'
 import * as upcomingInterviewService from '../service/upcomingInterview';
 
 export const createUpcomingInterview = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+  const fullDateTime = ctx.request.body.fullDateTime;
   const dateTime = ctx.request.body.dateTime;
   const type = ctx.request.body.type;
   const upcomingInterviewStatus = ctx.request.body.upcomingInterviewStatus;
@@ -18,6 +19,7 @@ export const createUpcomingInterview = async (ctx: Koa.Context, next: () => Prom
       const randomMockInterviewQuestion = _.sample(mockInterviewQuestionList);
       mockInterviewQuestionId = randomMockInterviewQuestion.mock_interview_question_id;
       await upcomingInterviewService.createUpcomingInterview(
+        fullDateTime,
         dateTime,
         type,
         upcomingInterviewStatus,
