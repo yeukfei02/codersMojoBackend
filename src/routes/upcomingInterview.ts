@@ -13,5 +13,10 @@ router.put(
   isUserLoggedIn,
   upcomingInterviewController.cancelUpcomingInterview,
 );
+router.put(
+  '/api/upcoming-interview/reschedule-upcoming-interview/:upcomingInterviewId',
+  isUserLoggedIn,
+  upcomingInterviewController.rescheduleUpcomingInterview,
+);
 
 export default router;
