@@ -2657,7 +2657,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"dateTime\": \"Friday, September 25th, 12:00 am\",\n    \"type\": \"Data Structures and Algorithms\",\n    \"upcomingInterviewStatus\": \"scheduled\",\n    \"users_id\": \"1\"\n}",
+							"raw": "{\n    \"fullDateTime\": \"2020-09-25 12:00:00\",\n    \"dateTime\": \"Friday, September 25th, 12:00 am\",\n    \"type\": \"Data Structures and Algorithms\",\n    \"upcomingInterviewStatus\": \"scheduled\",\n    \"users_id\": \"1\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2883,11 +2883,11 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1056"
+									"value": "2746"
 								},
 								{
 									"key": "Date",
-									"value": "Sat, 26 Sep 2020 09:33:21 GMT"
+									"value": "Sun, 27 Sep 2020 02:23:23 GMT"
 								},
 								{
 									"key": "Connection",
@@ -2895,7 +2895,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"getUpcomingInterview\",\n    \"result\": [\n        {\n            \"upcoming_interview_id\": 1,\n            \"datetime\": \"Friday, September 25th, 12:00 am\",\n            \"type\": \"Data Structures and Algorithms\",\n            \"status\": \"scheduled\",\n            \"mock_interview_question_id\": 2,\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-26T09:32:16.959Z\",\n            \"updated_by\": \"2020-09-26T09:32:16.959Z\"\n        },\n        {\n            \"upcoming_interview_id\": 2,\n            \"datetime\": \"Friday, September 25th, 12:00 am\",\n            \"type\": \"Data Structures and Algorithms\",\n            \"status\": \"scheduled\",\n            \"mock_interview_question_id\": 1,\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-26T09:32:17.455Z\",\n            \"updated_by\": \"2020-09-26T09:32:17.455Z\"\n        },\n        {\n            \"upcoming_interview_id\": 3,\n            \"datetime\": \"Friday, September 25th, 12:00 am\",\n            \"type\": \"Data Structures and Algorithms\",\n            \"status\": \"scheduled\",\n            \"mock_interview_question_id\": 1,\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-26T09:32:17.978Z\",\n            \"updated_by\": \"2020-09-26T09:32:17.978Z\"\n        }\n    ]\n}"
+							"body": "{\n    \"message\": \"getUpcomingInterview\",\n    \"result\": [\n        {\n            \"upcoming_interview_id\": 1,\n            \"full_date_time\": \"2020-09-25 12:00:00\",\n            \"date_time\": \"Friday, September 25th, 12:00 am\",\n            \"type\": \"Data Structures and Algorithms\",\n            \"status\": \"scheduled\",\n            \"mock_interview_question_id\": 2,\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-27T02:23:21.648Z\",\n            \"updated_by\": \"2020-09-27T02:23:21.648Z\",\n            \"mock_interview_question\": {\n                \"mock_interview_question_id\": 2,\n                \"question_title\": \"Best Time to Buy and Sell Stock\",\n                \"question_description\": \"Say you have an array for which the ith element is the price of a given stock on day i.\\n\\nIf you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.\\n\\nNote that you cannot sell a stock before you buy one.\\n\\nExample 1:\\n\\nInput: [7,1,5,3,6,4]\\nOutput: 5\\nExplanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.\\n             Not 7-1 = 6, as selling price needs to be larger than buying price.\\nExample 2:\\n\\nInput: [7,6,4,3,1]\\nOutput: 0\\nExplanation: In this case, no transaction is done, i.e. max profit = 0.\",\n                \"type\": \"Data Structures and Algorithms\",\n                \"created_by\": \"2020-09-27T10:11:58.530Z\",\n                \"updated_by\": \"2020-09-27T10:11:58.530Z\"\n            }\n        },\n        {\n            \"upcoming_interview_id\": 2,\n            \"full_date_time\": \"2020-09-25 12:00:00\",\n            \"date_time\": \"Friday, September 25th, 12:00 am\",\n            \"type\": \"Data Structures and Algorithms\",\n            \"status\": \"scheduled\",\n            \"mock_interview_question_id\": 18,\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-27T02:23:22.347Z\",\n            \"updated_by\": \"2020-09-27T02:23:22.347Z\",\n            \"mock_interview_question\": {\n                \"mock_interview_question_id\": 18,\n                \"question_title\": \"Word Search II\",\n                \"question_description\": \"Given a 2D board and a list of words from the dictionary, find all words in the board.\\n\\nEach word must be constructed from letters of sequentially adjacent cell, where \\\"adjacent\\\" cells are those horizontally or vertically neighboring. The same letter cell may not be used more than once in a word.\\n\\n \\n\\nExample:\\n\\nInput: \\nboard = [\\n  [\\\"o\\\",\\\"a\\\",\\\"a\\\",\\\"n\\\"],\\n  [\\\"e\\\",\\\"t\\\",\\\"a\\\",\\\"e\\\"],\\n  [\\\"i\\\",\\\"h\\\",\\\"k\\\",\\\"r\\\"],\\n  [\\\"i\\\",\\\"f\\\",\\\"l\\\",\\\"v\\\"]\\n]\\nwords = [\\\"oath\\\",\\\"pea\\\",\\\"eat\\\",\\\"rain\\\"]\\n\\nOutput: [\\\"eat\\\",\\\"oath\\\"]\\n \\n\\nNote:\\n\\nAll inputs are consist of lowercase letters a-z.\\nThe values of words are distinct.\",\n                \"type\": \"Data Structures and Algorithms\",\n                \"created_by\": \"2020-09-27T10:11:58.530Z\",\n                \"updated_by\": \"2020-09-27T10:11:58.530Z\"\n            }\n        }\n    ]\n}"
 						}
 					]
 				}

@@ -77,7 +77,8 @@ create table mock_interview_question (
 
 create table upcoming_interview (
     upcoming_interview_id serial PRIMARY KEY,
-    dateTime text NOT NULL,
+    full_date_time text NOT NULL,
+    date_time text NOT NULL,
     type text NOT NULL,
     status text NOT NULL,
     mock_interview_question_id integer REFERENCES mock_interview_question (mock_interview_question_id),
@@ -108,7 +109,7 @@ create table country (
 );
 
 INSERT INTO users (users_id, first_name, last_name, email, password) VALUES
-(1, 'test', 'test2', 'test@email.com', '$2b$10$5ssPBLSsOl7V1uIs59K.X.zQ2aKX6EyvtZNFX7vBlJSPSg61Z3dmW');
+(1, 'test', 'test2', 'test@email.com', '$2b$10$5ssPBLSsOl7V1uIs59K.X.zQ2aKX6EyvtZNFX7vBlJSPSg61Z3dmW'),
 (2, 'coders', 'mojo', 'codersmojoplatform@gmail.com', '$2b$10$5ssPBLSsOl7V1uIs59K.X.zQ2aKX6EyvtZNFX7vBlJSPSg61Z3dmW');
 
 INSERT INTO mock_interview_question (mock_interview_question_id, question_title, question_description, type) VALUES
