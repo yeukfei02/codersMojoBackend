@@ -116,7 +116,8 @@ model mock_interview_question {
 
 model upcoming_interview {
   upcoming_interview_id      Int                      @default(autoincrement()) @id
-  datetime                   String
+  full_date_time             String
+  date_time                  String
   type                       String
   status                     String
   mock_interview_question_id Int?

@@ -3,6 +3,7 @@ import { PrismaClient, upcoming_interview } from '@prisma/client';
 const prisma = new PrismaClient();
 
 export const createUpcomingInterview = async (
+  fullDateTime: string,
   datetime: string,
   type: string,
   upcomingInterviewStatus: string,
@@ -11,7 +12,8 @@ export const createUpcomingInterview = async (
 ): Promise<void> => {
   await prisma.upcoming_interview.create({
     data: {
-      datetime: datetime ? datetime : '',
+      full_date_time: fullDateTime ? fullDateTime : '',
+      date_time: datetime ? datetime : '',
       type: type ? type : '',
       status: upcomingInterviewStatus ? upcomingInterviewStatus : '',
       mock_interview_question: {
@@ -31,7 +33,7 @@ export const createUpcomingInterview = async (
 export const getUpcomingInterview = async (): Promise<upcoming_interview[]> => {
   const upcomingInterviewList = await prisma.upcoming_interview.findMany({
     orderBy: {
-      datetime: 'desc',
+      full_date_time: 'desc',
     },
   });
   return upcomingInterviewList;
@@ -43,7 +45,7 @@ export const getUpcomingInterviewByUsersId = async (users_id: number): Promise<u
       users_id: users_id,
     },
     orderBy: {
-      datetime: 'desc',
+      full_date_time: 'desc',
     },
   });
   return upcomingInterviewList;
