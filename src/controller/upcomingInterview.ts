@@ -86,3 +86,22 @@ export const cancelUpcomingInterview = async (ctx: Koa.Context, next: () => Prom
     };
   }
 };
+
+export const rescheduleUpcomingInterview = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+  const upcomingInterviewId = parseInt(ctx.params.upcomingInterviewId, 10);
+  const fullDateTime = ctx.request.body.fullDateTime;
+  const dateTime = ctx.request.body.dateTime;
+
+  if (upcomingInterviewId) {
+    const result = await upcomingInterviewService.rescheduleUpcomingInterview(
+      upcomingInterviewId,
+      fullDateTime,
+      dateTime,
+    );
+    ctx.response.status = 200;
+    ctx.body = {
+      message: 'rescheduleUpcomingInterview',
+      result: result,
+    };
+  }
+};

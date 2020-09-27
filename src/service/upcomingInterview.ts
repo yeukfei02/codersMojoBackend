@@ -65,3 +65,20 @@ export const cancelUpcomingInterview = async (
   });
   return result;
 };
+
+export const rescheduleUpcomingInterview = async (
+  upcomingInterviewId: number,
+  fullDateTime: string,
+  dateTime: string,
+): Promise<upcoming_interview> => {
+  const result = await prisma.upcoming_interview.update({
+    data: {
+      full_date_time: fullDateTime,
+      date_time: dateTime,
+    },
+    where: {
+      upcoming_interview_id: upcomingInterviewId,
+    },
+  });
+  return result;
+};
