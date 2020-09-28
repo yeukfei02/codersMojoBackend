@@ -87,6 +87,18 @@ create table upcoming_interview (
     updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
+create table past_interview (
+    past_interview_id serial PRIMARY KEY,
+    full_date_time text NOT NULL,
+    date_time text NOT NULL,
+    type text NOT NULL,
+    status text NOT NULL,
+    mock_interview_question_id integer REFERENCES mock_interview_question (mock_interview_question_id),
+    users_id integer REFERENCES users (users_id),
+    created_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
+
 create table firebase_details (
     firebase_details_id serial PRIMARY KEY,
     current_token text NOT NULL,

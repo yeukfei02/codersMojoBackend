@@ -30,3 +30,12 @@ export const getPostsByTag = async (tag: string): Promise<posts[]> => {
   });
   return postsList;
 };
+
+export const deletePostsById = async (postId: number): Promise<posts> => {
+  const posts = await prisma.posts.delete({
+    where: {
+      posts_id: postId,
+    },
+  });
+  return posts;
+};

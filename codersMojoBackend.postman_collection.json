@@ -1730,6 +1730,128 @@
 							"body": "{\n    \"message\": \"getPosts\",\n    \"result\": [\n        {\n            \"posts_id\": 1,\n            \"title\": \"post title\",\n            \"description\": \"post description\",\n            \"tag\": \"Career\",\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-15T07:42:52.168Z\",\n            \"updated_by\": \"2020-09-15T07:42:52.169Z\"\n        }\n    ]\n}"
 						}
 					]
+				},
+				{
+					"name": "/posts/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNiZmM3OWE4LWIyOTctNGVhMy1hOWVlLWZmOWM1ZWVlY2JhMCIsImlhdCI6MTYwMTI4MDgyOSwiZXhwIjoxNjAxMzY3MjI5fQ.UNp2tXHmNg6pXStB-6thA7Gu0GcOk9wPZWYQhEtzPUA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/posts/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts",
+								"2"
+							]
+						},
+						"description": "/posts/{id}"
+					},
+					"response": [
+						{
+							"name": "/posts/{id}",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNiZmM3OWE4LWIyOTctNGVhMy1hOWVlLWZmOWM1ZWVlY2JhMCIsImlhdCI6MTYwMTI4MDgyOSwiZXhwIjoxNjAxMzY3MjI5fQ.UNp2tXHmNg6pXStB-6thA7Gu0GcOk9wPZWYQhEtzPUA"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/posts/2",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"posts",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "254"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Sep 2020 08:17:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"deletePostsById\",\n    \"result\": {\n        \"posts_id\": 2,\n        \"title\": \"test\",\n        \"description\": \"tech post\",\n        \"tag\": \"Tech\",\n        \"users_id\": 1,\n        \"created_by\": \"2020-09-27T05:14:30.980Z\",\n        \"updated_by\": \"2020-09-27T05:14:30.980Z\"\n    }\n}"
+						}
+					]
 				}
 			],
 			"description": "posts",
@@ -3022,6 +3144,130 @@
 							"body": "{\n    \"message\": \"cancelUpcomingInterview\",\n    \"result\": {\n        \"upcoming_interview_id\": 1,\n        \"full_date_time\": \"2020-09-28 03:00:00\",\n        \"date_time\": \"Monday, September 28th, 03:00 am\",\n        \"type\": \"Data Structures and Algorithms\",\n        \"status\": \"cancelled\",\n        \"mock_interview_question_id\": 24,\n        \"users_id\": 1,\n        \"created_by\": \"2020-09-27T02:55:13.026Z\",\n        \"updated_by\": \"2020-09-27T02:55:13.026Z\"\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "/upcoming-interview/reschedule-upcoming-interview/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjMmI5OGY1LTJmMDctNGRkNy1iZTg4LWIwYzQ4ZmYwMGZjYiIsImlhdCI6MTYwMTE4NjUzMCwiZXhwIjoxNjAxMjcyOTMwfQ.jzIyD4LwlJ9dn9QvXij1l9ihi7oyPVdANNuI4JY5DyI"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullDateTime\": \"2020-09-28 04:30:00\",\n    \"dateTime\": \"Monday, September 28th, 04:30 am\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/upcoming-interview/reschedule-upcoming-interview/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"upcoming-interview",
+								"reschedule-upcoming-interview",
+								"1"
+							]
+						},
+						"description": "/upcoming-interview/reschedule-upcoming-interview/{id}"
+					},
+					"response": [
+						{
+							"name": "/upcoming-interview/reschedule-upcoming-interview/{id}",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjMmI5OGY1LTJmMDctNGRkNy1iZTg4LWIwYzQ4ZmYwMGZjYiIsImlhdCI6MTYwMTE4NjUzMCwiZXhwIjoxNjAxMjcyOTMwfQ.jzIyD4LwlJ9dn9QvXij1l9ihi7oyPVdANNuI4JY5DyI"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fullDateTime\": \"2020-09-28 04:30:00\",\n    \"dateTime\": \"Monday, September 28th, 04:30 am\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/upcoming-interview/reschedule-upcoming-interview/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"upcoming-interview",
+										"reschedule-upcoming-interview",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "416"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 27 Sep 2020 12:22:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"rescheduleUpcomingInterview\",\n    \"result\": {\n        \"upcoming_interview_id\": 1,\n        \"full_date_time\": \"2020-09-28 04:30:00\",\n        \"date_time\": \"Monday, September 28th, 04:30 am\",\n        \"type\": \"Data Structures and Algorithms\",\n        \"status\": \"scheduled\",\n        \"mock_interview_question_id\": 17,\n        \"users_id\": 1,\n        \"created_by\": \"2020-09-27T11:26:58.602Z\",\n        \"updated_by\": \"2020-09-27T11:26:58.602Z\"\n    }\n}"
+						}
+					]
 				}
 			],
 			"description": "upcoming-interview",
@@ -3040,6 +3286,290 @@
 					"listen": "test",
 					"script": {
 						"id": "fe6486c7-af3c-4a26-a337-df0d4f125fcf",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "past-interview",
+			"item": [
+				{
+					"name": "/past-interview",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ1NjhjNTQ1LTg0OTktNDIyMi1hZDZiLTEyYTRmM2VjNWNiOCIsImlhdCI6MTYwMTI4MzgwNywiZXhwIjoxNjAxMzcwMjA3fQ.Tx7KCEU9sqImggDiccxPYdaeLdgFGADPiJ8XPh7hiWs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullDateTime\": \"2020-09-25 12:00:00\",\n    \"dateTime\": \"Friday, September 25th, 12:00 am\",\n    \"type\": \"Data Structures and Algorithms\",\n    \"pastInterviewStatus\": \"finished\",\n    \"users_id\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/past-interview",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"past-interview"
+							]
+						},
+						"description": "/past-interview"
+					},
+					"response": [
+						{
+							"name": "/past-interview",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ1NjhjNTQ1LTg0OTktNDIyMi1hZDZiLTEyYTRmM2VjNWNiOCIsImlhdCI6MTYwMTI4MzgwNywiZXhwIjoxNjAxMzcwMjA3fQ.Tx7KCEU9sqImggDiccxPYdaeLdgFGADPiJ8XPh7hiWs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"fullDateTime\": \"2020-09-25 12:00:00\",\n    \"dateTime\": \"Friday, September 25th, 12:00 am\",\n    \"type\": \"Data Structures and Algorithms\",\n    \"pastInterviewStatus\": \"finished\",\n    \"users_id\": \"1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/past-interview",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"past-interview"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Sep 2020 09:04:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"createPastInterview\",\n    \"mockInterviewQuestionId\": 11\n}"
+						}
+					]
+				},
+				{
+					"name": "/past-interview",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ1NjhjNTQ1LTg0OTktNDIyMi1hZDZiLTEyYTRmM2VjNWNiOCIsImlhdCI6MTYwMTI4MzgwNywiZXhwIjoxNjAxMzcwMjA3fQ.Tx7KCEU9sqImggDiccxPYdaeLdgFGADPiJ8XPh7hiWs"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/past-interview?users_id=1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"past-interview"
+							],
+							"query": [
+								{
+									"key": "users_id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "/past-interview"
+					},
+					"response": [
+						{
+							"name": "/past-interview",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ1NjhjNTQ1LTg0OTktNDIyMi1hZDZiLTEyYTRmM2VjNWNiOCIsImlhdCI6MTYwMTI4MzgwNywiZXhwIjoxNjAxMzcwMjA3fQ.Tx7KCEU9sqImggDiccxPYdaeLdgFGADPiJ8XPh7hiWs"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/past-interview?users_id=1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"past-interview"
+									],
+									"query": [
+										{
+											"key": "users_id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "940"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 28 Sep 2020 09:04:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"getPastInterview\",\n    \"result\": [\n        {\n            \"past_interview_id\": 1,\n            \"full_date_time\": \"2020-09-25 12:00:00\",\n            \"date_time\": \"Friday, September 25th, 12:00 am\",\n            \"type\": \"Data Structures and Algorithms\",\n            \"status\": \"finished\",\n            \"mock_interview_question_id\": 11,\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-28T09:04:12.338Z\",\n            \"updated_by\": \"2020-09-28T09:04:12.338Z\",\n            \"mock_interview_question\": {\n                \"mock_interview_question_id\": 11,\n                \"question_title\": \"Sum of Two Integers\",\n                \"question_description\": \"Calculate the sum of two integers a and b, but you are not allowed to use the operator + and -.\\n\\nExample 1:\\n\\nInput: a = 1, b = 2\\nOutput: 3\\nExample 2:\\n\\nInput: a = -2, b = 3\\nOutput: 1\",\n                \"type\": \"Data Structures and Algorithms\",\n                \"created_by\": \"2020-09-27T19:15:00.504Z\",\n                \"updated_by\": \"2020-09-27T19:15:00.504Z\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "past-interview",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1cf15ab1-2061-4bd4-a6b1-e93cc381b898",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "ef044642-824d-460c-b2b7-eedc476e5500",
 						"type": "text/javascript",
 						"exec": [
 							""
