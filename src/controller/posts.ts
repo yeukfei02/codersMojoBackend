@@ -34,3 +34,24 @@ export const getPosts = async (ctx: Koa.Context, next: () => Promise<any>): Prom
     result: postsList,
   };
 };
+
+export const deletePostsById = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+  const postsId = parseInt(ctx.params.postsId, 10);
+
+  try {
+    if (postsId) {
+      const result = await postsService.deletePostsById(postsId);
+
+      ctx.response.status = 200;
+      ctx.body = {
+        message: 'deletePostsById',
+        result: result,
+      };
+    }
+  } catch (e) {
+    ctx.response.status = 400;
+    ctx.body = {
+      message: 'deletePostsById error, no this postsId or posts already delete',
+    };
+  }
+};

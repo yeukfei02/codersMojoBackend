@@ -8,5 +8,6 @@ import { isUserLoggedIn } from '../middleware/middleware';
 
 router.post('/api/posts', isUserLoggedIn, postsController.createPosts);
 router.get('/api/posts', isUserLoggedIn, postsController.getPosts);
+router.delete('/api/posts/:postsId', isUserLoggedIn, postsController.deletePostsById);
 
 export default router;
