@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.16](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.15...v0.0.16) (2020-09-28)
+
+
+### Features
+
+* 🎸 add delete posts by id api ([3516cee](https://github.com/yeukfei02/codersMojoBackend/commit/3516ceeeece3a7611228474256a850efdfe95157))
+* 🎸 add past interview api ([f961c10](https://github.com/yeukfei02/codersMojoBackend/commit/f961c10300e7297271285e0127155722c21fb668))
+
 ### [0.0.15](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.14...v0.0.15) (2020-09-27)
 
 
