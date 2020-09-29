@@ -10,6 +10,7 @@ import inviteFriendsRoutes from '../routes/inviteFriends';
 import mockInterviewQuestionRoutes from '../routes/mockInterviewQuestion';
 import upcomingInterviewRoutes from '../routes/upcomingInterview';
 import pastInterviewRoutes from '../routes/pastInterview';
+import codeRoutes from '../routes/code';
 import countryRoutes from '../routes/country';
 import mailchimpRoutes from '../routes/mailchimp';
 import firebaseRoutes from '../routes/firebase';
@@ -25,6 +26,7 @@ const router = combineRouters(
   mockInterviewQuestionRoutes,
   upcomingInterviewRoutes,
   pastInterviewRoutes,
+  codeRoutes,
   countryRoutes,
   mailchimpRoutes,
   firebaseRoutes,
