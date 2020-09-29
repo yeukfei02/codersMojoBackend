@@ -8,7 +8,7 @@ datasource db {
 }
 
 model users {
-  users_id           Int                  @default(autoincrement()) @id
+  users_id           Int                  @id @default(autoincrement())
   first_name         String
   last_name          String
   email              String
@@ -24,7 +24,7 @@ model users {
 }
 
 model tech_blog {
-  tech_blog_id Int      @default(autoincrement()) @id
+  tech_blog_id Int      @id @default(autoincrement())
   image        String
   title        String
   description  String
@@ -36,7 +36,7 @@ model tech_blog {
 }
 
 model jobs {
-  jobs_id     Int      @default(autoincrement()) @id
+  jobs_id     Int      @id @default(autoincrement())
   type        String
   company     String
   company_url String
@@ -50,7 +50,7 @@ model jobs {
 }
 
 model country {
-  country_id Int      @default(autoincrement()) @id
+  country_id Int      @id @default(autoincrement())
   iso        String
   name       String
   nicename   String
@@ -62,7 +62,7 @@ model country {
 }
 
 model posts {
-  posts_id    Int      @default(autoincrement()) @id
+  posts_id    Int      @id @default(autoincrement())
   title       String
   description String
   tag         String
@@ -73,7 +73,7 @@ model posts {
 }
 
 model firebase_details {
-  firebase_details_id Int      @default(autoincrement()) @id
+  firebase_details_id Int      @id @default(autoincrement())
   current_token       String
   refreshed_token     String
   users_id            Int?
@@ -83,7 +83,7 @@ model firebase_details {
 }
 
 model hackathons {
-  hackathons_id Int      @default(autoincrement()) @id
+  hackathons_id Int      @id @default(autoincrement())
   image         String
   name          String
   mode          String
@@ -96,7 +96,7 @@ model hackathons {
 }
 
 model invite_friends {
-  invite_friends_id Int      @default(autoincrement()) @id
+  invite_friends_id Int      @id @default(autoincrement())
   invite_link       String
   generated_text    String
   users_id          Int?
@@ -106,7 +106,7 @@ model invite_friends {
 }
 
 model mock_interview_question {
-  mock_interview_question_id Int                  @default(autoincrement()) @id
+  mock_interview_question_id Int                  @id @default(autoincrement())
   question_title             String
   question_description       String
   type                       String
@@ -117,7 +117,7 @@ model mock_interview_question {
 }
 
 model upcoming_interview {
-  upcoming_interview_id      Int                      @default(autoincrement()) @id
+  upcoming_interview_id      Int                      @id @default(autoincrement())
   full_date_time             String
   date_time                  String
   type                       String
@@ -131,7 +131,7 @@ model upcoming_interview {
 }
 
 model past_interview {
-  past_interview_id          Int                      @default(autoincrement()) @id
+  past_interview_id          Int                      @id @default(autoincrement())
   full_date_time             String
   date_time                  String
   type                       String
