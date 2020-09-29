@@ -8,13 +8,19 @@ datasource db {
 }
 
 model users {
-  users_id   Int      @default(autoincrement()) @id
-  first_name String
-  last_name  String
-  email      String
-  password   String
-  created_by DateTime @default(now())
-  updated_by DateTime @default(now())
+  users_id           Int                  @default(autoincrement()) @id
+  first_name         String
+  last_name          String
+  email              String
+  password           String
+  created_by         DateTime             @default(now())
+  updated_by         DateTime             @default(now())
+  firebase_details   firebase_details[]
+  invite_friends     invite_friends[]
+  past_interview     past_interview[]
+  posts              posts[]
+  tech_blog          tech_blog[]
+  upcoming_interview upcoming_interview[]
 }
 
 model tech_blog {
@@ -26,6 +32,7 @@ model tech_blog {
   users_id     Int?
   created_by   DateTime @default(now())
   updated_by   DateTime @default(now())
+  users        users?   @relation(fields: [users_id], references: [users_id])
 }
 
 model jobs {
@@ -62,6 +69,7 @@ model posts {
   users_id    Int?
   created_by  DateTime @default(now())
   updated_by  DateTime @default(now())
+  users       users?   @relation(fields: [users_id], references: [users_id])
 }
 
 model firebase_details {
@@ -71,6 +79,7 @@ model firebase_details {
   users_id            Int?
   created_by          DateTime @default(now())
   updated_by          DateTime @default(now())
+  users               users?   @relation(fields: [users_id], references: [users_id])
 }
 
 model hackathons {
@@ -93,6 +102,7 @@ model invite_friends {
   users_id          Int?
   created_by        DateTime @default(now())
   updated_by        DateTime @default(now())
+  users             users?   @relation(fields: [users_id], references: [users_id])
 }
 
 model mock_interview_question {
@@ -117,6 +127,7 @@ model upcoming_interview {
   created_by                 DateTime                 @default(now())
   updated_by                 DateTime                 @default(now())
   mock_interview_question    mock_interview_question? @relation(fields: [mock_interview_question_id], references: [mock_interview_question_id])
+  users                      users?                   @relation(fields: [users_id], references: [users_id])
 }
 
 model past_interview {
@@ -130,4 +141,5 @@ model past_interview {
   created_by                 DateTime                 @default(now())
   updated_by                 DateTime                 @default(now())
   mock_interview_question    mock_interview_question? @relation(fields: [mock_interview_question_id], references: [mock_interview_question_id])
+  users                      users?                   @relation(fields: [users_id], references: [users_id])
 }
