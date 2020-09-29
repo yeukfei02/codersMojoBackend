@@ -124,6 +124,27 @@ INSERT INTO users (users_id, first_name, last_name, email, password) VALUES
 (1, 'test', 'test2', 'test@email.com', '$2b$10$5ssPBLSsOl7V1uIs59K.X.zQ2aKX6EyvtZNFX7vBlJSPSg61Z3dmW'),
 (2, 'coders', 'mojo', 'codersmojoplatform@gmail.com', '$2b$10$5ssPBLSsOl7V1uIs59K.X.zQ2aKX6EyvtZNFX7vBlJSPSg61Z3dmW');
 
+INSERT INTO tech_blog (tech_blog_id, image, title, description, tag, users_id) VALUES
+(1, 'https://codersmojo.s3-ap-southeast-1.amazonaws.com/tech-blog.png', 'Free Data Science and Machine Learning Books', 'Programming Languages
+
+Python
+* 		Think Python: How does one Think Like a Computer Scientist
+Allen Downey
+
+SQL
+* 		Learn SQL The Hard Way
+Zed. A. Shaw
+
+Statistics and Statistical Learning
+* 		Think Stats: Exploratory Data Analysis in Python
+
+Data Science in General
+* 		An Introduction to Data Science
+Jeffrey Stanton
+
+Data Processing
+* 		Data-Intensive Text Processing with MapReduce — Jimmy Lin and Chris Dyer', 'Machine Learning', 1);
+
 INSERT INTO mock_interview_question (mock_interview_question_id, question_title, question_description, type) VALUES
 (1, 'Two Sum', 'Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
