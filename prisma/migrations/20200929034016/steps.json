@@ -163,41 +163,6 @@
       "value": "now()"
     },
     {
-      "tag": "CreateField",
-      "model": "users",
-      "field": "firebase_details",
-      "type": "firebase_details",
-      "arity": "List"
-    },
-    {
-      "tag": "CreateField",
-      "model": "users",
-      "field": "invite_friends",
-      "type": "invite_friends",
-      "arity": "List"
-    },
-    {
-      "tag": "CreateField",
-      "model": "users",
-      "field": "posts",
-      "type": "posts",
-      "arity": "List"
-    },
-    {
-      "tag": "CreateField",
-      "model": "users",
-      "field": "tech_blog",
-      "type": "tech_blog",
-      "arity": "List"
-    },
-    {
-      "tag": "CreateField",
-      "model": "users",
-      "field": "upcoming_interview",
-      "type": "upcoming_interview",
-      "arity": "List"
-    },
-    {
       "tag": "CreateModel",
       "model": "tech_blog"
     },
@@ -342,52 +307,6 @@
       },
       "argument": "",
       "value": "now()"
-    },
-    {
-      "tag": "CreateField",
-      "model": "tech_blog",
-      "field": "users",
-      "type": "users",
-      "arity": "Optional"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "tech_blog",
-          "field": "users"
-        },
-        "directive": "relation"
-      }
-    },
-    {
-      "tag": "CreateArgument",
-      "location": {
-        "tag": "Directive",
-        "path": {
-          "tag": "Field",
-          "model": "tech_blog",
-          "field": "users"
-        },
-        "directive": "relation"
-      },
-      "argument": "fields",
-      "value": "[users_id]"
-    },
-    {
-      "tag": "CreateArgument",
-      "location": {
-        "tag": "Directive",
-        "path": {
-          "tag": "Field",
-          "model": "tech_blog",
-          "field": "users"
-        },
-        "directive": "relation"
-      },
-      "argument": "references",
-      "value": "[users_id]"
     },
     {
       "tag": "CreateModel",
@@ -874,52 +793,6 @@
       "value": "now()"
     },
     {
-      "tag": "CreateField",
-      "model": "posts",
-      "field": "users",
-      "type": "users",
-      "arity": "Optional"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "posts",
-          "field": "users"
-        },
-        "directive": "relation"
-      }
-    },
-    {
-      "tag": "CreateArgument",
-      "location": {
-        "tag": "Directive",
-        "path": {
-          "tag": "Field",
-          "model": "posts",
-          "field": "users"
-        },
-        "directive": "relation"
-      },
-      "argument": "fields",
-      "value": "[users_id]"
-    },
-    {
-      "tag": "CreateArgument",
-      "location": {
-        "tag": "Directive",
-        "path": {
-          "tag": "Field",
-          "model": "posts",
-          "field": "users"
-        },
-        "directive": "relation"
-      },
-      "argument": "references",
-      "value": "[users_id]"
-    },
-    {
       "tag": "CreateModel",
       "model": "firebase_details"
     },
@@ -1050,52 +923,6 @@
       },
       "argument": "",
       "value": "now()"
-    },
-    {
-      "tag": "CreateField",
-      "model": "firebase_details",
-      "field": "users",
-      "type": "users",
-      "arity": "Optional"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "firebase_details",
-          "field": "users"
-        },
-        "directive": "relation"
-      }
-    },
-    {
-      "tag": "CreateArgument",
-      "location": {
-        "tag": "Directive",
-        "path": {
-          "tag": "Field",
-          "model": "firebase_details",
-          "field": "users"
-        },
-        "directive": "relation"
-      },
-      "argument": "fields",
-      "value": "[users_id]"
-    },
-    {
-      "tag": "CreateArgument",
-      "location": {
-        "tag": "Directive",
-        "path": {
-          "tag": "Field",
-          "model": "firebase_details",
-          "field": "users"
-        },
-        "directive": "relation"
-      },
-      "argument": "references",
-      "value": "[users_id]"
     },
     {
       "tag": "CreateModel",
@@ -1390,52 +1217,6 @@
       "value": "now()"
     },
     {
-      "tag": "CreateField",
-      "model": "invite_friends",
-      "field": "users",
-      "type": "users",
-      "arity": "Optional"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "invite_friends",
-          "field": "users"
-        },
-        "directive": "relation"
-      }
-    },
-    {
-      "tag": "CreateArgument",
-      "location": {
-        "tag": "Directive",
-        "path": {
-          "tag": "Field",
-          "model": "invite_friends",
-          "field": "users"
-        },
-        "directive": "relation"
-      },
-      "argument": "fields",
-      "value": "[users_id]"
-    },
-    {
-      "tag": "CreateArgument",
-      "location": {
-        "tag": "Directive",
-        "path": {
-          "tag": "Field",
-          "model": "invite_friends",
-          "field": "users"
-        },
-        "directive": "relation"
-      },
-      "argument": "references",
-      "value": "[users_id]"
-    },
-    {
       "tag": "CreateModel",
       "model": "mock_interview_question"
     },
@@ -1566,6 +1347,13 @@
       },
       "argument": "",
       "value": "now()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "mock_interview_question",
+      "field": "past_interview",
+      "type": "past_interview",
+      "arity": "List"
     },
     {
       "tag": "CreateField",
@@ -1774,10 +1562,163 @@
       "value": "[mock_interview_question_id]"
     },
     {
+      "tag": "CreateModel",
+      "model": "past_interview"
+    },
+    {
       "tag": "CreateField",
-      "model": "upcoming_interview",
-      "field": "users",
-      "type": "users",
+      "model": "past_interview",
+      "field": "past_interview_id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "past_interview",
+          "field": "past_interview_id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "past_interview",
+          "field": "past_interview_id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "past_interview",
+          "field": "past_interview_id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateField",
+      "model": "past_interview",
+      "field": "full_date_time",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "past_interview",
+      "field": "date_time",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "past_interview",
+      "field": "type",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "past_interview",
+      "field": "status",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "past_interview",
+      "field": "mock_interview_question_id",
+      "type": "Int",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "past_interview",
+      "field": "users_id",
+      "type": "Int",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "past_interview",
+      "field": "created_by",
+      "type": "DateTime",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "past_interview",
+          "field": "created_by"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "past_interview",
+          "field": "created_by"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "now()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "past_interview",
+      "field": "updated_by",
+      "type": "DateTime",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "past_interview",
+          "field": "updated_by"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "past_interview",
+          "field": "updated_by"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "now()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "past_interview",
+      "field": "mock_interview_question",
+      "type": "mock_interview_question",
       "arity": "Optional"
     },
     {
@@ -1785,8 +1726,8 @@
       "location": {
         "path": {
           "tag": "Field",
-          "model": "upcoming_interview",
-          "field": "users"
+          "model": "past_interview",
+          "field": "mock_interview_question"
         },
         "directive": "relation"
       }
@@ -1797,13 +1738,13 @@
         "tag": "Directive",
         "path": {
           "tag": "Field",
-          "model": "upcoming_interview",
-          "field": "users"
+          "model": "past_interview",
+          "field": "mock_interview_question"
         },
         "directive": "relation"
       },
       "argument": "fields",
-      "value": "[users_id]"
+      "value": "[mock_interview_question_id]"
     },
     {
       "tag": "CreateArgument",
@@ -1811,13 +1752,13 @@
         "tag": "Directive",
         "path": {
           "tag": "Field",
-          "model": "upcoming_interview",
-          "field": "users"
+          "model": "past_interview",
+          "field": "mock_interview_question"
         },
         "directive": "relation"
       },
       "argument": "references",
-      "value": "[users_id]"
+      "value": "[mock_interview_question_id]"
     }
   ]
 }
