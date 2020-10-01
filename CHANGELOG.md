@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.19](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.18...v0.0.19) (2020-09-29)
+
+
+### Features
+
+* 🎸 add hackerearth run code api ([c3fbe4f](https://github.com/yeukfei02/codersMojoBackend/commit/c3fbe4fff2b339697effa5b379057ccfcc8370a4))
+
 ### [0.0.18](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.17...v0.0.18) (2020-09-29)
 
 ### [0.0.17](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.16...v0.0.17) (2020-09-29)

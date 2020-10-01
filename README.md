@@ -4,12 +4,22 @@ CodersMojo is an AI-based peer-to-peer interactive tech interview platform for W
 
 documentation: https://documenter.getpostman.com/view/3827865/TVCjxmDv
 
+staging:
+
+https://coders-mojo-backend-staging.com/
+
+prod:
+
+https://coders-mojo-backend.com/
+
 ## Requirement:
- - install yarn
- - install node (v12+)
- - install postgres
+
+- install yarn
+- install node (v12+)
+- install postgres
 
 ## Testing and run:
+
 ```
 $ yarn
 
