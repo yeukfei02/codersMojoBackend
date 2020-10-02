@@ -4,6 +4,7 @@ import mainRoutes from '../routes/main';
 import userRoutes from '../routes/user';
 import techBlogRoutes from '../routes/techBlog';
 import jobsRoutes from '../routes/jobs';
+import techSalaryRoutes from './techSalary';
 import postsRoutes from '../routes/posts';
 import hackathonsRoutes from '../routes/hackathons';
 import inviteFriendsRoutes from '../routes/inviteFriends';
@@ -20,6 +21,7 @@ const router = combineRouters(
   userRoutes,
   techBlogRoutes,
   jobsRoutes,
+  techSalaryRoutes,
   postsRoutes,
   hackathonsRoutes,
   inviteFriendsRoutes,

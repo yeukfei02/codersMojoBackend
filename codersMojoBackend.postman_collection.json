@@ -1474,6 +1474,276 @@
 			"protocolProfileBehavior": {}
 		},
 		{
+			"name": "tech-salary",
+			"item": [
+				{
+					"name": "/tech-salary",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3YTVhMzVhLWMzYjItNDY2Zi05ODUwLWNlZmM4NWJhYzRmMSIsImlhdCI6MTYwMTYyNzY2OSwiZXhwIjoxNjAxNzE0MDY5fQ.pNIxh7I6wp1H7_xRTIaj1Z_9ornhhJNSs6gAlaQOuD0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"jobTitle\": \"Software Developer\",\n    \"company\": \"Google\",\n    \"description\": \"job description\",\n    \"totalCompensation\": \"$100000 per year\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/tech-salary",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tech-salary"
+							]
+						},
+						"description": "/tech-salary"
+					},
+					"response": [
+						{
+							"name": "/tech-salary",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3YTVhMzVhLWMzYjItNDY2Zi05ODUwLWNlZmM4NWJhYzRmMSIsImlhdCI6MTYwMTYyNzY2OSwiZXhwIjoxNjAxNzE0MDY5fQ.pNIxh7I6wp1H7_xRTIaj1Z_9ornhhJNSs6gAlaQOuD0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"jobTitle\": \"Software Developer\",\n    \"company\": \"Google\",\n    \"description\": \"job description\",\n    \"totalCompensation\": \"$100000 per year\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/tech-salary",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"tech-salary"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Oct 2020 08:34:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"createTechSalary\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/tech-salary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3YTVhMzVhLWMzYjItNDY2Zi05ODUwLWNlZmM4NWJhYzRmMSIsImlhdCI6MTYwMTYyNzY2OSwiZXhwIjoxNjAxNzE0MDY5fQ.pNIxh7I6wp1H7_xRTIaj1Z_9ornhhJNSs6gAlaQOuD0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/tech-salary?jobTitle=Software Developer&company=Google",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tech-salary"
+							],
+							"query": [
+								{
+									"key": "jobTitle",
+									"value": "Software Developer"
+								},
+								{
+									"key": "company",
+									"value": "Google"
+								}
+							]
+						},
+						"description": "/tech-salary"
+					},
+					"response": [
+						{
+							"name": "/tech-salary",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3YTVhMzVhLWMzYjItNDY2Zi05ODUwLWNlZmM4NWJhYzRmMSIsImlhdCI6MTYwMTYyNzY2OSwiZXhwIjoxNjAxNzE0MDY5fQ.pNIxh7I6wp1H7_xRTIaj1Z_9ornhhJNSs6gAlaQOuD0"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/tech-salary?jobTitle=Software Developer&company=Google",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"tech-salary"
+									],
+									"query": [
+										{
+											"key": "jobTitle",
+											"value": "Software Developer"
+										},
+										{
+											"key": "company",
+											"value": "Google"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "632"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Oct 2020 08:43:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"getTechSalary\",\n    \"result\": [\n        {\n            \"tech_salary_id\": 1,\n            \"job_title\": \"Software Developer\",\n            \"company\": \"Google\",\n            \"description\": \"job description\",\n            \"total_compensation\": \"$100000 per year\",\n            \"created_by\": \"2020-10-02T08:34:42.060Z\",\n            \"updated_by\": \"2020-10-02T08:34:42.060Z\"\n        },\n        {\n            \"tech_salary_id\": 2,\n            \"job_title\": \"Software Developer\",\n            \"company\": \"Google\",\n            \"description\": \"job description\",\n            \"total_compensation\": \"$100000 per year\",\n            \"created_by\": \"2020-10-02T08:34:43.291Z\",\n            \"updated_by\": \"2020-10-02T08:34:43.291Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "tech-salary",
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "posts",
 			"item": [
 				{
@@ -3577,6 +3847,49 @@
 					}
 				}
 			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "code",
+			"item": [
+				{
+					"name": "/run",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmNjY2E2LTBlYzAtNGQ1NS1hN2EzLWYxYTA3NGI2NDdkMSIsImlhdCI6MTYwMTM5NDY0NywiZXhwIjoxNjAxNDgxMDQ3fQ.Jt4mV1vp5dNaYGYdRiazQHJnuQgw8vS_plheFpP8kJ0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"source\": \"function test() { console.log(123); } test();\",\n    \"lang\": \"JAVASCRIPT_NODE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/code/run",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"code",
+								"run"
+							]
+						},
+						"description": "/run"
+					},
+					"response": []
+				}
+			],
+			"description": "code",
 			"protocolProfileBehavior": {}
 		},
 		{
