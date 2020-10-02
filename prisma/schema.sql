@@ -76,6 +76,18 @@ create table invite_friends (
     updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
+create table women_investor_community (
+    women_investor_community_id serial PRIMARY KEY,
+    name text NOT NULL,
+    investor_type text NOT NULL,
+    areas_of_investment text NOT NULL,
+    expertise text NOT NULL,
+    location text NOT NULL,
+    status text NOT NULL,
+    created_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
+
 create table mock_interview_question (
     mock_interview_question_id serial PRIMARY KEY,
     question_title text NOT NULL,

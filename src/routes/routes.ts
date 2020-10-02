@@ -8,6 +8,7 @@ import techSalaryRoutes from './techSalary';
 import postsRoutes from '../routes/posts';
 import hackathonsRoutes from '../routes/hackathons';
 import inviteFriendsRoutes from '../routes/inviteFriends';
+import womenInvestorCommunityRoutes from '../routes/womenInvestorCommunity';
 import mockInterviewQuestionRoutes from '../routes/mockInterviewQuestion';
 import upcomingInterviewRoutes from '../routes/upcomingInterview';
 import pastInterviewRoutes from '../routes/pastInterview';
@@ -25,6 +26,7 @@ const router = combineRouters(
   postsRoutes,
   hackathonsRoutes,
   inviteFriendsRoutes,
+  womenInvestorCommunityRoutes,
   mockInterviewQuestionRoutes,
   upcomingInterviewRoutes,
   pastInterviewRoutes,

@@ -2659,6 +2659,298 @@
 			"protocolProfileBehavior": {}
 		},
 		{
+			"name": "women-investor-community",
+			"item": [
+				{
+					"name": "/women-investor-community",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3YTVhMzVhLWMzYjItNDY2Zi05ODUwLWNlZmM4NWJhYzRmMSIsImlhdCI6MTYwMTYyNzY2OSwiZXhwIjoxNjAxNzE0MDY5fQ.pNIxh7I6wp1H7_xRTIaj1Z_9ornhhJNSs6gAlaQOuD0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Gary Law\",\n    \"investorType\": \"Angel Investor\",\n    \"areaOfInvestment\": \"Technology\",\n    \"expertise\": \"IT, Finance\",\n    \"location\": \"Hong Kong\",\n    \"connectStatus\": \"Not Connected\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/women-investor-community",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"women-investor-community"
+							]
+						},
+						"description": "/women-investor-community"
+					},
+					"response": [
+						{
+							"name": "/women-investor-community",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3YTVhMzVhLWMzYjItNDY2Zi05ODUwLWNlZmM4NWJhYzRmMSIsImlhdCI6MTYwMTYyNzY2OSwiZXhwIjoxNjAxNzE0MDY5fQ.pNIxh7I6wp1H7_xRTIaj1Z_9ornhhJNSs6gAlaQOuD0"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Gary Law\",\n    \"investorType\": \"Angel Investor\",\n    \"areaOfInvestment\": \"Technology\",\n    \"expertise\": \"IT, Finance\",\n    \"location\": \"Hong Kong\",\n    \"connectStatus\": \"Not Connected\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/women-investor-community",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"women-investor-community"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Oct 2020 09:50:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"createWomenInvestorCommunity\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/women-investor-community",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3YTVhMzVhLWMzYjItNDY2Zi05ODUwLWNlZmM4NWJhYzRmMSIsImlhdCI6MTYwMTYyNzY2OSwiZXhwIjoxNjAxNzE0MDY5fQ.pNIxh7I6wp1H7_xRTIaj1Z_9ornhhJNSs6gAlaQOuD0"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/women-investor-community?expertise=IT, Finance&location=Hong Kong",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"women-investor-community"
+							],
+							"query": [
+								{
+									"key": "expertise",
+									"value": "IT, Finance"
+								},
+								{
+									"key": "location",
+									"value": "Hong Kong"
+								}
+							]
+						},
+						"description": "/women-investor-community"
+					},
+					"response": [
+						{
+							"name": "/women-investor-community",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3YTVhMzVhLWMzYjItNDY2Zi05ODUwLWNlZmM4NWJhYzRmMSIsImlhdCI6MTYwMTYyNzY2OSwiZXhwIjoxNjAxNzE0MDY5fQ.pNIxh7I6wp1H7_xRTIaj1Z_9ornhhJNSs6gAlaQOuD0"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/women-investor-community?expertise=IT, Finance&location=Hong Kong",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"women-investor-community"
+									],
+									"query": [
+										{
+											"key": "expertise",
+											"value": "IT, Finance"
+										},
+										{
+											"key": "location",
+											"value": "Hong Kong"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "418"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 02 Oct 2020 09:46:30 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"getWomenInvestorCommunity\",\n    \"result\": [\n        {\n            \"women_investor_community_id\": 1,\n            \"name\": \"Gary Law\",\n            \"investor_type\": \"Angel Investor\",\n            \"areas_of_investment\": \"Technology\",\n            \"expertise\": \"IT, Finance\",\n            \"location\": \"Hong Kong\",\n            \"status\": \"Not Connected\",\n            \"created_by\": \"2020-10-02T09:46:04.236Z\",\n            \"updated_by\": \"2020-10-02T09:46:04.236Z\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "women-investor-community",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "65d58bfa-4004-4471-b5b8-408f482a03bd",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d10201a3-5178-4d0b-ae1c-941535f3103b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "mock-interview-question",
 			"item": [
 				{
