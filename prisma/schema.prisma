@@ -143,3 +143,13 @@ model past_interview {
   mock_interview_question    mock_interview_question? @relation(fields: [mock_interview_question_id], references: [mock_interview_question_id])
   users                      users?                   @relation(fields: [users_id], references: [users_id])
 }
+
+model tech_salary {
+  tech_salary_id     Int      @id @default(autoincrement())
+  job_title          String
+  company            String
+  description        String
+  total_compensation String
+  created_by         DateTime @default(now())
+  updated_by         DateTime @default(now())
+}

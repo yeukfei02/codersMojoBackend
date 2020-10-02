@@ -34,6 +34,16 @@ create table jobs (
     updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
+create table tech_salary (
+    tech_salary_id serial PRIMARY KEY,
+    job_title varchar(255) NOT NULL,
+    company text NOT NULL,
+    description text NOT NULL,
+    total_compensation text NOT NULL,
+    created_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
+
 create table posts (
     posts_id serial PRIMARY KEY,
     title varchar(255) NOT NULL,
