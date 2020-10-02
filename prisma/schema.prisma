@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_AWS_PROD_URL")
+  url      = env("DATABASE_URL")
 }
 
 model users {
@@ -152,4 +152,16 @@ model tech_salary {
   total_compensation String
   created_by         DateTime @default(now())
   updated_by         DateTime @default(now())
+}
+
+model women_investor_community {
+  women_investor_community_id Int      @id @default(autoincrement())
+  name                        String
+  investor_type               String
+  areas_of_investment         String
+  expertise                   String
+  location                    String
+  status                      String
+  created_by                  DateTime @default(now())
+  updated_by                  DateTime @default(now())
 }
