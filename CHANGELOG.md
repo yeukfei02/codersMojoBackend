@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.20](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.19...v0.0.20) (2020-10-02)
+
+
+### Features
+
+* 🎸 add tech salary route ([e1901ac](https://github.com/yeukfei02/codersMojoBackend/commit/e1901ac01d305a451b6822529f2f986ab5307a57))
+* 🎸 add women investor community api ([da47d2d](https://github.com/yeukfei02/codersMojoBackend/commit/da47d2d0b769ba6906faac4cd30737974e0714cf))
+
 ### [0.0.19](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.18...v0.0.19) (2020-09-29)
 
 
