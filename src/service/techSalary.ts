@@ -29,11 +29,16 @@ export const getTechSalary = async (): Promise<tech_salary[]> => {
   return techSalaryList;
 };
 
-export const getTechSalaryByFilter = async (jobTitle: string, company: string): Promise<tech_salary[]> => {
+export const getTechSalaryByFilter = async (
+  jobTitle: string,
+  company: string,
+  location: string,
+): Promise<tech_salary[]> => {
   const techSalaryList = await prisma.tech_salary.findMany({
     where: {
       job_title: jobTitle,
       company: company,
+      location: location,
     },
     orderBy: {
       company: 'asc',

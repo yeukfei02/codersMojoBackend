@@ -22,12 +22,13 @@ export const createTechSalary = async (ctx: Koa.Context, next: () => Promise<any
 export const getTechSalary = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const jobTitle = ctx.query.jobTitle;
   const company = ctx.query.company;
+  const location = ctx.query.location;
 
   let techSalaryList = [];
-  if (!jobTitle && !company) {
+  if (!jobTitle && !company && !location) {
     techSalaryList = await techSalaryService.getTechSalary();
   } else {
-    techSalaryList = await techSalaryService.getTechSalaryByFilter(jobTitle, company);
+    techSalaryList = await techSalaryService.getTechSalaryByFilter(jobTitle, company, location);
   }
 
   ctx.response.status = 200;
