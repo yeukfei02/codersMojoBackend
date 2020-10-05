@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.21](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.20...v0.0.21) (2020-10-05)
+
+
+### Features
+
+* 🎸 add location filter in tech salary ([50d0208](https://github.com/yeukfei02/codersMojoBackend/commit/50d0208c0b8ae9cd158932524ec0f12c02fdbeda))
+* 🎸 add scheduleFetchTechSalary func ([2d4530b](https://github.com/yeukfei02/codersMojoBackend/commit/2d4530bef029832691f75a6d7e5f9f5e98d1db09))
+
 ### [0.0.20](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.19...v0.0.20) (2020-10-02)
 
 
