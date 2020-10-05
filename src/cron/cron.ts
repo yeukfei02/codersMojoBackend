@@ -5,6 +5,7 @@ import * as _ from 'lodash';
 
 import * as hackathonsService from '../service/hackathons';
 import * as jobsService from '../service/jobs';
+import * as techSalaryService from '../service/techSalary';
 
 const fetchHackathonsDataFromGoogleSheet = async () => {
   const doc = new GoogleSpreadsheet('13869Q8PPsqLkfVCuQkgu091E0NPf0zlpY4ZU-CIZJms');
@@ -99,6 +100,27 @@ const fetchJobsDataFromGithubJobs = async () => {
   }
 };
 
+const fetchTechSalaryDataFromLevelsFyi = async () => {
+  const response = await axios.get(`https://www.levels.fyi/js/salaryData.json`);
+  if (response) {
+    const responseData = response.data;
+    if (responseData) {
+      responseData.forEach(async (item: any, i: number) => {
+        const jobTitle = item.title;
+        const company = item.company;
+        const description = `years of experience: ${item.yearsofexperience}`;
+        const totalCompensation = `${item.totalyearlycompensation}k p.a.`;
+        const location = item.location;
+
+        const existingTechSalary = await techSalaryService.getTechSalaryByJobTitleAndCompany(jobTitle, company);
+        if (_.isEmpty(existingTechSalary)) {
+          await techSalaryService.createTechSalary(jobTitle, company, description, totalCompensation, location);
+        }
+      });
+    }
+  }
+};
+
 const scheduleFetchHackathons = (scheduleTime: string) => {
   cron.schedule(scheduleTime, () => {
     console.log('### cron scheduleFetchHackathons ###');
@@ -115,12 +137,23 @@ const scheduleFetchJobs = (scheduleTime: string) => {
   });
 };
 
+const scheduleFetchTechSalary = (scheduleTime: string) => {
+  cron.schedule(scheduleTime, () => {
+    console.log('### cron scheduleFetchTechSalary ###');
+
+    fetchTechSalaryDataFromLevelsFyi();
+  });
+};
+
 export const init = (): void => {
   // fetch hackathons data from google sheet every 1 hour
   scheduleFetchHackathons('0 * * * *');
 
   // fetch jobs data from github jobs every 1 hour
   scheduleFetchJobs('0 * * * *');
+
+  // fetch tech salary data from levels.fyi every 1 hour
+  scheduleFetchTechSalary('0 * * * *');
 };
 
 export default cron;

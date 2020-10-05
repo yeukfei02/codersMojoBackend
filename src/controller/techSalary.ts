@@ -7,9 +7,10 @@ export const createTechSalary = async (ctx: Koa.Context, next: () => Promise<any
   const company = ctx.request.body.company;
   const description = ctx.request.body.description;
   const totalCompensation = ctx.request.body.totalCompensation;
+  const location = ctx.request.body.location;
 
-  if (jobTitle && company && description && totalCompensation) {
-    await techSalaryService.createTechSalary(jobTitle, company, description, totalCompensation);
+  if (jobTitle && company && description && totalCompensation && location) {
+    await techSalaryService.createTechSalary(jobTitle, company, description, totalCompensation, location);
 
     ctx.response.status = 201;
     ctx.body = {
