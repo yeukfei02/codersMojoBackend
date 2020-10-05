@@ -40,6 +40,7 @@ create table tech_salary (
     company text NOT NULL,
     description text NOT NULL,
     total_compensation text NOT NULL,
+    location text NOT NULL,
     created_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
     updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );

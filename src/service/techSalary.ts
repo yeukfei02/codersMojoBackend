@@ -7,6 +7,7 @@ export const createTechSalary = async (
   company: string,
   description: string,
   totalCompensation: string,
+  location: string,
 ): Promise<void> => {
   await prisma.tech_salary.create({
     data: {
@@ -14,6 +15,7 @@ export const createTechSalary = async (
       company: company ? company : '',
       description: description ? description : '',
       total_compensation: totalCompensation ? totalCompensation : '',
+      location: location ? location : '',
     },
   });
 };
@@ -27,15 +29,31 @@ export const getTechSalary = async (): Promise<tech_salary[]> => {
   return techSalaryList;
 };
 
-export const getTechSalaryByFilter = async (jobTitle: string, company: string): Promise<tech_salary[]> => {
+export const getTechSalaryByFilter = async (
+  jobTitle: string,
+  company: string,
+  location: string,
+): Promise<tech_salary[]> => {
+  const techSalaryList = await prisma.tech_salary.findMany({
+    where: {
+      job_title: jobTitle,
+      company: company,
+      location: location,
+    },
+    orderBy: {
+      company: 'asc',
+    },
+  });
+  return techSalaryList;
+};
+
+export const getTechSalaryByJobTitleAndCompany = async (jobTitle: string, company: string): Promise<tech_salary[]> => {
   const techSalaryList = await prisma.tech_salary.findMany({
     where: {
       job_title: jobTitle,
       company: company,
     },
-    orderBy: {
-      company: 'asc',
-    },
+    take: 1,
   });
   return techSalaryList;
 };
