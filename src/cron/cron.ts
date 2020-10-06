@@ -105,18 +105,21 @@ const fetchTechSalaryDataFromLevelsFyi = async () => {
   if (response) {
     const responseData = response.data;
     if (responseData) {
-      responseData.forEach(async (item: any, i: number) => {
-        const jobTitle = item.title;
-        const company = item.company;
-        const description = `years of experience: ${item.yearsofexperience}`;
-        const totalCompensation = `${item.totalyearlycompensation}k p.a.`;
-        const location = item.location;
+      const filteredResponseData = _.sampleSize(responseData, 2500);
+      if (filteredResponseData) {
+        filteredResponseData.forEach(async (item: any, i: number) => {
+          const jobTitle = item.title;
+          const company = item.company;
+          const description = `years of experience: ${item.yearsofexperience}`;
+          const totalCompensation = `${item.totalyearlycompensation}k p.a.`;
+          const location = item.location;
 
-        const existingTechSalary = await techSalaryService.getTechSalaryByJobTitleAndCompany(jobTitle, company);
-        if (_.isEmpty(existingTechSalary)) {
-          await techSalaryService.createTechSalary(jobTitle, company, description, totalCompensation, location);
-        }
-      });
+          const existingTechSalary = await techSalaryService.getTechSalaryByJobTitleAndCompany(jobTitle, company);
+          if (_.isEmpty(existingTechSalary)) {
+            await techSalaryService.createTechSalary(jobTitle, company, description, totalCompensation, location);
+          }
+        });
+      }
     }
   }
 };
