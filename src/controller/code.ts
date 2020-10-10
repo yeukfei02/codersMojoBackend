@@ -55,7 +55,14 @@ async function judge0Func(ctx: Koa.Context, source: string, lang: string) {
       const token = await createSubmission(source, languageId);
       if (token) {
         const result = await getSubmission(token);
-        response = result;
+        if (result && result.status.description !== 'Processing') {
+          response = result;
+        } else {
+          const result = await getSubmission(token);
+          if (result) {
+            response = result;
+          }
+        }
       }
     }
   }
@@ -115,7 +122,7 @@ async function createSubmission(source: string, languageId: number) {
 }
 
 async function getSubmission(token: string) {
-  let result = '';
+  let result = null;
 
   const response = await axios.get(`https://judge0.p.rapidapi.com/submissions/${token}`, {
     headers: {
