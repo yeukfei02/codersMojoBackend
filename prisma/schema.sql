@@ -79,6 +79,7 @@ create table invite_friends (
 
 create table women_investor_community (
     women_investor_community_id serial PRIMARY KEY,
+    image text NOT NULL,
     name text NOT NULL,
     investor_type text NOT NULL,
     areas_of_investment text NOT NULL,
