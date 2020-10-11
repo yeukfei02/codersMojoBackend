@@ -3,6 +3,7 @@ import { PrismaClient, women_investor_community } from '@prisma/client';
 const prisma = new PrismaClient();
 
 export const createWomenInvestorCommunity = async (
+  image: string,
   name: string,
   investorType: string,
   areaOfInvestment: string,
@@ -12,6 +13,7 @@ export const createWomenInvestorCommunity = async (
 ): Promise<void> => {
   await prisma.women_investor_community.create({
     data: {
+      image: image ? image : '',
       name: name ? name : '',
       investor_type: investorType ? investorType : '',
       areas_of_investment: areaOfInvestment ? areaOfInvestment : '',
