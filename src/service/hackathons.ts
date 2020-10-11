@@ -12,8 +12,7 @@ export const createHackathons = async (
 ): Promise<void> => {
   await prisma.hackathons.create({
     data: {
-      image:
-        'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80',
+      image: '',
       name: name ? name : '',
       mode: mode ? mode : '',
       prize: prize ? prize : '',
