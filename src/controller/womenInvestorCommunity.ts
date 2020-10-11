@@ -47,14 +47,16 @@ export const createWomenInvestorCommunity = async (ctx: Koa.Context, next: () =>
 };
 
 export const getWomenInvestorCommunity = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+  const name = ctx.query.name;
   const expertise = ctx.query.expertise;
   const location = ctx.query.location;
 
   let womenInvestorCommunityList = [];
-  if (!expertise && !location) {
+  if (!name && !expertise && !location) {
     womenInvestorCommunityList = await womenInvestorCommunityService.getWomenInvestorCommunity();
   } else {
     womenInvestorCommunityList = await womenInvestorCommunityService.getWomenInvestorCommunityByFilter(
+      name,
       expertise,
       location,
     );

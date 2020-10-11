@@ -34,11 +34,13 @@ export const getWomenInvestorCommunity = async (): Promise<women_investor_commun
 };
 
 export const getWomenInvestorCommunityByFilter = async (
+  name: string,
   expertise: string,
   location: string,
 ): Promise<women_investor_community[]> => {
   const womenInvestorCommunityList = await prisma.women_investor_community.findMany({
     where: {
+      name: name,
       expertise: expertise,
       location: location,
     },
