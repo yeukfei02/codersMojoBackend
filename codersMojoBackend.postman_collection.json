@@ -1134,7 +1134,7 @@
 									}
 								},
 								"url": {
-									"raw": "localhost:3000/api/tech-blog?tag=Programming",
+									"raw": "localhost:3000/api/tech-blog",
 									"host": [
 										"localhost"
 									],
@@ -1146,7 +1146,8 @@
 									"query": [
 										{
 											"key": "tag",
-											"value": "Programming"
+											"value": "Programming",
+											"disabled": true
 										}
 									]
 								}
@@ -1189,11 +1190,11 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "1234"
+									"value": "2445"
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 13 Sep 2020 06:22:48 GMT"
+									"value": "Sun, 11 Oct 2020 04:03:52 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1201,7 +1202,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"getTechBlog\",\n    \"result\": [\n        {\n            \"tech_blog_id\": 1,\n            \"image\": \"https://images.unsplash.com/photo-1561736778-92e52a7769ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80\",\n            \"title\": \"test title\",\n            \"description\": \"test description\",\n            \"tag\": \"Programming\",\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-13T04:14:50.943Z\",\n            \"updated_by\": \"2020-09-13T04:14:50.943Z\"\n        },\n        {\n            \"tech_blog_id\": 4,\n            \"image\": \"https://images.unsplash.com/photo-1561736778-92e52a7769ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80\",\n            \"title\": \"test title\",\n            \"description\": \"test description\",\n            \"tag\": \"Programming\",\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-13T05:37:26.325Z\",\n            \"updated_by\": \"2020-09-13T05:37:26.325Z\"\n        },\n        {\n            \"tech_blog_id\": 5,\n            \"image\": \"https://images.unsplash.com/photo-1561736778-92e52a7769ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80\",\n            \"title\": \"aaa\",\n            \"description\": \"bbb\",\n            \"tag\": \"Programming\",\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-13T06:03:25.178Z\",\n            \"updated_by\": \"2020-09-13T06:03:25.179Z\"\n        }\n    ]\n}"
+							"body": "{\n    \"message\": \"getTechBlog\",\n    \"result\": [\n        {\n            \"tech_blog_id\": 1,\n            \"image\": \"https://codersmojo.s3-ap-southeast-1.amazonaws.com/tech-blog.png\",\n            \"title\": \"Free Data Science and Machine Learning Books\",\n            \"description\": \"Programming Languages\\n\\nPython\\n* \\t\\tThink Python: How does one Think Like a Computer Scientist\\nAllen Downey\\n\\nSQL\\n* \\t\\tLearn SQL The Hard Way\\nZed. A. Shaw\\n\\nStatistics and Statistical Learning\\n* \\t\\tThink Stats: Exploratory Data Analysis in Python\\n\\nData Science in General\\n* \\t\\tAn Introduction to Data Science\\nJeffrey Stanton\\n\\nData Processing\\n* \\t\\tData-Intensive Text Processing with MapReduce — Jimmy Lin and Chris Dyer\",\n            \"tag\": \"Machine Learning\",\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-29T09:49:25.086Z\",\n            \"updated_by\": \"2020-09-29T09:49:25.086Z\"\n        },\n        {\n            \"tech_blog_id\": 2,\n            \"image\": \"https://codersmojo.s3-ap-southeast-1.amazonaws.com/tech-blog.png\",\n            \"title\": \"Free Data Science and Machine Learning Books\",\n            \"description\": \"Programming Languages\\n\\nPython\\n* \\t\\tThink Python: How does one Think Like a Computer Scientist\\nAllen Downey\\n\\nSQL\\n* \\t\\tLearn SQL The Hard Way\\nZed. A. Shaw\\n\\nStatistics and Statistical Learning\\n* \\t\\tThink Stats: Exploratory Data Analysis in Python\\n\\nData Science in General\\n* \\t\\tAn Introduction to Data Science\\nJeffrey Stanton\\n\\nData Processing\\n* \\t\\tData-Intensive Text Processing with MapReduce — Jimmy Lin and Chris Dyer\",\n            \"tag\": \"Machine Learning\",\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-29T09:49:25.086Z\",\n            \"updated_by\": \"2020-09-29T09:49:25.086Z\"\n        },\n        {\n            \"tech_blog_id\": 3,\n            \"image\": \"https://codersmojo.s3-ap-southeast-1.amazonaws.com/tech-blog.png\",\n            \"title\": \"Free Data Science and Machine Learning Books\",\n            \"description\": \"Programming Languages\\n\\nPython\\n* \\t\\tThink Python: How does one Think Like a Computer Scientist\\nAllen Downey\\n\\nSQL\\n* \\t\\tLearn SQL The Hard Way\\nZed. A. Shaw\\n\\nStatistics and Statistical Learning\\n* \\t\\tThink Stats: Exploratory Data Analysis in Python\\n\\nData Science in General\\n* \\t\\tAn Introduction to Data Science\\nJeffrey Stanton\\n\\nData Processing\\n* \\t\\tData-Intensive Text Processing with MapReduce — Jimmy Lin and Chris Dyer\",\n            \"tag\": \"Machine Learning\",\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-29T09:49:25.086Z\",\n            \"updated_by\": \"2020-09-29T09:49:25.086Z\"\n        }\n    ]\n}"
 						}
 					]
 				}
@@ -2297,7 +2298,7 @@
 									{
 										"key": "Authorization",
 										"type": "text",
-										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU1ZjUxYzFhLTIxYzUtNGE0MS1iYzU0LTQ1YzFlNjY3Mzg4OCIsImlhdCI6MTYwMDY2MDkwOCwiZXhwIjoxNjAwNzQ3MzA4fQ.adnREUQ2P95V0YImttraBVVLdhFgUZmwEna5dCDjDPs"
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU3ZjUzNDA4LWM1ZjktNDQ1Yi05MDMyLTU4YjAyN2JkMTJhNyIsImlhdCI6MTYwMjM4ODYxOSwiZXhwIjoxNjAyNDc1MDE5fQ.stq0NwJ4l05Zj-aZC9Y0ytcLUYL_SK4ffMZ98gvQZus"
 									}
 								],
 								"body": {
@@ -2365,11 +2366,11 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "824"
+									"value": "690"
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 21 Sep 2020 04:02:10 GMT"
+									"value": "Sun, 11 Oct 2020 03:58:03 GMT"
 								},
 								{
 									"key": "Connection",
@@ -2377,7 +2378,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"getHackathons\",\n    \"result\": [\n        {\n            \"hackathons_id\": 23,\n            \"image\": \"https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80\",\n            \"name\": \"API World 2020 Hackathon\",\n            \"mode\": \"Online\",\n            \"prize\": \"compete for $25,000+ in cash, products and prizes.\",\n            \"details\": \"API World is produced and owned by DevNetwork, the world's developer event community and producer of leading conferences for the developer, engineering & IT industries.\",\n            \"date_time\": \"October 19-29, 2020\",\n            \"link\": \"https://www.eventbrite.com/e/api-world-2020-hackathon-registration-111188226980?aff=ebdssbonlinesearch\",\n            \"created_by\": \"2020-09-21T03:57:02.062Z\",\n            \"updated_by\": \"2020-09-21T03:57:02.062Z\"\n        }\n    ]\n}"
+							"body": "{\n    \"message\": \"getHackathons\",\n    \"result\": [\n        {\n            \"hackathons_id\": 92,\n            \"image\": \"\",\n            \"name\": \"API World 2020 Hackathon\",\n            \"mode\": \"Online\",\n            \"prize\": \"compete for $25,000+ in cash, products and prizes.\",\n            \"details\": \"API World is produced and owned by DevNetwork, the world's developer event community and producer of leading conferences for the developer, engineering & IT industries.\",\n            \"date_time\": \"October 19-29, 2020\",\n            \"link\": \"https://www.eventbrite.com/e/api-world-2020-hackathon-registration-111188226980?aff=ebdssbonlinesearch\",\n            \"created_by\": \"2020-09-27T03:00:07.095Z\",\n            \"updated_by\": \"2020-09-27T03:00:07.095Z\"\n        }\n    ]\n}"
 						}
 					]
 				}
@@ -2669,6 +2670,140 @@
 		{
 			"name": "women-investor-community",
 			"item": [
+				{
+					"name": "/women-investor-community/upload-file",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNlYWZlOWY2LWVhYmMtNGM0Ni05MWQ0LTU4ZDIyY2E2Y2NlOCIsImlhdCI6MTYwMjM4ODgyMCwiZXhwIjoxNjAyNDc1MjIwfQ.U-tgrRuCidNeMFj1-2nvtKXF3hvrrLh_VEIwb_npVBs"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/donaldwu/Downloads/tech-blog3.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/women-investor-community/upload-file",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"women-investor-community",
+								"upload-file"
+							]
+						},
+						"description": "/women-investor-community/upload-file"
+					},
+					"response": [
+						{
+							"name": "/women-investor-community/upload-file",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNlYWZlOWY2LWVhYmMtNGM0Ni05MWQ0LTU4ZDIyY2E2Y2NlOCIsImlhdCI6MTYwMjM4ODgyMCwiZXhwIjoxNjAyNDc1MjIwfQ.U-tgrRuCidNeMFj1-2nvtKXF3hvrrLh_VEIwb_npVBs"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/donaldwu/Downloads/tech-blog3.jpg"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/women-investor-community/upload-file",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"women-investor-community",
+										"upload-file"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 11 Oct 2020 04:00:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"uploadWomenInvestorCommunityFile\",\n    \"imageUrl\": \"https://codersmojo.s3.ap-southeast-1.amazonaws.com/b17a252a-8e0e-47d2-8588-c019846dd2a0-tech-blog3.jpg\"\n}"
+						}
+					]
+				},
 				{
 					"name": "/women-investor-community",
 					"request": {
