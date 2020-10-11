@@ -7,6 +7,11 @@ import * as womenInvestorCommunityController from '../controller/womenInvestorCo
 import { isUserLoggedIn } from '../middleware/middleware';
 
 router.post(
+  '/api/women-investor-community/upload-file',
+  isUserLoggedIn,
+  womenInvestorCommunityController.uploadWomenInvestorCommunityFile,
+);
+router.post(
   '/api/women-investor-community',
   isUserLoggedIn,
   womenInvestorCommunityController.createWomenInvestorCommunity,
