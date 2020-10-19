@@ -54,13 +54,24 @@ async function judge0Func(ctx: Koa.Context, source: string, lang: string) {
     if (languageId > 0) {
       const token = await createSubmission(source, languageId);
       if (token) {
-        const result = await getSubmission(token);
-        if (result && result.status.description !== 'Processing') {
-          response = result;
-        } else {
-          const result = await getSubmission(token);
+        let getSubmissionStatus = true;
+        let result = null;
+        while (getSubmissionStatus) {
+          result = await getSubmission(token);
+          console.log('result = ', result);
+
           if (result) {
-            response = result;
+            if (result.status.description === 'Accepted') {
+              response = result;
+              getSubmissionStatus = false;
+            } else {
+              if (result.stderr === null) {
+                result = await getSubmission(token);
+              } else {
+                response = result;
+                getSubmissionStatus = false;
+              }
+            }
           }
         }
       }
