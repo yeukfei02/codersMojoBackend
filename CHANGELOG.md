@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.26](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.25...v0.0.26) (2020-10-14)
+
 ### [0.0.25](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.24...v0.0.25) (2020-10-11)
 
 ### [0.0.24](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.23...v0.0.24) (2020-10-10)
