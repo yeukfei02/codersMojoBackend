@@ -2013,6 +2013,133 @@
 				{
 					"name": "/posts/{id}",
 					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmNTQ0YzJjLWI1OWYtNDZiMC1iMjQ3LTE4Nzc2NjUxYzU0NSIsImlhdCI6MTYwMzYxNTI2MiwiZXhwIjoxNjAzNzAxNjYyfQ.1B1wjl-7sfAcb9u_CbE8TGtw6qfPuxi4ZdLGs3gDPVc"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/posts/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts",
+								"1"
+							]
+						},
+						"description": "/posts/{id}"
+					},
+					"response": [
+						{
+							"name": "/posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ0YjQzM2JmLTQxNjMtNDNlNi04ZmQ1LTVjNzViMGFhMDczNCIsImlhdCI6MTYwMDE1NTc2MywiZXhwIjoxNjAwMjQyMTYzfQ.T7KsqbKqYSUxNj-TbenLYjg6-kl_0sQxJQVOYHMw_Q4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/posts?tag=Career",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"posts"
+									],
+									"query": [
+										{
+											"key": "tag",
+											"value": "Career"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "288"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 15 Sep 2020 07:43:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"getPosts\",\n    \"result\": [\n        {\n            \"posts_id\": 1,\n            \"title\": \"post title\",\n            \"description\": \"post description\",\n            \"tag\": \"Career\",\n            \"users_id\": 1,\n            \"created_by\": \"2020-09-15T07:42:52.168Z\",\n            \"updated_by\": \"2020-09-15T07:42:52.169Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "/posts/{id}",
+					"request": {
 						"method": "DELETE",
 						"header": [
 							{
@@ -2134,6 +2261,159 @@
 				}
 			],
 			"description": "posts",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "/comments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE2MzM4YTZhLTA5ZDUtNDgwZS1hNjgxLThjMDlkMDAyYjkzZiIsImlhdCI6MTYwMzYwODI0MywiZXhwIjoxNjAzNjk0NjQzfQ.TX-M6Qtm-3t9DpeFQM_rp0D2waSK0wKbfc6sTvQOQFE"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"commentsText\": \"test\",\n\t\"posts_id\": 1,\n    \"users_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/comments",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"comments"
+							]
+						},
+						"description": "/comments"
+					},
+					"response": [
+						{
+							"name": "/comments",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE2MzM4YTZhLTA5ZDUtNDgwZS1hNjgxLThjMDlkMDAyYjkzZiIsImlhdCI6MTYwMzYwODI0MywiZXhwIjoxNjAzNjk0NjQzfQ.TX-M6Qtm-3t9DpeFQM_rp0D2waSK0wKbfc6sTvQOQFE"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"commentsText\": \"test\",\n\t\"posts_id\": 3,\n    \"users_id\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/api/comments",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"comments"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin, Accept-Encoding"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 25 Oct 2020 07:04:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"createComments\"\n}"
+						}
+					]
+				}
+			],
+			"description": "comments",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3d9c0fca-36bb-4f56-903c-f00c57126800",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "04921917-2e5c-4fb7-a81f-e71836c3ac0a",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
 			"protocolProfileBehavior": {}
 		},
 		{
