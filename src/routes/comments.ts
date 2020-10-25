@@ -7,6 +7,5 @@ import * as commentsController from '../controller/comments';
 import { isUserLoggedIn } from '../middleware/middleware';
 
 router.post('/api/comments', isUserLoggedIn, commentsController.createComments);
-router.get('/api/comments', isUserLoggedIn, commentsController.getComments);
 
 export default router;

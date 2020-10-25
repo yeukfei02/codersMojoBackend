@@ -16,15 +16,3 @@ export const createComments = async (ctx: Koa.Context, next: () => Promise<any>)
     };
   }
 };
-
-export const getComments = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
-  const postsId = parseInt(ctx.query.posts_id, 10);
-
-  const commentsList = await commentsService.getCommentsByPostsId(postsId);
-
-  ctx.response.status = 200;
-  ctx.body = {
-    message: 'getComments',
-    result: commentsList,
-  };
-};

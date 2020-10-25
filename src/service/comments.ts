@@ -28,3 +28,11 @@ export const getCommentsByPostsId = async (posts_id: number): Promise<comments[]
   });
   return commentsList;
 };
+
+export const deleteCommentsByPostsId = async (posts_id: number): Promise<void> => {
+  await prisma.comments.deleteMany({
+    where: {
+      posts_id: posts_id,
+    },
+  });
+};
