@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_AWS_PROD_URL")
+  url      = env("DATABASE_URL")
 }
 
 model users {
@@ -63,15 +63,16 @@ model country {
 }
 
 model posts {
-  posts_id    Int      @id @default(autoincrement())
+  posts_id    Int        @id @default(autoincrement())
   title       String
   description String
   tag         String
-  like_count  Int?     @default(0)
+  like_count  Int?       @default(0)
   users_id    Int?
-  created_by  DateTime @default(now())
-  updated_by  DateTime @default(now())
-  users       users?   @relation(fields: [users_id], references: [users_id])
+  created_by  DateTime   @default(now())
+  updated_by  DateTime   @default(now())
+  users       users?     @relation(fields: [users_id], references: [users_id])
+  comments    comments[]
 }
 
 model firebase_details {
@@ -177,5 +178,6 @@ model comments {
   users_id      Int?
   created_by    DateTime @default(now())
   updated_by    DateTime @default(now())
+  posts         posts?   @relation(fields: [posts_id], references: [posts_id])
   users         users?   @relation(fields: [users_id], references: [users_id])
 }

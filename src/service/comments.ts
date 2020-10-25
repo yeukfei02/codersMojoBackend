@@ -6,7 +6,11 @@ export const createComments = async (commentsText: string, posts_id: number, use
   await prisma.comments.create({
     data: {
       comments_text: commentsText,
-      posts_id: posts_id,
+      posts: {
+        connect: {
+          posts_id: posts_id,
+        },
+      },
       users: {
         connect: {
           users_id: users_id,
