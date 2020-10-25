@@ -1,4 +1,4 @@
-import { PrismaClient, posts } from '@prisma/client';
+import { PrismaClient, posts, users } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
@@ -18,7 +18,11 @@ export const createPosts = async (title: string, description: string, tag: strin
 };
 
 export const getPosts = async (): Promise<posts[]> => {
-  const postsList = await prisma.posts.findMany();
+  const postsList = await prisma.posts.findMany({
+    orderBy: {
+      posts_id: 'asc',
+    },
+  });
   return postsList;
 };
 
@@ -27,8 +31,29 @@ export const getPostsByTag = async (tag: string): Promise<posts[]> => {
     where: {
       tag: tag,
     },
+    orderBy: {
+      posts_id: 'asc',
+    },
   });
   return postsList;
+};
+
+export const addPostsLikeCount = async (posts_id: number): Promise<void> => {
+  const posts = await prisma.posts.findOne({
+    where: {
+      posts_id: posts_id,
+    },
+  });
+  const newLikeCount = (posts.like_count += 1);
+
+  await prisma.posts.update({
+    data: {
+      like_count: newLikeCount,
+    },
+    where: {
+      posts_id: posts_id,
+    },
+  });
 };
 
 export const deletePostsById = async (postId: number): Promise<posts> => {

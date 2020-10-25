@@ -4,7 +4,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = env("DATABASE_AWS_PROD_URL")
 }
 
 model users {
@@ -15,6 +15,7 @@ model users {
   password           String
   created_by         DateTime             @default(now())
   updated_by         DateTime             @default(now())
+  comments           comments[]
   firebase_details   firebase_details[]
   invite_friends     invite_friends[]
   past_interview     past_interview[]
@@ -66,6 +67,7 @@ model posts {
   title       String
   description String
   tag         String
+  like_count  Int?     @default(0)
   users_id    Int?
   created_by  DateTime @default(now())
   updated_by  DateTime @default(now())
@@ -166,4 +168,14 @@ model women_investor_community {
   status                      String
   created_by                  DateTime @default(now())
   updated_by                  DateTime @default(now())
+}
+
+model comments {
+  comments_id   Int      @id @default(autoincrement())
+  comments_text String
+  posts_id      Int?
+  users_id      Int?
+  created_by    DateTime @default(now())
+  updated_by    DateTime @default(now())
+  users         users?   @relation(fields: [users_id], references: [users_id])
 }

@@ -50,6 +50,16 @@ create table posts (
     title varchar(255) NOT NULL,
     description text NOT NULL,
     tag varchar(255) NOT NULL,
+    like_count integer DEFAULT 0,
+    users_id integer REFERENCES users (users_id),
+    created_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
+);
+
+create table comments (
+    comments_id serial PRIMARY KEY,
+    comments_text text NOT NULL,
+    posts_id integer REFERENCES posts (posts_id),
     users_id integer REFERENCES users (users_id),
     created_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
     updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL

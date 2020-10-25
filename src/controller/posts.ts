@@ -35,6 +35,17 @@ export const getPosts = async (ctx: Koa.Context, next: () => Promise<any>): Prom
   };
 };
 
+export const addPostsLikeCount = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+  const posts_id = parseInt(ctx.params.postsId, 10);
+
+  await postsService.addPostsLikeCount(posts_id);
+
+  ctx.response.status = 200;
+  ctx.body = {
+    message: 'addPostsLikeCount',
+  };
+};
+
 export const deletePostsById = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const postsId = parseInt(ctx.params.postsId, 10);
 

@@ -6,6 +6,7 @@ import techBlogRoutes from '../routes/techBlog';
 import jobsRoutes from '../routes/jobs';
 import techSalaryRoutes from './techSalary';
 import postsRoutes from '../routes/posts';
+import commentsRoutes from '../routes/comments';
 import hackathonsRoutes from '../routes/hackathons';
 import inviteFriendsRoutes from '../routes/inviteFriends';
 import womenInvestorCommunityRoutes from '../routes/womenInvestorCommunity';
@@ -24,6 +25,7 @@ const router = combineRouters(
   jobsRoutes,
   techSalaryRoutes,
   postsRoutes,
+  commentsRoutes,
   hackathonsRoutes,
   inviteFriendsRoutes,
   womenInvestorCommunityRoutes,
