@@ -1,4 +1,6 @@
 import { PrismaClient, upcoming_interview } from '@prisma/client';
+import * as moment from 'moment';
+import * as _ from 'lodash';
 
 const prisma = new PrismaClient();
 
@@ -36,7 +38,13 @@ export const getUpcomingInterview = async (): Promise<upcoming_interview[]> => {
       full_date_time: 'desc',
     },
   });
-  return upcomingInterviewList;
+  const formattedUpcomingInterviewList = upcomingInterviewList.map((item: any, i: number) => {
+    item.full_date_time = moment(item.full_date_time).format('YYYY-MM-DD');
+    return item;
+  });
+  const orderedUpcomingInterviewList = _.orderBy(formattedUpcomingInterviewList, 'full_date_time', 'desc');
+
+  return orderedUpcomingInterviewList;
 };
 
 export const getUpcomingInterviewByUsersId = async (users_id: number): Promise<upcoming_interview[]> => {
@@ -48,7 +56,13 @@ export const getUpcomingInterviewByUsersId = async (users_id: number): Promise<u
       full_date_time: 'desc',
     },
   });
-  return upcomingInterviewList;
+  const formattedUpcomingInterviewList = upcomingInterviewList.map((item: any, i: number) => {
+    item.full_date_time = moment(item.full_date_time).format('YYYY-MM-DD');
+    return item;
+  });
+  const orderedUpcomingInterviewList = _.orderBy(formattedUpcomingInterviewList, 'full_date_time', 'desc');
+
+  return orderedUpcomingInterviewList;
 };
 
 export const cancelUpcomingInterview = async (

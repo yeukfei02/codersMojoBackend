@@ -1,4 +1,6 @@
 import { PrismaClient, past_interview } from '@prisma/client';
+import * as moment from 'moment';
+import * as _ from 'lodash';
 
 const prisma = new PrismaClient();
 
@@ -36,7 +38,13 @@ export const getPastInterview = async (): Promise<past_interview[]> => {
       full_date_time: 'desc',
     },
   });
-  return pastInterviewList;
+  const formattedPastInterviewList = pastInterviewList.map((item: any, i: number) => {
+    item.full_date_time = moment(item.full_date_time).format('YYYY-MM-DD');
+    return item;
+  });
+  const orderedPastInterviewList = _.orderBy(formattedPastInterviewList, 'full_date_time', 'desc');
+
+  return orderedPastInterviewList;
 };
 
 export const getPastInterviewByUsersId = async (users_id: number): Promise<past_interview[]> => {
@@ -48,5 +56,11 @@ export const getPastInterviewByUsersId = async (users_id: number): Promise<past_
       full_date_time: 'desc',
     },
   });
-  return pastInterviewList;
+  const formattedPastInterviewList = pastInterviewList.map((item: any, i: number) => {
+    item.full_date_time = moment(item.full_date_time).format('YYYY-MM-DD');
+    return item;
+  });
+  const orderedPastInterviewList = _.orderBy(formattedPastInterviewList, 'full_date_time', 'desc');
+
+  return orderedPastInterviewList;
 };
