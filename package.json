@@ -82,7 +82,7 @@
     "migrate:prisma:create": "npx prisma migrate save --experimental",
     "migrate:prisma:up": "npx prisma migrate up --experimental",
     "migrate:prisma:down": "npx prisma migrate down 1 --experimental",
-    "prisma-studio": "npx prisma studio --experimental",
+    "prisma-studio": "npx prisma studio",
     "commit": "npx git-cz",
     "release": "standard-version"
   },
