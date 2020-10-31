@@ -3,6 +3,7 @@ import * as _ from 'lodash';
 
 import * as mockInterviewQuestionService from '../service/mockInterviewQuestion';
 import * as upcomingInterviewService from '../service/upcomingInterview';
+import * as userService from '../service/user';
 
 export const createUpcomingInterview = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const fullDateTime = ctx.request.body.fullDateTime;
@@ -11,7 +12,7 @@ export const createUpcomingInterview = async (ctx: Koa.Context, next: () => Prom
   const upcomingInterviewStatus = ctx.request.body.upcomingInterviewStatus;
   const users_id = parseInt(ctx.request.body.users_id, 10);
 
-  if (dateTime && type && upcomingInterviewStatus && users_id) {
+  if (fullDateTime && dateTime && type && upcomingInterviewStatus && users_id) {
     const mockInterviewQuestionList = await mockInterviewQuestionService.getMockInterviewQuestionByType(type);
 
     let mockInterviewQuestionId = null;
@@ -28,10 +29,25 @@ export const createUpcomingInterview = async (ctx: Koa.Context, next: () => Prom
       );
     }
 
+    let matchPeerName = '';
+    const upcomingInterviewList = await upcomingInterviewService.getUpcomingInterviewByFilter(
+      fullDateTime,
+      type,
+      users_id,
+    );
+    if (upcomingInterviewList) {
+      const upcomingInterview = _.sample(upcomingInterviewList);
+      if (upcomingInterview) {
+        const user = await userService.getUserById(upcomingInterview.users_id);
+        matchPeerName = `${user.first_name} ${user.last_name}`;
+      }
+    }
+
     ctx.response.status = 201;
     ctx.body = {
       message: 'createUpcomingInterview',
       mockInterviewQuestionId: mockInterviewQuestionId,
+      matchPeerName: matchPeerName,
     };
   }
 };
