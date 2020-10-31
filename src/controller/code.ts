@@ -39,43 +39,47 @@ export const runCode = async (ctx: Koa.Context, next: () => Promise<any>): Promi
 async function judge0Func(ctx: Koa.Context, source: string, lang: string) {
   let response = null;
 
-  if (source && lang) {
-    const languageList = await getLanguageList();
+  try {
+    if (source && lang) {
+      const languageList = await getLanguageList();
 
-    let languageId = 0;
-    if (languageList) {
-      languageList.forEach((item: any, i: number) => {
-        if (item.name.toLowerCase().includes(lang.toLowerCase())) {
-          languageId = item.id;
-        }
-      });
-    }
+      let languageId = 0;
+      if (languageList) {
+        languageList.forEach((item: any, i: number) => {
+          if (item.name.toLowerCase().includes(lang.toLowerCase())) {
+            languageId = item.id;
+          }
+        });
+      }
 
-    if (languageId > 0) {
-      const token = await createSubmission(source, languageId);
-      if (token) {
-        let getSubmissionStatus = true;
-        let result = null;
-        while (getSubmissionStatus) {
-          result = await getSubmission(token);
-          console.log('result = ', result);
+      if (languageId > 0) {
+        const token = await createSubmission(source, languageId);
+        if (token) {
+          let getSubmissionStatus = true;
+          let result = null;
+          while (getSubmissionStatus) {
+            result = await getSubmission(token);
+            console.log('runCode result = ', result);
 
-          if (result) {
-            if (result.status.description === 'Accepted') {
-              response = result;
-              getSubmissionStatus = false;
-            } else {
-              if (result.stderr === null) {
-                result = await getSubmission(token);
-              } else {
+            if (result) {
+              if (result.status.description === 'Accepted') {
                 response = result;
                 getSubmissionStatus = false;
+              } else {
+                if (result.stderr === null && !result.compile_output) {
+                  result = await getSubmission(token);
+                } else {
+                  response = result;
+                  getSubmissionStatus = false;
+                }
               }
             }
           }
         }
       }
     }
+  } catch (e) {
+    console.log('error = ', e);
   }
 
   return response;

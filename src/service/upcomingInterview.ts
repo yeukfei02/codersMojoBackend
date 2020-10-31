@@ -47,6 +47,24 @@ export const getUpcomingInterview = async (): Promise<upcoming_interview[]> => {
   return orderedUpcomingInterviewList;
 };
 
+export const getUpcomingInterviewByFilter = async (
+  fullDateTime: string,
+  type: string,
+  users_id: number,
+): Promise<upcoming_interview[]> => {
+  const upcomingInterviewList = await prisma.upcoming_interview.findMany({
+    where: {
+      full_date_time: fullDateTime,
+      type: type,
+    },
+  });
+
+  const filteredUpcomingInterviewList = upcomingInterviewList.filter((item: any, i: number) => {
+    return item.users_id != users_id;
+  });
+  return filteredUpcomingInterviewList;
+};
+
 export const getUpcomingInterviewByUsersId = async (users_id: number): Promise<upcoming_interview[]> => {
   const upcomingInterviewList = await prisma.upcoming_interview.findMany({
     where: {
