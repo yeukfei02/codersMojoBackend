@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.30](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.29...v0.0.30) (2020-11-01)
+
+
+### Features
+
+* 🎸 add phone in signup api ([83aa746](https://github.com/yeukfei02/codersMojoBackend/commit/83aa7461c1eb716c21561e107c6ba26569fb9c8a))
+
 ### [0.0.29](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.28...v0.0.29) (2020-10-31)
 
 
