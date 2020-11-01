@@ -42,6 +42,17 @@
           "model": "users",
           "field": "users_id"
         },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "users",
+          "field": "users_id"
+        },
         "directive": "default"
       }
     },
@@ -60,17 +71,6 @@
       "value": "autoincrement()"
     },
     {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "users",
-          "field": "users_id"
-        },
-        "directive": "id"
-      }
-    },
-    {
       "tag": "CreateField",
       "model": "users",
       "field": "first_name",
@@ -81,6 +81,13 @@
       "tag": "CreateField",
       "model": "users",
       "field": "last_name",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "users",
+      "field": "phone",
       "type": "String",
       "arity": "Required"
     },
@@ -165,6 +172,13 @@
     {
       "tag": "CreateField",
       "model": "users",
+      "field": "comments",
+      "type": "comments",
+      "arity": "List"
+    },
+    {
+      "tag": "CreateField",
+      "model": "users",
       "field": "firebase_details",
       "type": "firebase_details",
       "arity": "List"
@@ -223,6 +237,17 @@
           "model": "tech_blog",
           "field": "tech_blog_id"
         },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "tech_blog",
+          "field": "tech_blog_id"
+        },
         "directive": "default"
       }
     },
@@ -239,17 +264,6 @@
       },
       "argument": "",
       "value": "autoincrement()"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "tech_blog",
-          "field": "tech_blog_id"
-        },
-        "directive": "id"
-      }
     },
     {
       "tag": "CreateField",
@@ -415,6 +429,17 @@
           "model": "jobs",
           "field": "jobs_id"
         },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "jobs",
+          "field": "jobs_id"
+        },
         "directive": "default"
       }
     },
@@ -431,17 +456,6 @@
       },
       "argument": "",
       "value": "autoincrement()"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "jobs",
-          "field": "jobs_id"
-        },
-        "directive": "id"
-      }
     },
     {
       "tag": "CreateField",
@@ -582,6 +596,17 @@
           "model": "country",
           "field": "country_id"
         },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "country",
+          "field": "country_id"
+        },
         "directive": "default"
       }
     },
@@ -598,17 +623,6 @@
       },
       "argument": "",
       "value": "autoincrement()"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "country",
-          "field": "country_id"
-        },
-        "directive": "id"
-      }
     },
     {
       "tag": "CreateField",
@@ -637,31 +651,6 @@
       "field": "iso3",
       "type": "String",
       "arity": "Optional"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "country",
-          "field": "iso3"
-        },
-        "directive": "default"
-      }
-    },
-    {
-      "tag": "CreateArgument",
-      "location": {
-        "tag": "Directive",
-        "path": {
-          "tag": "Field",
-          "model": "country",
-          "field": "iso3"
-        },
-        "directive": "default"
-      },
-      "argument": "",
-      "value": "\"NULL\""
     },
     {
       "tag": "CreateField",
@@ -760,6 +749,17 @@
           "model": "posts",
           "field": "posts_id"
         },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "posts",
+          "field": "posts_id"
+        },
         "directive": "default"
       }
     },
@@ -776,17 +776,6 @@
       },
       "argument": "",
       "value": "autoincrement()"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "posts",
-          "field": "posts_id"
-        },
-        "directive": "id"
-      }
     },
     {
       "tag": "CreateField",
@@ -808,6 +797,38 @@
       "field": "tag",
       "type": "String",
       "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "posts",
+      "field": "like_count",
+      "type": "Int",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "posts",
+          "field": "like_count"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "posts",
+          "field": "like_count"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "0"
     },
     {
       "tag": "CreateField",
@@ -927,6 +948,13 @@
       "value": "[users_id]"
     },
     {
+      "tag": "CreateField",
+      "model": "posts",
+      "field": "comments",
+      "type": "comments",
+      "arity": "List"
+    },
+    {
       "tag": "CreateModel",
       "model": "firebase_details"
     },
@@ -936,6 +964,17 @@
       "field": "firebase_details_id",
       "type": "Int",
       "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "firebase_details",
+          "field": "firebase_details_id"
+        },
+        "directive": "id"
+      }
     },
     {
       "tag": "CreateDirective",
@@ -961,17 +1000,6 @@
       },
       "argument": "",
       "value": "autoincrement()"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "firebase_details",
-          "field": "firebase_details_id"
-        },
-        "directive": "id"
-      }
     },
     {
       "tag": "CreateField",
@@ -1123,6 +1151,17 @@
           "model": "hackathons",
           "field": "hackathons_id"
         },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "hackathons",
+          "field": "hackathons_id"
+        },
         "directive": "default"
       }
     },
@@ -1139,17 +1178,6 @@
       },
       "argument": "",
       "value": "autoincrement()"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "hackathons",
-          "field": "hackathons_id"
-        },
-        "directive": "id"
-      }
     },
     {
       "tag": "CreateField",
@@ -1283,6 +1311,17 @@
           "model": "invite_friends",
           "field": "invite_friends_id"
         },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "invite_friends",
+          "field": "invite_friends_id"
+        },
         "directive": "default"
       }
     },
@@ -1299,17 +1338,6 @@
       },
       "argument": "",
       "value": "autoincrement()"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "invite_friends",
-          "field": "invite_friends_id"
-        },
-        "directive": "id"
-      }
     },
     {
       "tag": "CreateField",
@@ -1461,6 +1489,17 @@
           "model": "mock_interview_question",
           "field": "mock_interview_question_id"
         },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "mock_interview_question",
+          "field": "mock_interview_question_id"
+        },
         "directive": "default"
       }
     },
@@ -1477,17 +1516,6 @@
       },
       "argument": "",
       "value": "autoincrement()"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "mock_interview_question",
-          "field": "mock_interview_question_id"
-        },
-        "directive": "id"
-      }
     },
     {
       "tag": "CreateField",
@@ -1607,6 +1635,17 @@
           "model": "upcoming_interview",
           "field": "upcoming_interview_id"
         },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "upcoming_interview",
+          "field": "upcoming_interview_id"
+        },
         "directive": "default"
       }
     },
@@ -1623,17 +1662,6 @@
       },
       "argument": "",
       "value": "autoincrement()"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "upcoming_interview",
-          "field": "upcoming_interview_id"
-        },
-        "directive": "id"
-      }
     },
     {
       "tag": "CreateField",
@@ -1852,6 +1880,17 @@
           "model": "past_interview",
           "field": "past_interview_id"
         },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "past_interview",
+          "field": "past_interview_id"
+        },
         "directive": "default"
       }
     },
@@ -1868,17 +1907,6 @@
       },
       "argument": "",
       "value": "autoincrement()"
-    },
-    {
-      "tag": "CreateDirective",
-      "location": {
-        "path": {
-          "tag": "Field",
-          "model": "past_interview",
-          "field": "past_interview_id"
-        },
-        "directive": "id"
-      }
     },
     {
       "tag": "CreateField",
@@ -2071,6 +2099,536 @@
         "path": {
           "tag": "Field",
           "model": "past_interview",
+          "field": "users"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[users_id]"
+    },
+    {
+      "tag": "CreateModel",
+      "model": "tech_salary"
+    },
+    {
+      "tag": "CreateField",
+      "model": "tech_salary",
+      "field": "tech_salary_id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "tech_salary",
+          "field": "tech_salary_id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "tech_salary",
+          "field": "tech_salary_id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "tech_salary",
+          "field": "tech_salary_id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "tech_salary",
+      "field": "job_title",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "tech_salary",
+      "field": "company",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "tech_salary",
+      "field": "description",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "tech_salary",
+      "field": "total_compensation",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "tech_salary",
+      "field": "location",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "tech_salary",
+      "field": "created_by",
+      "type": "DateTime",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "tech_salary",
+          "field": "created_by"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "tech_salary",
+          "field": "created_by"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "now()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "tech_salary",
+      "field": "updated_by",
+      "type": "DateTime",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "tech_salary",
+          "field": "updated_by"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "tech_salary",
+          "field": "updated_by"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "now()"
+    },
+    {
+      "tag": "CreateModel",
+      "model": "women_investor_community"
+    },
+    {
+      "tag": "CreateField",
+      "model": "women_investor_community",
+      "field": "women_investor_community_id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "women_investor_community",
+          "field": "women_investor_community_id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "women_investor_community",
+          "field": "women_investor_community_id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "women_investor_community",
+          "field": "women_investor_community_id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "women_investor_community",
+      "field": "image",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "women_investor_community",
+      "field": "name",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "women_investor_community",
+      "field": "investor_type",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "women_investor_community",
+      "field": "areas_of_investment",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "women_investor_community",
+      "field": "expertise",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "women_investor_community",
+      "field": "location",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "women_investor_community",
+      "field": "status",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "women_investor_community",
+      "field": "created_by",
+      "type": "DateTime",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "women_investor_community",
+          "field": "created_by"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "women_investor_community",
+          "field": "created_by"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "now()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "women_investor_community",
+      "field": "updated_by",
+      "type": "DateTime",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "women_investor_community",
+          "field": "updated_by"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "women_investor_community",
+          "field": "updated_by"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "now()"
+    },
+    {
+      "tag": "CreateModel",
+      "model": "comments"
+    },
+    {
+      "tag": "CreateField",
+      "model": "comments",
+      "field": "comments_id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "comments",
+          "field": "comments_id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "comments",
+          "field": "comments_id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "comments",
+          "field": "comments_id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "comments",
+      "field": "comments_text",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "comments",
+      "field": "posts_id",
+      "type": "Int",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "comments",
+      "field": "users_id",
+      "type": "Int",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "comments",
+      "field": "created_by",
+      "type": "DateTime",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "comments",
+          "field": "created_by"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "comments",
+          "field": "created_by"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "now()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "comments",
+      "field": "updated_by",
+      "type": "DateTime",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "comments",
+          "field": "updated_by"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "comments",
+          "field": "updated_by"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "now()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "comments",
+      "field": "posts",
+      "type": "posts",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "comments",
+          "field": "posts"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "comments",
+          "field": "posts"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[posts_id]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "comments",
+          "field": "posts"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[posts_id]"
+    },
+    {
+      "tag": "CreateField",
+      "model": "comments",
+      "field": "users",
+      "type": "users",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "comments",
+          "field": "users"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "comments",
+          "field": "users"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[users_id]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "comments",
           "field": "users"
         },
         "directive": "relation"
