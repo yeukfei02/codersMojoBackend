@@ -3,6 +3,7 @@ create table users (
     users_id serial PRIMARY KEY,
     first_name varchar(255) NOT NULL,
     last_name varchar(255) NOT NULL,
+    phone varchar(255) NOT NULL,
     email varchar(255) NOT NULL,
     password varchar(255) NOT NULL,
     created_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL,
@@ -154,9 +155,9 @@ create table country (
     updated_by timestamp without time zone DEFAULT CURRENT_TIMESTAMP NOT NULL
 );
 
-INSERT INTO users (users_id, first_name, last_name, email, password) VALUES
-(1, 'test', 'test2', 'test@email.com', '$2b$10$5ssPBLSsOl7V1uIs59K.X.zQ2aKX6EyvtZNFX7vBlJSPSg61Z3dmW'),
-(2, 'coders', 'mojo', 'codersmojoplatform@gmail.com', '$2b$10$5ssPBLSsOl7V1uIs59K.X.zQ2aKX6EyvtZNFX7vBlJSPSg61Z3dmW');
+INSERT INTO users (users_id, first_name, last_name, phone, email, password) VALUES
+(1, 'test', 'test2', '+85298137829','test@email.com', '$2b$10$5ssPBLSsOl7V1uIs59K.X.zQ2aKX6EyvtZNFX7vBlJSPSg61Z3dmW'),
+(2, 'coders', 'mojo', '+85298137829','codersmojoplatform@gmail.com', '$2b$10$5ssPBLSsOl7V1uIs59K.X.zQ2aKX6EyvtZNFX7vBlJSPSg61Z3dmW');
 
 INSERT INTO tech_blog (tech_blog_id, image, title, description, tag, users_id) VALUES
 (1, 'https://codersmojo.s3-ap-southeast-1.amazonaws.com/tech-blog.png', 'Free Data Science and Machine Learning Books', 'Programming Languages

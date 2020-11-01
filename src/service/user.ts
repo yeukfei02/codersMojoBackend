@@ -5,6 +5,7 @@ const prisma = new PrismaClient();
 export const createUser = async (
   firstName: string,
   lastName: string,
+  phone: string,
   email: string,
   password: string,
 ): Promise<void> => {
@@ -12,6 +13,7 @@ export const createUser = async (
     data: {
       first_name: firstName,
       last_name: lastName,
+      phone: phone,
       email: email,
       password: password,
     },
