@@ -33,7 +33,7 @@ export const getMockInterviewQuestionByType = async (type: string): Promise<mock
 export const getMockInterviewQuestionById = async (
   mockInterviewQuestionId: number,
 ): Promise<mock_interview_question> => {
-  const mockInterviewQuestion = await prisma.mock_interview_question.findOne({
+  const mockInterviewQuestion = await prisma.mock_interview_question.findUnique({
     where: {
       mock_interview_question_id: mockInterviewQuestionId,
     },
