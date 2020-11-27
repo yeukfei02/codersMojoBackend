@@ -39,7 +39,7 @@ export const getPostsByTag = async (tag: string): Promise<posts[]> => {
 };
 
 export const addPostsLikeCount = async (posts_id: number): Promise<void> => {
-  const posts = await prisma.posts.findOne({
+  const posts = await prisma.posts.findUnique({
     where: {
       posts_id: posts_id,
     },
