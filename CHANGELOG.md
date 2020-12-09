@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.32](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.31...v0.0.32) (2020-12-09)
+
+
+### Bug Fixes
+
+* 🐛 use findUnique ([ed797b5](https://github.com/yeukfei02/codersMojoBackend/commit/ed797b5138df4f12e59e3fc6d3c0deb844cf00ef))
+
 ### [0.0.31](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.30...v0.0.31) (2020-11-18)
 
 ### [0.0.30](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.29...v0.0.30) (2020-11-01)
