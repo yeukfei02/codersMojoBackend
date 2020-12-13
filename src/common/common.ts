@@ -112,25 +112,18 @@ export const uploadFileToS3 = async (filePath: any, fileName: string): Promise<s
   });
 
   const BUCKET_NAME = 'codersmojo';
-
   const params = {
     Bucket: BUCKET_NAME,
     Key: `${uuidv4()}-${fileName}`,
     Body: fileContent,
   };
 
-  const s3UploadResult: Promise<any> = new Promise((resolve, reject) => {
-    s3.upload(params, (error: any, data: any) => {
-      if (!error) {
-        if (data) {
-          resolve(data.Location);
-        }
-      } else {
-        reject('error = ' + error);
-      }
-    });
-  });
+  let s3UploadResult = null;
+  const data = await s3.upload(params).promise();
+  if (data && data.Location) {
+    s3UploadResult = data.Location;
+  }
 
-  const imageUrl = await s3UploadResult;
+  const imageUrl = s3UploadResult;
   return imageUrl;
 };
