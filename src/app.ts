@@ -1,17 +1,17 @@
-import * as Koa from 'koa';
+import Koa from 'koa';
 
-import * as cors from '@koa/cors';
-import * as helmet from 'koa-helmet';
-import * as logger from 'koa-logger';
-import * as compress from 'koa-compress';
+import cors from '@koa/cors';
+import helmet from 'koa-helmet';
+import logger from 'koa-logger';
+import compress from 'koa-compress';
 const formidable = require('koa2-formidable');
-import * as bodyParser from 'koa-bodyparser';
-import * as json from 'koa-json';
+import bodyParser from 'koa-bodyparser';
+import json from 'koa-json';
 
-import * as env from 'dotenv';
+import env from 'dotenv';
 env.config();
 
-import * as cron from './cron/cron';
+import { cronStart } from './cron/cron';
 
 import router from './routes/routes';
 
@@ -43,7 +43,7 @@ app.use(json());
 app.use(router());
 
 // cron job
-cron.init();
+cronStart();
 
 app.listen(port, () => {
   console.log(`server is listening on port: ${port}`);

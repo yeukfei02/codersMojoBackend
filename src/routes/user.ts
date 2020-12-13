@@ -1,17 +1,25 @@
-import * as Router from 'koa-router';
+import Router from 'koa-router';
 
 const router = new Router();
 
-import * as userController from '../controller/user';
+import {
+  signup,
+  login,
+  forgotPassword,
+  changeUesrCredentialsFunc,
+  changePassword,
+  getAllUserFunc,
+  getUserByIdFunc,
+} from '../controller/user';
 
 import { isUserLoggedIn } from '../middleware/middleware';
 
-router.post('/api/user/signup', userController.signup);
-router.post('/api/user/login', userController.login);
-router.post('/api/user/forgot-password', userController.forgotPassword);
-router.put('/api/user/change-user-credentials/:id', isUserLoggedIn, userController.changeUesrCredentials);
-router.put('/api/user/change-password/:id', isUserLoggedIn, userController.changePassword);
-router.get('/api/user', userController.getAllUser);
-router.get('/api/user/:id', userController.getUserById);
+router.post('/api/user/signup', signup);
+router.post('/api/user/login', login);
+router.post('/api/user/forgot-password', forgotPassword);
+router.put('/api/user/change-user-credentials/:id', isUserLoggedIn, changeUesrCredentialsFunc);
+router.put('/api/user/change-password/:id', isUserLoggedIn, changePassword);
+router.get('/api/user', getAllUserFunc);
+router.get('/api/user/:id', getUserByIdFunc);
 
 export default router;

@@ -1,10 +1,10 @@
-import * as Koa from 'koa';
-import * as _ from 'lodash';
+import Koa from 'koa';
+import _ from 'lodash';
 
-import * as mockInterviewQuestionService from '../service/mockInterviewQuestion';
-import * as pastInterviewService from '../service/pastInterview';
+import { getMockInterviewQuestionByType, getMockInterviewQuestionById } from '../service/mockInterviewQuestion';
+import { createPastInterview, getPastInterview, getPastInterviewByUsersId } from '../service/pastInterview';
 
-export const createPastInterview = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const createPastInterviewFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const fullDateTime = ctx.request.body.fullDateTime;
   const dateTime = ctx.request.body.dateTime;
   const type = ctx.request.body.type;
@@ -12,20 +12,13 @@ export const createPastInterview = async (ctx: Koa.Context, next: () => Promise<
   const users_id = parseInt(ctx.request.body.users_id, 10);
 
   if (dateTime && type && pastInterviewStatus && users_id) {
-    const mockInterviewQuestionList = await mockInterviewQuestionService.getMockInterviewQuestionByType(type);
+    const mockInterviewQuestionList = await getMockInterviewQuestionByType(type);
 
     let mockInterviewQuestionId = null;
     if (mockInterviewQuestionList) {
       const randomMockInterviewQuestion = _.sample(mockInterviewQuestionList);
       mockInterviewQuestionId = randomMockInterviewQuestion.mock_interview_question_id;
-      await pastInterviewService.createPastInterview(
-        fullDateTime,
-        dateTime,
-        type,
-        pastInterviewStatus,
-        mockInterviewQuestionId,
-        users_id,
-      );
+      await createPastInterview(fullDateTime, dateTime, type, pastInterviewStatus, mockInterviewQuestionId, users_id);
     }
 
     ctx.response.status = 201;
@@ -36,14 +29,14 @@ export const createPastInterview = async (ctx: Koa.Context, next: () => Promise<
   }
 };
 
-export const getPastInterview = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const getPastInterviewFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const users_id = parseInt(ctx.query.users_id, 10);
 
   let pastInterviewList = [];
   if (!users_id) {
-    pastInterviewList = await pastInterviewService.getPastInterview();
+    pastInterviewList = await getPastInterview();
   } else {
-    pastInterviewList = await pastInterviewService.getPastInterviewByUsersId(users_id);
+    pastInterviewList = await getPastInterviewByUsersId(users_id);
   }
 
   let result = [];
@@ -51,9 +44,7 @@ export const getPastInterview = async (ctx: Koa.Context, next: () => Promise<any
     const mockInterviewQuestionList: any[] = [];
     for (let i = 0; i < pastInterviewList.length; i++) {
       const item = pastInterviewList[i];
-      const mockInterviewQuestion = await mockInterviewQuestionService.getMockInterviewQuestionById(
-        item.mock_interview_question_id,
-      );
+      const mockInterviewQuestion = await getMockInterviewQuestionById(item.mock_interview_question_id);
       mockInterviewQuestionList.push(mockInterviewQuestion);
     }
 

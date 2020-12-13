@@ -1,17 +1,17 @@
-import * as Koa from 'koa';
+import Koa from 'koa';
 
-import * as postsService from '../service/posts';
-import * as commentsService from '../service/comments';
-import * as userService from '../service/user';
+import { createPosts, getPosts, getPostsByTag, addPostsLikeCount, deletePostsById } from '../service/posts';
+import { getCommentsByPostsId, deleteCommentsByPostsId } from '../service/comments';
+import { getUserById } from '../service/user';
 
-export const createPosts = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const createPostsFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const title = ctx.request.body.title;
   const description = ctx.request.body.description;
   const tag = ctx.request.body.tag;
   const users_id = parseInt(ctx.request.body.users_id, 10);
 
   if (title && description && tag && users_id) {
-    await postsService.createPosts(title, description, tag, users_id);
+    await createPosts(title, description, tag, users_id);
 
     ctx.response.status = 201;
     ctx.body = {
@@ -20,14 +20,14 @@ export const createPosts = async (ctx: Koa.Context, next: () => Promise<any>): P
   }
 };
 
-export const getPosts = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const getPostsFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const tag = ctx.query.tag;
 
   let postsList = [];
   if (!tag) {
-    postsList = await postsService.getPosts();
+    postsList = await getPosts();
   } else {
-    postsList = await postsService.getPostsByTag(tag);
+    postsList = await getPostsByTag(tag);
   }
 
   const formattedPostsList: any[] = [];
@@ -37,14 +37,14 @@ export const getPosts = async (ctx: Koa.Context, next: () => Promise<any>): Prom
       const posts_id = item.posts_id;
 
       const commentResultList: any[] = [];
-      const commentList = await commentsService.getCommentsByPostsId(posts_id);
+      const commentList = await getCommentsByPostsId(posts_id);
       for (let index = 0; index < commentList.length; index++) {
         const comment = commentList[index];
 
         const commentText = comment.comments_text;
         const users_id = comment.users_id;
 
-        const user = await userService.getUserById(users_id);
+        const user = await getUserById(users_id);
         const name = `${user.first_name} ${user.last_name}`;
 
         const commentResult = {
@@ -69,10 +69,10 @@ export const getPosts = async (ctx: Koa.Context, next: () => Promise<any>): Prom
   };
 };
 
-export const addPostsLikeCount = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const addPostsLikeCountFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const posts_id = parseInt(ctx.params.postsId, 10);
 
-  await postsService.addPostsLikeCount(posts_id);
+  await addPostsLikeCount(posts_id);
 
   ctx.response.status = 200;
   ctx.body = {
@@ -80,13 +80,13 @@ export const addPostsLikeCount = async (ctx: Koa.Context, next: () => Promise<an
   };
 };
 
-export const deletePostsById = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const deletePostsByIdFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const postsId = parseInt(ctx.params.postsId, 10);
 
   try {
     if (postsId) {
-      await commentsService.deleteCommentsByPostsId(postsId);
-      const result = await postsService.deletePostsById(postsId);
+      await deleteCommentsByPostsId(postsId);
+      const result = await deletePostsById(postsId);
 
       ctx.response.status = 200;
       ctx.body = {

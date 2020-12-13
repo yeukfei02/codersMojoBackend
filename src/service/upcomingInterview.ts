@@ -1,6 +1,6 @@
 import { PrismaClient, upcoming_interview } from '@prisma/client';
-import * as moment from 'moment';
-import * as _ from 'lodash';
+import moment from 'moment';
+import _ from 'lodash';
 
 const prisma = new PrismaClient();
 

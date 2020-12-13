@@ -1,12 +1,12 @@
-import * as Router from 'koa-router';
+import Router from 'koa-router';
 
 const router = new Router();
 
-import * as hackathonsController from '../controller/hackathons';
+import { createHackathonsFunc, getHackathonsFunc } from '../controller/hackathons';
 
 import { isUserLoggedIn } from '../middleware/middleware';
 
-router.post('/api/hackathons', hackathonsController.createHackathons);
-router.get('/api/hackathons', isUserLoggedIn, hackathonsController.getHackathons);
+router.post('/api/hackathons', createHackathonsFunc);
+router.get('/api/hackathons', isUserLoggedIn, getHackathonsFunc);
 
 export default router;

@@ -1,9 +1,9 @@
-import * as Router from 'koa-router';
+import Router from 'koa-router';
 
 const router = new Router();
 
-import * as countryController from '../controller/country';
+import { getCountryFunc } from '../controller/country';
 
-router.get('/api/country', countryController.getCountry);
+router.get('/api/country', getCountryFunc);
 
 export default router;

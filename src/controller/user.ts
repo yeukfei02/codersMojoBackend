@@ -1,10 +1,17 @@
-import * as Koa from 'koa';
-import * as jwt from 'jsonwebtoken';
-import * as bcrypt from 'bcryptjs';
+import Koa from 'koa';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 import { v4 as uuidv4 } from 'uuid';
-import * as crypto from 'crypto';
+import crypto from 'crypto';
 
-import * as userService from '../service/user';
+import {
+  getUserByEmail,
+  createUser,
+  updateUserPassword,
+  changeUesrCredentials,
+  getAllUser,
+  getUserById,
+} from '../service/user';
 import { sendForgotPasswordEmail } from '../common/common';
 
 export const signup = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
@@ -15,9 +22,9 @@ export const signup = async (ctx: Koa.Context, next: () => Promise<any>): Promis
   const password = bcrypt.hashSync(ctx.request.body.password, 10);
 
   if (email && password) {
-    const record = await userService.getUserByEmail(email);
+    const record = await getUserByEmail(email);
     if (!record) {
-      await userService.createUser(firstName, lastName, phone, email, password);
+      await createUser(firstName, lastName, phone, email, password);
 
       ctx.response.status = 201;
       ctx.body = {
@@ -37,7 +44,7 @@ export const login = async (ctx: Koa.Context, next: () => Promise<any>): Promise
   const password = ctx.request.body.password;
 
   if (email && password) {
-    const user = await userService.getUserByEmail(email);
+    const user = await getUserByEmail(email);
     if (user) {
       const userPasswordFromDB = user.password;
 
@@ -82,7 +89,7 @@ export const forgotPassword = async (ctx: Koa.Context, next: () => Promise<any>)
   const email = ctx.request.body.email;
 
   if (email) {
-    const user = await userService.getUserByEmail(email);
+    const user = await getUserByEmail(email);
     if (user) {
       const id = user.users_id;
       const newPassword = crypto.randomBytes(20).toString('hex');
@@ -90,7 +97,7 @@ export const forgotPassword = async (ctx: Koa.Context, next: () => Promise<any>)
 
       sendForgotPasswordEmail(email, newPassword);
 
-      const result = await userService.updateUserPassword(id, newPasswordHash);
+      const result = await updateUserPassword(id, newPasswordHash);
       if (result) {
         ctx.response.status = 200;
         ctx.body = {
@@ -117,12 +124,12 @@ export const changePassword = async (ctx: Koa.Context, next: () => Promise<any>)
   const newPassword = ctx.request.body.newPassword;
 
   if (id) {
-    const user = await userService.getUserById(id);
+    const user = await getUserById(id);
     if (user) {
       const userPasswordFromDB = user.password;
       if (bcrypt.compareSync(oldPassword, userPasswordFromDB)) {
         const newPasswordHash = bcrypt.hashSync(newPassword, 10);
-        const result = await userService.updateUserPassword(id, newPasswordHash);
+        const result = await updateUserPassword(id, newPasswordHash);
         if (result) {
           ctx.response.status = 200;
           ctx.body = {
@@ -149,15 +156,15 @@ export const changePassword = async (ctx: Koa.Context, next: () => Promise<any>)
   }
 };
 
-export const changeUesrCredentials = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const changeUesrCredentialsFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const id = parseInt(ctx.params.id, 10);
   const firstName = ctx.request.body.firstName;
   const lastName = ctx.request.body.lastName;
 
   if (id) {
-    const user = await userService.getUserById(id);
+    const user = await getUserById(id);
     if (user) {
-      const result = await userService.changeUesrCredentials(id, firstName, lastName);
+      const result = await changeUesrCredentials(id, firstName, lastName);
       if (result) {
         ctx.response.status = 200;
         ctx.body = {
@@ -178,8 +185,8 @@ export const changeUesrCredentials = async (ctx: Koa.Context, next: () => Promis
   }
 };
 
-export const getAllUser = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
-  const userList = await userService.getAllUser();
+export const getAllUserFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+  const userList = await getAllUser();
 
   let result: any[] = [];
   if (userList) {
@@ -193,9 +200,9 @@ export const getAllUser = async (ctx: Koa.Context, next: () => Promise<any>): Pr
   };
 };
 
-export const getUserById = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const getUserByIdFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const id = parseInt(ctx.params.id, 10);
-  const user = await userService.getUserById(id);
+  const user = await getUserById(id);
 
   let result = {};
   if (user) {
