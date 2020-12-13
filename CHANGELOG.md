@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.33](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.32...v0.0.33) (2020-12-13)
+
+
+### Bug Fixes
+
+* 🐛 fix uploadFileToS3 to async await ([52653e2](https://github.com/yeukfei02/codersMojoBackend/commit/52653e2b5bdd32404932a6f9a529e357a3a30617))
+
 ### [0.0.32](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.31...v0.0.32) (2020-12-09)
 
 
