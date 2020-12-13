@@ -1,9 +1,9 @@
-import * as Koa from 'koa';
+import Koa from 'koa';
 
-import * as countryService from '../service/country';
+import { getCountry } from '../service/country';
 
-export const getCountry = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
-  const countryList = await countryService.getCountry();
+export const getCountryFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+  const countryList = await getCountry();
 
   ctx.response.status = 200;
   ctx.body = {

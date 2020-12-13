@@ -1,9 +1,9 @@
-import * as Koa from 'koa';
-import * as crypto from 'crypto';
-import * as _ from 'lodash';
+import Koa from 'koa';
+import crypto from 'crypto';
+import _ from 'lodash';
 
-import * as inviteFriendsService from '../service/inviteFriends';
-import * as userService from '../service/user';
+import { getInviteFriendsByUsersId, createInviteFriends } from '../service/inviteFriends';
+import { getUserById } from '../service/user';
 
 import { sendInviteFriendsEmail } from '../common/common';
 
@@ -12,7 +12,7 @@ export const sendInviteFriendsEmailFunc = async (ctx: Koa.Context, next: () => P
   const users_id = parseInt(ctx.request.body.users_id, 10);
 
   if (email) {
-    const user = await userService.getUserById(users_id);
+    const user = await getUserById(users_id);
     const username = `${user.first_name} ${user.last_name}`;
     sendInviteFriendsEmail(email, username);
 
@@ -28,13 +28,13 @@ export const getShareYourInviteLink = async (ctx: Koa.Context, next: () => Promi
   const users_id = parseInt(ctx.params.users_id, 10);
 
   if (users_id) {
-    const existingInviteFriends = await inviteFriendsService.getInviteFriendsByUsersId(users_id);
+    const existingInviteFriends = await getInviteFriendsByUsersId(users_id);
 
     let inviteLink = '';
     if (_.isEmpty(existingInviteFriends)) {
       const generatedText = crypto.randomBytes(20).toString('hex');
       inviteLink = `${hostname}${generatedText}`;
-      await inviteFriendsService.createInviteFriends(inviteLink, generatedText, users_id);
+      await createInviteFriends(inviteLink, generatedText, users_id);
     } else {
       inviteLink = existingInviteFriends[0].invite_link;
     }

@@ -1,6 +1,6 @@
-import * as Koa from 'koa';
+import Koa from 'koa';
 const mailchimp = require('@mailchimp/mailchimp_marketing');
-import * as md5 from 'md5';
+import md5 from 'md5';
 
 mailchimp.setConfig({
   apiKey: process.env.MAILCHIMP_API_KEY,

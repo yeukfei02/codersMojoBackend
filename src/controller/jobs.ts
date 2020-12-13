@@ -1,8 +1,8 @@
-import * as Koa from 'koa';
+import Koa from 'koa';
 
-import * as jobsService from '../service/jobs';
+import { createJobs, getJobs, getJobsByFilter } from '../service/jobs';
 
-export const createJobs = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const createJobsFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const type = ctx.request.body.type;
   const company = ctx.request.body.company;
   const companyUrl = ctx.request.body.companyUrl;
@@ -13,7 +13,7 @@ export const createJobs = async (ctx: Koa.Context, next: () => Promise<any>): Pr
   const url = ctx.request.body.url;
 
   if (type && department && location && title && description) {
-    await jobsService.createJobs(type, company, companyUrl, department, location, title, description, url);
+    await createJobs(type, company, companyUrl, department, location, title, description, url);
 
     ctx.response.status = 201;
     ctx.body = {
@@ -22,16 +22,16 @@ export const createJobs = async (ctx: Koa.Context, next: () => Promise<any>): Pr
   }
 };
 
-export const getJobs = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const getJobsFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const type = ctx.query.type;
   const department = ctx.query.department;
   const location = ctx.query.location;
 
   let jobsList = [];
   if (!type && !department && !location) {
-    jobsList = await jobsService.getJobs();
+    jobsList = await getJobs();
   } else {
-    jobsList = await jobsService.getJobsByFilter(type, department, location);
+    jobsList = await getJobsByFilter(type, department, location);
   }
 
   ctx.response.status = 200;

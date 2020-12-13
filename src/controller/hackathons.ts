@@ -1,8 +1,8 @@
-import * as Koa from 'koa';
+import Koa from 'koa';
 
-import * as hackathonsService from '../service/hackathons';
+import { createHackathons, getHackathons, getHackathonsByFilter } from '../service/hackathons';
 
-export const createHackathons = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const createHackathonsFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const name = ctx.request.body.name;
   const mode = ctx.request.body.mode;
   const prize = ctx.request.body.prize;
@@ -11,7 +11,7 @@ export const createHackathons = async (ctx: Koa.Context, next: () => Promise<any
   const link = ctx.request.body.link;
 
   if (name && mode && prize && details && dateTime && link) {
-    await hackathonsService.createHackathons(name, mode, prize, details, dateTime, link);
+    await createHackathons(name, mode, prize, details, dateTime, link);
 
     ctx.response.status = 201;
     ctx.body = {
@@ -20,14 +20,14 @@ export const createHackathons = async (ctx: Koa.Context, next: () => Promise<any
   }
 };
 
-export const getHackathons = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const getHackathonsFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const name = ctx.query.name;
 
   let hackathonsList = [];
   if (!name) {
-    hackathonsList = await hackathonsService.getHackathons();
+    hackathonsList = await getHackathons();
   } else {
-    hackathonsList = await hackathonsService.getHackathonsByFilter(name);
+    hackathonsList = await getHackathonsByFilter(name);
   }
 
   ctx.response.status = 200;

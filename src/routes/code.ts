@@ -1,9 +1,9 @@
-import * as Router from 'koa-router';
+import Router from 'koa-router';
 
 const router = new Router();
 
-import * as codeController from '../controller/code';
+import { runCode } from '../controller/code';
 
-router.post('/api/code/run', codeController.runCode);
+router.post('/api/code/run', runCode);
 
 export default router;

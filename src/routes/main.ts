@@ -1,9 +1,9 @@
-import * as Router from 'koa-router';
+import Router from 'koa-router';
 
 const router = new Router();
 
-import * as mainController from '../controller/main';
+import { getMain } from '../controller/main';
 
-router.get('/', mainController.getMain);
+router.get('/', getMain);
 
 export default router;
