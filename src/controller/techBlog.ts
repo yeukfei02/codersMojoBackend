@@ -1,8 +1,8 @@
-import * as Koa from 'koa';
+import Koa from 'koa';
 
 import { uploadFileToS3 } from '../common/common';
 
-import * as techBlogService from '../service/techBlog';
+import { createTechBlog, getTechBlog, getTechBlogByTag } from '../service/techBlog';
 
 export const uploadTechBlogFile = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const files = (ctx.request as any).files;
@@ -19,7 +19,7 @@ export const uploadTechBlogFile = async (ctx: Koa.Context, next: () => Promise<a
   };
 };
 
-export const createTechBlog = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const createTechBlogFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const image = ctx.request.body.image;
   const title = ctx.request.body.title;
   const description = ctx.request.body.description;
@@ -27,7 +27,7 @@ export const createTechBlog = async (ctx: Koa.Context, next: () => Promise<any>)
   const users_id = parseInt(ctx.request.body.users_id, 10);
 
   if (image && title && description && tag && users_id) {
-    await techBlogService.createTechBlog(image, title, description, tag, users_id);
+    await createTechBlog(image, title, description, tag, users_id);
 
     ctx.response.status = 201;
     ctx.body = {
@@ -36,14 +36,14 @@ export const createTechBlog = async (ctx: Koa.Context, next: () => Promise<any>)
   }
 };
 
-export const getTechBlog = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const getTechBlogFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const tag = ctx.query.tag;
 
   let techBlogList = [];
   if (!tag) {
-    techBlogList = await techBlogService.getTechBlog();
+    techBlogList = await getTechBlog();
   } else {
-    techBlogList = await techBlogService.getTechBlogByTag(tag);
+    techBlogList = await getTechBlogByTag(tag);
   }
 
   ctx.response.status = 200;

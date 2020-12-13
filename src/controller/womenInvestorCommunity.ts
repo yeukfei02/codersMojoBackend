@@ -1,8 +1,12 @@
-import * as Koa from 'koa';
+import Koa from 'koa';
 
 import { uploadFileToS3 } from '../common/common';
 
-import * as womenInvestorCommunityService from '../service/womenInvestorCommunity';
+import {
+  createWomenInvestorCommunity,
+  getWomenInvestorCommunity,
+  getWomenInvestorCommunityByFilter,
+} from '../service/womenInvestorCommunity';
 
 export const uploadWomenInvestorCommunityFile = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const files = (ctx.request as any).files;
@@ -19,7 +23,7 @@ export const uploadWomenInvestorCommunityFile = async (ctx: Koa.Context, next: (
   };
 };
 
-export const createWomenInvestorCommunity = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const createWomenInvestorCommunityFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const image = ctx.request.body.image;
   const name = ctx.request.body.name;
   const investorType = ctx.request.body.investorType;
@@ -29,15 +33,7 @@ export const createWomenInvestorCommunity = async (ctx: Koa.Context, next: () =>
   const connectStatus = ctx.request.body.connectStatus;
 
   if (image && name && investorType && areaOfInvestment && expertise && location && connectStatus) {
-    await womenInvestorCommunityService.createWomenInvestorCommunity(
-      image,
-      name,
-      investorType,
-      areaOfInvestment,
-      expertise,
-      location,
-      connectStatus,
-    );
+    await createWomenInvestorCommunity(image, name, investorType, areaOfInvestment, expertise, location, connectStatus);
 
     ctx.response.status = 201;
     ctx.body = {
@@ -46,20 +42,16 @@ export const createWomenInvestorCommunity = async (ctx: Koa.Context, next: () =>
   }
 };
 
-export const getWomenInvestorCommunity = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const getWomenInvestorCommunityFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const name = ctx.query.name;
   const expertise = ctx.query.expertise;
   const location = ctx.query.location;
 
   let womenInvestorCommunityList = [];
   if (!name && !expertise && !location) {
-    womenInvestorCommunityList = await womenInvestorCommunityService.getWomenInvestorCommunity();
+    womenInvestorCommunityList = await getWomenInvestorCommunity();
   } else {
-    womenInvestorCommunityList = await womenInvestorCommunityService.getWomenInvestorCommunityByFilter(
-      name,
-      expertise,
-      location,
-    );
+    womenInvestorCommunityList = await getWomenInvestorCommunityByFilter(name, expertise, location);
   }
 
   ctx.response.status = 200;

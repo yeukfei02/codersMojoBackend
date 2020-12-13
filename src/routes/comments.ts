@@ -1,11 +1,11 @@
-import * as Router from 'koa-router';
+import Router from 'koa-router';
 
 const router = new Router();
 
-import * as commentsController from '../controller/comments';
+import { createCommentsFunc } from '../controller/comments';
 
 import { isUserLoggedIn } from '../middleware/middleware';
 
-router.post('/api/comments', isUserLoggedIn, commentsController.createComments);
+router.post('/api/comments', isUserLoggedIn, createCommentsFunc);
 
 export default router;

@@ -1,8 +1,8 @@
-import * as Koa from 'koa';
+import Koa from 'koa';
 
-import * as techSalaryService from '../service/techSalary';
+import { createTechSalary, getTechSalary, getTechSalaryByFilter } from '../service/techSalary';
 
-export const createTechSalary = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const createTechSalaryFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const jobTitle = ctx.request.body.jobTitle;
   const company = ctx.request.body.company;
   const description = ctx.request.body.description;
@@ -10,7 +10,7 @@ export const createTechSalary = async (ctx: Koa.Context, next: () => Promise<any
   const location = ctx.request.body.location;
 
   if (jobTitle && company && description && totalCompensation && location) {
-    await techSalaryService.createTechSalary(jobTitle, company, description, totalCompensation, location);
+    await createTechSalary(jobTitle, company, description, totalCompensation, location);
 
     ctx.response.status = 201;
     ctx.body = {
@@ -19,16 +19,16 @@ export const createTechSalary = async (ctx: Koa.Context, next: () => Promise<any
   }
 };
 
-export const getTechSalary = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const getTechSalaryFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const jobTitle = ctx.query.jobTitle;
   const company = ctx.query.company;
   const location = ctx.query.location;
 
   let techSalaryList = [];
   if (!jobTitle && !company && !location) {
-    techSalaryList = await techSalaryService.getTechSalary();
+    techSalaryList = await getTechSalary();
   } else {
-    techSalaryList = await techSalaryService.getTechSalaryByFilter(jobTitle, company, location);
+    techSalaryList = await getTechSalaryByFilter(jobTitle, company, location);
   }
 
   ctx.response.status = 200;

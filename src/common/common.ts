@@ -1,7 +1,7 @@
-import * as mailgun from 'mailgun-js';
-import * as fs from 'fs';
-import * as path from 'path';
-import * as AWS from 'aws-sdk';
+import mailgun from 'mailgun-js';
+import fs from 'fs';
+import path from 'path';
+import AWS from 'aws-sdk';
 import { v4 as uuidv4 } from 'uuid';
 
 const getMailgun = () => {

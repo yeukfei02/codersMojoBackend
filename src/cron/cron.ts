@@ -1,11 +1,11 @@
-import * as cron from 'node-cron';
+import cron from 'node-cron';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
 import axios from 'axios';
-import * as _ from 'lodash';
+import _ from 'lodash';
 
-import * as hackathonsService from '../service/hackathons';
-import * as jobsService from '../service/jobs';
-import * as techSalaryService from '../service/techSalary';
+import { getHackathonsByName, createHackathons } from '../service/hackathons';
+import { getJobsByCompanyAndTitle, createJobs } from '../service/jobs';
+import { getTechSalaryByJobTitleAndCompany, createTechSalary } from '../service/techSalary';
 
 const fetchHackathonsDataFromGoogleSheet = async () => {
   const doc = new GoogleSpreadsheet('13869Q8PPsqLkfVCuQkgu091E0NPf0zlpY4ZU-CIZJms');
@@ -31,9 +31,8 @@ const fetchHackathonsDataFromGoogleSheet = async () => {
       const dateTime = rowData[3];
       const link = rowData[5];
 
-      const existingHackathons = await hackathonsService.getHackathonsByName(name);
-      if (_.isEmpty(existingHackathons))
-        await hackathonsService.createHackathons(name, mode, prize, details, dateTime, link);
+      const existingHackathons = await getHackathonsByName(name);
+      if (_.isEmpty(existingHackathons)) await createHackathons(name, mode, prize, details, dateTime, link);
     });
   }
 };
@@ -89,9 +88,9 @@ const fetchJobsDataFromGithubJobs = async () => {
 
             const url = item.url;
 
-            const existingJobs = await jobsService.getJobsByCompanyAndTitle(company, title);
+            const existingJobs = await getJobsByCompanyAndTitle(company, title);
             if (_.isEmpty(existingJobs)) {
-              await jobsService.createJobs(type, company, companyUrl, department, location, title, description, url);
+              await createJobs(type, company, companyUrl, department, location, title, description, url);
             }
           });
         }
@@ -114,9 +113,9 @@ const fetchTechSalaryDataFromLevelsFyi = async () => {
           const totalCompensation = `${item.totalyearlycompensation}k p.a.`;
           const location = item.location;
 
-          const existingTechSalary = await techSalaryService.getTechSalaryByJobTitleAndCompany(jobTitle, company);
+          const existingTechSalary = await getTechSalaryByJobTitleAndCompany(jobTitle, company);
           if (_.isEmpty(existingTechSalary)) {
-            await techSalaryService.createTechSalary(jobTitle, company, description, totalCompensation, location);
+            await createTechSalary(jobTitle, company, description, totalCompensation, location);
           }
         });
       }
@@ -148,7 +147,7 @@ const scheduleFetchTechSalary = (scheduleTime: string) => {
   });
 };
 
-export const init = (): void => {
+export const cronStart = (): void => {
   // fetch hackathons data from google sheet every 1 hour
   scheduleFetchHackathons('0 * * * *');
 
@@ -158,5 +157,3 @@ export const init = (): void => {
   // fetch tech salary data from levels.fyi every 1 hour
   scheduleFetchTechSalary('0 * * * *');
 };
-
-export default cron;

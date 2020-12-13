@@ -1,9 +1,9 @@
-import * as Koa from 'koa';
-import * as admin from 'firebase-admin';
-import * as _ from 'lodash';
+import Koa from 'koa';
+import admin from 'firebase-admin';
+import _ from 'lodash';
 
-import * as userService from '../service/user';
-import * as firebaseService from '../service/firebase';
+import { getUserById } from '../service/user';
+import { getFirebaseDetailsByCurrentToken, addTokenToFirebaseDetails } from '../service/firebase';
 
 const serviceAccount = {
   type: process.env.FIREBASE_ADMIN_TYPE,
@@ -22,15 +22,15 @@ admin.initializeApp({
   credential: admin.credential.cert(JSON.parse(serviceAccountStr)),
 });
 
-export const addTokenToFirebaseDetails = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
+export const addTokenToFirebaseDetailsFunc = async (ctx: Koa.Context, next: () => Promise<any>): Promise<void> => {
   const currentToken = ctx.request.body.currentToken;
   const refreshedToken = ctx.request.body.refreshedToken;
   const users_id = parseInt(ctx.request.body.users_id, 10);
 
   if (users_id) {
-    const firebaseDetails = await firebaseService.getFirebaseDetailsByCurrentToken(currentToken);
+    const firebaseDetails = await getFirebaseDetailsByCurrentToken(currentToken);
     if (_.isEmpty(firebaseDetails)) {
-      await firebaseService.addTokenToFirebaseDetails(currentToken, refreshedToken, users_id);
+      await addTokenToFirebaseDetails(currentToken, refreshedToken, users_id);
       ctx.response.status = 201;
       ctx.body = {
         message: 'addTokenToFirebaseDetails',
@@ -50,7 +50,7 @@ export const subscribeTopic = async (ctx: Koa.Context, next: () => Promise<any>)
   const users_id = parseInt(ctx.request.body.users_id, 10);
 
   if (users_id) {
-    const user = await userService.getUserById(users_id);
+    const user = await getUserById(users_id);
     if (user) {
       const response = await admin.messaging().subscribeToTopic(registrationTokenList, topic);
       console.log('response = ', response);
@@ -76,7 +76,7 @@ export const unsubscribeTopic = async (ctx: Koa.Context, next: () => Promise<any
   const users_id = parseInt(ctx.request.body.users_id, 10);
 
   if (users_id) {
-    const user = await userService.getUserById(users_id);
+    const user = await getUserById(users_id);
     if (user) {
       const response = await admin.messaging().unsubscribeFromTopic(registrationTokenList, topic);
       console.log('response = ', response);

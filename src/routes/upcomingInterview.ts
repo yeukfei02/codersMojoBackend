@@ -1,22 +1,27 @@
-import * as Router from 'koa-router';
+import Router from 'koa-router';
 
 const router = new Router();
 
-import * as upcomingInterviewController from '../controller/upcomingInterview';
+import {
+  createUpcomingInterviewFunc,
+  getUpcomingInterviewFunc,
+  cancelUpcomingInterviewFunc,
+  rescheduleUpcomingInterviewFunc,
+} from '../controller/upcomingInterview';
 
 import { isUserLoggedIn } from '../middleware/middleware';
 
-router.post('/api/upcoming-interview', isUserLoggedIn, upcomingInterviewController.createUpcomingInterview);
-router.get('/api/upcoming-interview', isUserLoggedIn, upcomingInterviewController.getUpcomingInterview);
+router.post('/api/upcoming-interview', isUserLoggedIn, createUpcomingInterviewFunc);
+router.get('/api/upcoming-interview', isUserLoggedIn, getUpcomingInterviewFunc);
 router.put(
   '/api/upcoming-interview/cancel-upcoming-interview/:upcomingInterviewId',
   isUserLoggedIn,
-  upcomingInterviewController.cancelUpcomingInterview,
+  cancelUpcomingInterviewFunc,
 );
 router.put(
   '/api/upcoming-interview/reschedule-upcoming-interview/:upcomingInterviewId',
   isUserLoggedIn,
-  upcomingInterviewController.rescheduleUpcomingInterview,
+  rescheduleUpcomingInterviewFunc,
 );
 
 export default router;
