@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.34](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.33...v0.0.34) (2020-12-23)
+
+
+### Bug Fixes
+
+* 🐛 update prisma lib ([b2f4937](https://github.com/yeukfei02/codersMojoBackend/commit/b2f49373fa4bf86f4fdb2b5d43078b4f88de093d))
+
 ### [0.0.33](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.32...v0.0.33) (2020-12-13)
 
 
