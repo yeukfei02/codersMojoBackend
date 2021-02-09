@@ -8,7 +8,7 @@
   "dependencies": {
     "@koa/cors": "^3.1.0",
     "@mailchimp/mailchimp_marketing": "^3.0.15",
-    "@prisma/client": "^2.16.0",
+    "@prisma/client": "^2.16.1",
     "aws-sdk": "^2.755.0",
     "axios": "^0.20.0",
     "babel-polyfill": "^6.26.0",
@@ -67,7 +67,7 @@
     "husky": "^4.3.0",
     "jest": "^26.4.2",
     "prettier": "^2.1.1",
-    "prisma": "^2.16.0",
+    "prisma": "^2.16.1",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.3.0",
     "ts-node": "^9.0.0",
