@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.5](https://github.com/yeukfei02/codersMojoBackend/compare/v0.5.4...v0.5.5) (2021-04-24)
+
+
+### Bug Fixes
+
+* 🐛 add migration file ([ba5205e](https://github.com/yeukfei02/codersMojoBackend/commit/ba5205ef2144f4bd946e6284e08d786d6a0177ac))
+
 ### [0.5.4](https://github.com/yeukfei02/codersMojoBackend/compare/v0.5.3...v0.5.4) (2021-04-24)
 
 
