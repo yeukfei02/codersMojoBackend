@@ -34,6 +34,7 @@
     "moment-timezone": "^0.5.31",
     "node-cron": "^2.0.3",
     "nodemon": "^2.0.4",
+    "rimraf": "^3.0.2",
     "uuid": "^8.3.0"
   },
   "devDependencies": {
@@ -76,7 +77,7 @@
   },
   "scripts": {
     "dev": "NODE_ENV=development ts-node-dev ./src/app.ts",
-    "start": "rm -rf dist && tsc && NODE_ENV=production nodemon ./dist/app.js",
+    "start": "rimraf dist && tsc && NODE_ENV=production nodemon ./dist/app.js",
     "test": "jest --detectOpenHandles",
     "lint": "eslint '*/**/*.{ts,tsx}' --quiet --fix",
     "pull:prisma": "cd ./prisma && npx prisma db pull",
