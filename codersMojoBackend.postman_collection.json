@@ -24,11 +24,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/user/signup",
+							"raw": "{{rootUrl}}/api/user/signup",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"user",
@@ -121,6 +120,21 @@
 				},
 				{
 					"name": "/login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const jsonData = pm.response.json();",
+									"console.log(\"jsonData = \", jsonData);",
+									"if (jsonData) {",
+									"    pm.environment.set(\"jwtToken\", jsonData.token);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -134,11 +148,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/user/login",
+							"raw": "{{rootUrl}}/api/user/login",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"user",
@@ -244,11 +257,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/user/forgot-password",
+							"raw": "{{rootUrl}}/api/user/forgot-password",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"user",
@@ -342,14 +354,18 @@
 				{
 					"name": "/change-user-credentials",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU1YTk0MGJmLTEyMWItNGU0NS04NWJiLTM0NGRlNmI2NmIwYyIsImlhdCI6MTYwMDMyNjUxNiwiZXhwIjoxNjAwNDEyOTE2fQ.Pej4RHoN2QuWjuQYR94m1yv7MPC5JjW-1hxhTYhmFSI"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"firstName\": \"ok\",\n    \"lastName\": \"okok\"\n}",
@@ -360,11 +376,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/user/change-user-credentials/1",
+							"raw": "{{rootUrl}}/api/user/change-user-credentials/1",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"user",
@@ -466,14 +481,18 @@
 				{
 					"name": "/change-password",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNhZjEwMDUxLTkxNzUtNDRkYy1hZDc2LTU4OGJhOGVkYWMyZSIsImlhdCI6MTU5OTk3NTQzNSwiZXhwIjoxNjAwMDYxODM1fQ.RgnQzCgXe2LFFXTufFnpiGnp_90T_TWQZI3zsxnWcXU",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"oldPassword\": \"4021fd9c50016e34617563b00e9d880b381294a8\",\n    \"newPassword\": \"test\"\n}",
@@ -484,11 +503,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/user/change-password/1",
+							"raw": "{{rootUrl}}/api/user/change-password/1",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"user",
@@ -599,11 +617,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/user",
+							"raw": "{{rootUrl}}/api/user",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"user"
@@ -710,11 +727,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/user/1",
+							"raw": "{{rootUrl}}/api/user/1",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"user",
@@ -811,7 +827,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "4ed713d6-4527-41f6-8fcb-2d978362c769",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -821,15 +836,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "23e6a7e4-440d-4c1b-84a7-abe2313a6b42",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "tech-blog",
@@ -837,14 +850,18 @@
 				{
 					"name": "/tech-blog/upload-file",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjNTFlZWMxLTI5ZmMtNDk3ZS05YmI3LTNkMTZjZjJlZWIwNiIsImlhdCI6MTYwMDQyODY4MCwiZXhwIjoxNjAwNTE1MDgwfQ.tWw_UVqwYKN-Cq72weZkPpgodxTXVT82E_4-iOGCeN8"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -853,19 +870,13 @@
 									"type": "file",
 									"src": "/Users/donaldwu/Downloads/posts.jpg"
 								}
-							],
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/tech-blog/upload-file",
+							"raw": "{{rootUrl}}/api/tech-blog/upload-file",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"tech-blog",
@@ -971,14 +982,18 @@
 				{
 					"name": "/tech-blog",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNhZjEwMDUxLTkxNzUtNDRkYy1hZDc2LTU4OGJhOGVkYWMyZSIsImlhdCI6MTU5OTk3NTQzNSwiZXhwIjoxNjAwMDYxODM1fQ.RgnQzCgXe2LFFXTufFnpiGnp_90T_TWQZI3zsxnWcXU",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"title\": \"test title\",\n\t\"description\": \"test description\",\n\t\"tag\": \"Programming\",\n    \"users_id\": 1\n}",
@@ -989,11 +1004,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/tech-blog",
+							"raw": "{{rootUrl}}/api/tech-blog",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"tech-blog"
@@ -1100,11 +1114,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/tech-blog?tag=Programming",
+							"raw": "{{rootUrl}}/api/tech-blog?tag=Programming",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"tech-blog"
@@ -1207,8 +1220,7 @@
 					]
 				}
 			],
-			"description": "tech-blog",
-			"protocolProfileBehavior": {}
+			"description": "tech-blog"
 		},
 		{
 			"name": "jobs",
@@ -1228,11 +1240,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/jobs",
+							"raw": "{{rootUrl}}/api/jobs",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"jobs"
@@ -1333,14 +1344,18 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImIxYTE5Zjg2LWJkZWMtNDMzOC1iZGU5LWRiNjcyY2M3YjBkZSIsImlhdCI6MTYwMDg1OTA4NCwiZXhwIjoxNjAwOTQ1NDg0fQ.kCHdnw-f7bL10Tt-6dw8I30ihZUz5Q2o-9ps8B1S8m4"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -1351,11 +1366,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/jobs?type=Full Time&location=US",
+							"raw": "{{rootUrl}}/api/jobs?type=Full Time&location=US",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"jobs"
@@ -1471,8 +1485,7 @@
 					]
 				}
 			],
-			"description": "jobs",
-			"protocolProfileBehavior": {}
+			"description": "jobs"
 		},
 		{
 			"name": "tech-salary",
@@ -1480,14 +1493,18 @@
 				{
 					"name": "/tech-salary",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc4ZGY2NjE0LWM5NjAtNDc0NS05MGRkLTg4YTRiYmRjYWI4OCIsImlhdCI6MTYwMTkwNjIxNywiZXhwIjoxNjAxOTkyNjE3fQ.vpyPy4ZK42zCiIOOHtIZV7eb4xh5ridjlcdUiQltPYs",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"jobTitle\": \"Software Developer\",\n    \"company\": \"Google\",\n    \"description\": \"job description\",\n    \"totalCompensation\": \"$100000 per year\",\n    \"location\": \"US\"\n}",
@@ -1498,11 +1515,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/tech-salary",
+							"raw": "{{rootUrl}}/api/tech-salary",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"tech-salary"
@@ -1603,14 +1619,18 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRiNTFlMTFhLThmM2UtNDcwOS04OWVlLTA2OWU1ZWI2Mjc5NCIsImlhdCI6MTYwMTkwNjExNSwiZXhwIjoxNjAxOTkyNTE1fQ.KvZSRgau5WsX_pD7qY8gVXki-QabJL8Kk-kSUW-fC7Y"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -1621,11 +1641,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/tech-salary?jobTitle=Software Engineer&company=Microsoft&location=Redmond, WA",
+							"raw": "{{rootUrl}}/api/tech-salary?jobTitle=Software Engineer&company=Microsoft&location=Redmond, WA",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"tech-salary"
@@ -1749,8 +1768,7 @@
 					]
 				}
 			],
-			"description": "tech-salary",
-			"protocolProfileBehavior": {}
+			"description": "tech-salary"
 		},
 		{
 			"name": "posts",
@@ -1758,14 +1776,18 @@
 				{
 					"name": "/posts",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ0YjQzM2JmLTQxNjMtNDNlNi04ZmQ1LTVjNzViMGFhMDczNCIsImlhdCI6MTYwMDE1NTc2MywiZXhwIjoxNjAwMjQyMTYzfQ.T7KsqbKqYSUxNj-TbenLYjg6-kl_0sQxJQVOYHMw_Q4"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"title\": \"post title\",\n\t\"description\": \"post description\",\n\t\"tag\": \"Career\",\n    \"users_id\": 1\n}",
@@ -1776,11 +1798,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/posts",
+							"raw": "{{rootUrl}}/api/posts",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"posts"
@@ -1881,14 +1902,18 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ0YjQzM2JmLTQxNjMtNDNlNi04ZmQ1LTVjNzViMGFhMDczNCIsImlhdCI6MTYwMDE1NTc2MywiZXhwIjoxNjAwMjQyMTYzfQ.T7KsqbKqYSUxNj-TbenLYjg6-kl_0sQxJQVOYHMw_Q4",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -1899,11 +1924,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/posts?tag=Career",
+							"raw": "{{rootUrl}}/api/posts?tag=Career",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"posts"
@@ -2013,14 +2037,18 @@
 				{
 					"name": "/posts/{id}",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFmNTQ0YzJjLWI1OWYtNDZiMC1iMjQ3LTE4Nzc2NjUxYzU0NSIsImlhdCI6MTYwMzYxNTI2MiwiZXhwIjoxNjAzNzAxNjYyfQ.1B1wjl-7sfAcb9u_CbE8TGtw6qfPuxi4ZdLGs3gDPVc"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -2031,11 +2059,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/posts/1",
+							"raw": "{{rootUrl}}/api/posts/1",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"posts",
@@ -2140,14 +2167,18 @@
 				{
 					"name": "/posts/{id}",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNiZmM3OWE4LWIyOTctNGVhMy1hOWVlLWZmOWM1ZWVlY2JhMCIsImlhdCI6MTYwMTI4MDgyOSwiZXhwIjoxNjAxMzY3MjI5fQ.UNp2tXHmNg6pXStB-6thA7Gu0GcOk9wPZWYQhEtzPUA"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -2158,11 +2189,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/posts/2",
+							"raw": "{{rootUrl}}/api/posts/2",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"posts",
@@ -2260,8 +2290,7 @@
 					]
 				}
 			],
-			"description": "posts",
-			"protocolProfileBehavior": {}
+			"description": "posts"
 		},
 		{
 			"name": "comments",
@@ -2269,14 +2298,18 @@
 				{
 					"name": "/comments",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE2MzM4YTZhLTA5ZDUtNDgwZS1hNjgxLThjMDlkMDAyYjkzZiIsImlhdCI6MTYwMzYwODI0MywiZXhwIjoxNjAzNjk0NjQzfQ.TX-M6Qtm-3t9DpeFQM_rp0D2waSK0wKbfc6sTvQOQFE"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"commentsText\": \"test\",\n\t\"posts_id\": 1,\n    \"users_id\": 1\n}",
@@ -2287,11 +2320,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/comments",
+							"raw": "{{rootUrl}}/api/comments",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"comments"
@@ -2396,7 +2428,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "3d9c0fca-36bb-4f56-903c-f00c57126800",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2406,15 +2437,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "04921917-2e5c-4fb7-a81f-e71836c3ac0a",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "hackathons",
@@ -2434,11 +2463,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/hackathons",
+							"raw": "{{rootUrl}}/api/hackathons",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"hackathons"
@@ -2533,14 +2561,18 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU1ZjUxYzFhLTIxYzUtNGE0MS1iYzU0LTQ1YzFlNjY3Mzg4OCIsImlhdCI6MTYwMDY2MDkwOCwiZXhwIjoxNjAwNzQ3MzA4fQ.adnREUQ2P95V0YImttraBVVLdhFgUZmwEna5dCDjDPs"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -2551,11 +2583,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/hackathons?name=API World 2020 Hackathon",
+							"raw": "{{rootUrl}}/api/hackathons?name=API World 2020 Hackathon",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"hackathons"
@@ -2668,7 +2699,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "c98a4f2b-b0d1-4357-a0f7-b44c771e655d",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2678,15 +2708,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "509f8547-68fc-4cdc-825f-abce43894142",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "invite-friends",
@@ -2694,14 +2722,18 @@
 				{
 					"name": "/invite-friends",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJhM2Q1YjYwLWEzMjItNDQ2Zi1hZmRkLTY1ODE5NTBiMmE4MyIsImlhdCI6MTYwMTAzNDY4OSwiZXhwIjoxNjAxMTIxMDg5fQ.-eWUsU0XRoK7eE_4O8lz5Dpa17KGZY_PayPc1cuj0cA",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"email\": \"codersmojoplatform@gmail.com\",\n    \"users_id\": 1\n}",
@@ -2712,11 +2744,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/invite-friends",
+							"raw": "{{rootUrl}}/api/invite-friends",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"invite-friends"
@@ -2817,14 +2848,18 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImJhM2Q1YjYwLWEzMjItNDQ2Zi1hZmRkLTY1ODE5NTBiMmE4MyIsImlhdCI6MTYwMTAzNDY4OSwiZXhwIjoxNjAxMTIxMDg5fQ.-eWUsU0XRoK7eE_4O8lz5Dpa17KGZY_PayPc1cuj0cA"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -2835,11 +2870,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/invite-friends/get-share-your-invite-link/1?hostname=http://localhost:5000/",
+							"raw": "{{rootUrl}}/api/invite-friends/get-share-your-invite-link/1?hostname=http://localhost:5000/",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"invite-friends",
@@ -2944,8 +2978,7 @@
 					]
 				}
 			],
-			"description": "invite-friends",
-			"protocolProfileBehavior": {}
+			"description": "invite-friends"
 		},
 		{
 			"name": "women-investor-community",
@@ -2953,14 +2986,18 @@
 				{
 					"name": "/women-investor-community/upload-file",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNlYWZlOWY2LWVhYmMtNGM0Ni05MWQ0LTU4ZDIyY2E2Y2NlOCIsImlhdCI6MTYwMjM4ODgyMCwiZXhwIjoxNjAyNDc1MjIwfQ.U-tgrRuCidNeMFj1-2nvtKXF3hvrrLh_VEIwb_npVBs"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -2969,19 +3006,13 @@
 									"type": "file",
 									"src": "/Users/donaldwu/Downloads/tech-blog3.jpg"
 								}
-							],
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							]
 						},
 						"url": {
-							"raw": "localhost:3000/api/women-investor-community/upload-file",
+							"raw": "{{rootUrl}}/api/women-investor-community/upload-file",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"women-investor-community",
@@ -3087,14 +3118,18 @@
 				{
 					"name": "/women-investor-community",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3YTVhMzVhLWMzYjItNDY2Zi05ODUwLWNlZmM4NWJhYzRmMSIsImlhdCI6MTYwMTYyNzY2OSwiZXhwIjoxNjAxNzE0MDY5fQ.pNIxh7I6wp1H7_xRTIaj1Z_9ornhhJNSs6gAlaQOuD0"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"name\": \"Gary Law\",\n    \"investorType\": \"Angel Investor\",\n    \"areaOfInvestment\": \"Technology\",\n    \"expertise\": \"IT, Finance\",\n    \"location\": \"Hong Kong\",\n    \"connectStatus\": \"Not Connected\"\n}",
@@ -3105,11 +3140,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/women-investor-community",
+							"raw": "{{rootUrl}}/api/women-investor-community",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"women-investor-community"
@@ -3210,14 +3244,18 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE3YTVhMzVhLWMzYjItNDY2Zi05ODUwLWNlZmM4NWJhYzRmMSIsImlhdCI6MTYwMTYyNzY2OSwiZXhwIjoxNjAxNzE0MDY5fQ.pNIxh7I6wp1H7_xRTIaj1Z_9ornhhJNSs6gAlaQOuD0"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -3228,11 +3266,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/women-investor-community?expertise=IT, Finance&location=Hong Kong",
+							"raw": "{{rootUrl}}/api/women-investor-community?expertise=IT, Finance&location=Hong Kong",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"women-investor-community"
@@ -3353,7 +3390,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "65d58bfa-4004-4471-b5b8-408f482a03bd",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3363,15 +3399,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d10201a3-5178-4d0b-ae1c-941535f3103b",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "mock-interview-question",
@@ -3391,11 +3425,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/mock-interview-question",
+							"raw": "{{rootUrl}}/api/mock-interview-question",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"mock-interview-question"
@@ -3490,14 +3523,18 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMwOGQyMmMxLTRmODQtNDZhZi1iYTkzLWY1ODAyMzk0ODJhNSIsImlhdCI6MTYwMTExMjI0MSwiZXhwIjoxNjAxMTk4NjQxfQ.WheKfFbg2Z_fL1kS3NSa8amyXeMveW7x6I6eC6NXckA",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -3508,11 +3545,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/mock-interview-question?type=Data Structures and Algorithms",
+							"raw": "{{rootUrl}}/api/mock-interview-question?type=Data Structures and Algorithms",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"mock-interview-question"
@@ -3625,14 +3661,18 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMwOGQyMmMxLTRmODQtNDZhZi1iYTkzLWY1ODAyMzk0ODJhNSIsImlhdCI6MTYwMTExMjI0MSwiZXhwIjoxNjAxMTk4NjQxfQ.WheKfFbg2Z_fL1kS3NSa8amyXeMveW7x6I6eC6NXckA"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -3643,11 +3683,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/mock-interview-question/1",
+							"raw": "{{rootUrl}}/api/mock-interview-question/1",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"mock-interview-question",
@@ -3745,8 +3784,7 @@
 					]
 				}
 			],
-			"description": "mock-interview-question",
-			"protocolProfileBehavior": {}
+			"description": "mock-interview-question"
 		},
 		{
 			"name": "upcoming-interview",
@@ -3754,14 +3792,18 @@
 				{
 					"name": "/upcoming-interview",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMwOGQyMmMxLTRmODQtNDZhZi1iYTkzLWY1ODAyMzk0ODJhNSIsImlhdCI6MTYwMTExMjI0MSwiZXhwIjoxNjAxMTk4NjQxfQ.WheKfFbg2Z_fL1kS3NSa8amyXeMveW7x6I6eC6NXckA",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"fullDateTime\": \"2020-09-25 12:00:00\",\n    \"dateTime\": \"Friday, September 25th, 12:00 am\",\n    \"type\": \"Data Structures and Algorithms\",\n    \"upcomingInterviewStatus\": \"scheduled\",\n    \"users_id\": \"1\"\n}",
@@ -3772,11 +3814,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/upcoming-interview",
+							"raw": "{{rootUrl}}/api/upcoming-interview",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"upcoming-interview"
@@ -3877,14 +3918,18 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMwOGQyMmMxLTRmODQtNDZhZi1iYTkzLWY1ODAyMzk0ODJhNSIsImlhdCI6MTYwMTExMjI0MSwiZXhwIjoxNjAxMTk4NjQxfQ.WheKfFbg2Z_fL1kS3NSa8amyXeMveW7x6I6eC6NXckA"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -3895,11 +3940,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/upcoming-interview?users_id=1",
+							"raw": "{{rootUrl}}/api/upcoming-interview?users_id=1",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"upcoming-interview"
@@ -4009,14 +4053,18 @@
 				{
 					"name": "/upcoming-interview/cancel-upcoming-interview/{id}",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjMmI5OGY1LTJmMDctNGRkNy1iZTg4LWIwYzQ4ZmYwMGZjYiIsImlhdCI6MTYwMTE4NjUzMCwiZXhwIjoxNjAxMjcyOTMwfQ.jzIyD4LwlJ9dn9QvXij1l9ihi7oyPVdANNuI4JY5DyI"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"upcomingInterviewStatus\": \"cancelled\"\n}",
@@ -4027,11 +4075,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/upcoming-interview/cancel-upcoming-interview/1",
+							"raw": "{{rootUrl}}/api/upcoming-interview/cancel-upcoming-interview/1",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"upcoming-interview",
@@ -4133,14 +4180,18 @@
 				{
 					"name": "/upcoming-interview/reschedule-upcoming-interview/{id}",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJjMmI5OGY1LTJmMDctNGRkNy1iZTg4LWIwYzQ4ZmYwMGZjYiIsImlhdCI6MTYwMTE4NjUzMCwiZXhwIjoxNjAxMjcyOTMwfQ.jzIyD4LwlJ9dn9QvXij1l9ihi7oyPVdANNuI4JY5DyI"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"fullDateTime\": \"2020-09-28 04:30:00\",\n    \"dateTime\": \"Monday, September 28th, 04:30 am\"\n}",
@@ -4151,11 +4202,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/upcoming-interview/reschedule-upcoming-interview/1",
+							"raw": "{{rootUrl}}/api/upcoming-interview/reschedule-upcoming-interview/1",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"upcoming-interview",
@@ -4260,7 +4310,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "e144e068-e95d-474c-87d8-1c55cdf40778",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -4270,15 +4319,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "fe6486c7-af3c-4a26-a337-df0d4f125fcf",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "past-interview",
@@ -4286,14 +4333,18 @@
 				{
 					"name": "/past-interview",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ1NjhjNTQ1LTg0OTktNDIyMi1hZDZiLTEyYTRmM2VjNWNiOCIsImlhdCI6MTYwMTI4MzgwNywiZXhwIjoxNjAxMzcwMjA3fQ.Tx7KCEU9sqImggDiccxPYdaeLdgFGADPiJ8XPh7hiWs",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"fullDateTime\": \"2020-09-25 12:00:00\",\n    \"dateTime\": \"Friday, September 25th, 12:00 am\",\n    \"type\": \"Data Structures and Algorithms\",\n    \"pastInterviewStatus\": \"finished\",\n    \"users_id\": \"1\"\n}",
@@ -4304,11 +4355,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/past-interview",
+							"raw": "{{rootUrl}}/api/past-interview",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"past-interview"
@@ -4409,14 +4459,18 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"type": "text",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ1NjhjNTQ1LTg0OTktNDIyMi1hZDZiLTEyYTRmM2VjNWNiOCIsImlhdCI6MTYwMTI4MzgwNywiZXhwIjoxNjAxMzcwMjA3fQ.Tx7KCEU9sqImggDiccxPYdaeLdgFGADPiJ8XPh7hiWs"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -4427,11 +4481,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/past-interview?users_id=1",
+							"raw": "{{rootUrl}}/api/past-interview?users_id=1",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"past-interview"
@@ -4544,7 +4597,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "1cf15ab1-2061-4bd4-a6b1-e93cc381b898",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -4554,15 +4606,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "ef044642-824d-460c-b2b7-eedc476e5500",
 						"type": "text/javascript",
 						"exec": [
 							""
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "code",
@@ -4570,14 +4620,18 @@
 				{
 					"name": "/run",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YmNjY2E2LTBlYzAtNGQ1NS1hN2EzLWYxYTA3NGI2NDdkMSIsImlhdCI6MTYwMTM5NDY0NywiZXhwIjoxNjAxNDgxMDQ3fQ.Jt4mV1vp5dNaYGYdRiazQHJnuQgw8vS_plheFpP8kJ0",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"source\": \"function test() { console.log(123); } test();\",\n    \"lang\": \"JAVASCRIPT_NODE\"\n}",
@@ -4588,11 +4642,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/code/run",
+							"raw": "{{rootUrl}}/api/code/run",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"code",
@@ -4604,8 +4657,7 @@
 					"response": []
 				}
 			],
-			"description": "code",
-			"protocolProfileBehavior": {}
+			"description": "code"
 		},
 		{
 			"name": "country",
@@ -4628,11 +4680,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/country",
+							"raw": "{{rootUrl}}/api/country",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"country"
@@ -4722,8 +4773,7 @@
 					]
 				}
 			],
-			"description": "country",
-			"protocolProfileBehavior": {}
+			"description": "country"
 		},
 		{
 			"name": "mailchimp",
@@ -4743,11 +4793,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/mailchimp/add-contact-to-audience",
+							"raw": "{{rootUrl}}/api/mailchimp/add-contact-to-audience",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"mailchimp",
@@ -4856,11 +4905,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/mailchimp/check-contact-subscription-status?email=yeukfei02@gmail.com",
+							"raw": "{{rootUrl}}/api/mailchimp/check-contact-subscription-status?email=yeukfei02@gmail.com",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"mailchimp",
@@ -4972,11 +5020,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/mailchimp/unsubscribe-contact",
+							"raw": "{{rootUrl}}/api/mailchimp/unsubscribe-contact",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"mailchimp",
@@ -5068,8 +5115,7 @@
 					]
 				}
 			],
-			"description": "mailchimp",
-			"protocolProfileBehavior": {}
+			"description": "mailchimp"
 		},
 		{
 			"name": "firebase",
@@ -5089,11 +5135,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/firebase/add-token-to-firebase-details",
+							"raw": "{{rootUrl}}/api/firebase/add-token-to-firebase-details",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"firebase",
@@ -5199,11 +5244,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/firebase/subscribe-topic",
+							"raw": "{{rootUrl}}/api/firebase/subscribe-topic",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"firebase",
@@ -5309,11 +5353,10 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:3000/api/firebase/unsubscribe-topic",
+							"raw": "{{rootUrl}}/api/firebase/unsubscribe-topic",
 							"host": [
-								"localhost"
+								"{{rootUrl}}"
 							],
-							"port": "3000",
 							"path": [
 								"api",
 								"firebase",
@@ -5405,9 +5448,7 @@
 					]
 				}
 			],
-			"description": "firebase",
-			"protocolProfileBehavior": {}
+			"description": "firebase"
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
