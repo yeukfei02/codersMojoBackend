@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.6](https://github.com/yeukfei02/codersMojoBackend/compare/v0.5.5...v0.5.6) (2021-04-24)
+
+
+### Features
+
+* 🎸 add rimraf lib ([18aa123](https://github.com/yeukfei02/codersMojoBackend/commit/18aa123ecdd25d174b617a0b22907b494ef998e1))
+
 ### [0.5.5](https://github.com/yeukfei02/codersMojoBackend/compare/v0.5.4...v0.5.5) (2021-04-24)
 
 
