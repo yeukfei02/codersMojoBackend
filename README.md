@@ -35,8 +35,14 @@ $ yarn run lint
 ```zsh
 every time table change needs to run:
 
-// update schema.prisma from existing database, generate artifacts (e.g. Prisma Client)
+// pull the schema from an existing database, updating the Prisma schema
+$ yarn run pull:prisma
+
+// generate artifacts (e.g. Prisma Client)
 $ yarn run generate:prisma
+
+// Create migrations from your Prisma schema, apply them to the database, generate artifacts (e.g. Prisma Client)
+$ yarn run migrate:prisma
 
 // format schema.prisma
 $ yarn run format:prisma
