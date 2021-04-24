@@ -9,13 +9,13 @@ datasource db {
 
 model users {
   users_id           Int                  @id @default(autoincrement())
-  first_name         String
-  last_name          String
-  phone              String
-  email              String
-  password           String
-  created_by         DateTime             @default(now())
-  updated_by         DateTime             @default(now())
+  first_name         String               @db.VarChar(255)
+  last_name          String               @db.VarChar(255)
+  phone              String               @db.VarChar(255)
+  email              String               @db.VarChar(255)
+  password           String               @db.VarChar(255)
+  created_by         DateTime             @default(now()) @db.Timestamp(6)
+  updated_by         DateTime             @default(now()) @db.Timestamp(6)
   comments           comments[]
   firebase_details   firebase_details[]
   invite_friends     invite_friends[]
@@ -28,50 +28,50 @@ model users {
 model tech_blog {
   tech_blog_id Int      @id @default(autoincrement())
   image        String
-  title        String
+  title        String   @db.VarChar(255)
   description  String
-  tag          String
+  tag          String   @db.VarChar(255)
   users_id     Int?
-  created_by   DateTime @default(now())
-  updated_by   DateTime @default(now())
+  created_by   DateTime @default(now()) @db.Timestamp(6)
+  updated_by   DateTime @default(now()) @db.Timestamp(6)
   users        users?   @relation(fields: [users_id], references: [users_id])
 }
 
 model jobs {
   jobs_id     Int      @id @default(autoincrement())
-  type        String
-  company     String
+  type        String   @db.VarChar(255)
+  company     String   @db.VarChar(255)
   company_url String
-  department  String
+  department  String   @db.VarChar(255)
   location    String
-  title       String
+  title       String   @db.VarChar(255)
   description String
   url         String
-  created_by  DateTime @default(now())
-  updated_by  DateTime @default(now())
+  created_by  DateTime @default(now()) @db.Timestamp(6)
+  updated_by  DateTime @default(now()) @db.Timestamp(6)
 }
 
 model country {
   country_id Int      @id @default(autoincrement())
-  iso        String
-  name       String
-  nicename   String
-  iso3       String?
-  numcode    Int?
+  iso        String   @db.Char(2)
+  name       String   @db.VarChar(80)
+  nicename   String   @db.VarChar(80)
+  iso3       String?  @db.Char(3)
+  numcode    Int?     @db.SmallInt
   phonecode  Int
-  created_by DateTime @default(now())
-  updated_by DateTime @default(now())
+  created_by DateTime @default(now()) @db.Timestamp(6)
+  updated_by DateTime @default(now()) @db.Timestamp(6)
 }
 
 model posts {
   posts_id    Int        @id @default(autoincrement())
-  title       String
+  title       String     @db.VarChar(255)
   description String
-  tag         String
+  tag         String     @db.VarChar(255)
   like_count  Int?       @default(0)
   users_id    Int?
-  created_by  DateTime   @default(now())
-  updated_by  DateTime   @default(now())
+  created_by  DateTime   @default(now()) @db.Timestamp(6)
+  updated_by  DateTime   @default(now()) @db.Timestamp(6)
   users       users?     @relation(fields: [users_id], references: [users_id])
   comments    comments[]
 }
@@ -81,22 +81,22 @@ model firebase_details {
   current_token       String
   refreshed_token     String
   users_id            Int?
-  created_by          DateTime @default(now())
-  updated_by          DateTime @default(now())
+  created_by          DateTime @default(now()) @db.Timestamp(6)
+  updated_by          DateTime @default(now()) @db.Timestamp(6)
   users               users?   @relation(fields: [users_id], references: [users_id])
 }
 
 model hackathons {
   hackathons_id Int      @id @default(autoincrement())
   image         String
-  name          String
-  mode          String
+  name          String   @db.VarChar(255)
+  mode          String   @db.VarChar(255)
   prize         String
   details       String
   date_time     String
   link          String
-  created_by    DateTime @default(now())
-  updated_by    DateTime @default(now())
+  created_by    DateTime @default(now()) @db.Timestamp(6)
+  updated_by    DateTime @default(now()) @db.Timestamp(6)
 }
 
 model invite_friends {
@@ -104,8 +104,8 @@ model invite_friends {
   invite_link       String
   generated_text    String
   users_id          Int?
-  created_by        DateTime @default(now())
-  updated_by        DateTime @default(now())
+  created_by        DateTime @default(now()) @db.Timestamp(6)
+  updated_by        DateTime @default(now()) @db.Timestamp(6)
   users             users?   @relation(fields: [users_id], references: [users_id])
 }
 
@@ -114,8 +114,8 @@ model mock_interview_question {
   question_title             String
   question_description       String
   type                       String
-  created_by                 DateTime             @default(now())
-  updated_by                 DateTime             @default(now())
+  created_by                 DateTime             @default(now()) @db.Timestamp(6)
+  updated_by                 DateTime             @default(now()) @db.Timestamp(6)
   past_interview             past_interview[]
   upcoming_interview         upcoming_interview[]
 }
@@ -128,8 +128,8 @@ model upcoming_interview {
   status                     String
   mock_interview_question_id Int?
   users_id                   Int?
-  created_by                 DateTime                 @default(now())
-  updated_by                 DateTime                 @default(now())
+  created_by                 DateTime                 @default(now()) @db.Timestamp(6)
+  updated_by                 DateTime                 @default(now()) @db.Timestamp(6)
   mock_interview_question    mock_interview_question? @relation(fields: [mock_interview_question_id], references: [mock_interview_question_id])
   users                      users?                   @relation(fields: [users_id], references: [users_id])
 }
@@ -142,21 +142,21 @@ model past_interview {
   status                     String
   mock_interview_question_id Int?
   users_id                   Int?
-  created_by                 DateTime                 @default(now())
-  updated_by                 DateTime                 @default(now())
+  created_by                 DateTime                 @default(now()) @db.Timestamp(6)
+  updated_by                 DateTime                 @default(now()) @db.Timestamp(6)
   mock_interview_question    mock_interview_question? @relation(fields: [mock_interview_question_id], references: [mock_interview_question_id])
   users                      users?                   @relation(fields: [users_id], references: [users_id])
 }
 
 model tech_salary {
   tech_salary_id     Int      @id @default(autoincrement())
-  job_title          String
+  job_title          String   @db.VarChar(255)
   company            String
   description        String
   total_compensation String
   location           String
-  created_by         DateTime @default(now())
-  updated_by         DateTime @default(now())
+  created_by         DateTime @default(now()) @db.Timestamp(6)
+  updated_by         DateTime @default(now()) @db.Timestamp(6)
 }
 
 model women_investor_community {
@@ -168,8 +168,8 @@ model women_investor_community {
   expertise                   String
   location                    String
   status                      String
-  created_by                  DateTime @default(now())
-  updated_by                  DateTime @default(now())
+  created_by                  DateTime @default(now()) @db.Timestamp(6)
+  updated_by                  DateTime @default(now()) @db.Timestamp(6)
 }
 
 model comments {
@@ -177,8 +177,8 @@ model comments {
   comments_text String
   posts_id      Int?
   users_id      Int?
-  created_by    DateTime @default(now())
-  updated_by    DateTime @default(now())
+  created_by    DateTime @default(now()) @db.Timestamp(6)
+  updated_by    DateTime @default(now()) @db.Timestamp(6)
   posts         posts?   @relation(fields: [posts_id], references: [posts_id])
   users         users?   @relation(fields: [users_id], references: [users_id])
 }
