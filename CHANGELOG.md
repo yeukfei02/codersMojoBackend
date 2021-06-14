@@ -2,6 +2,73 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.6](https://github.com/yeukfei02/codersMojoBackend/compare/v0.5.5...v0.5.6) (2021-04-24)
+
+
+### Features
+
+* 🎸 add rimraf lib ([18aa123](https://github.com/yeukfei02/codersMojoBackend/commit/18aa123ecdd25d174b617a0b22907b494ef998e1))
+
+### [0.5.5](https://github.com/yeukfei02/codersMojoBackend/compare/v0.5.4...v0.5.5) (2021-04-24)
+
+
+### Bug Fixes
+
+* 🐛 add migration file ([ba5205e](https://github.com/yeukfei02/codersMojoBackend/commit/ba5205ef2144f4bd946e6284e08d786d6a0177ac))
+
+### [0.5.4](https://github.com/yeukfei02/codersMojoBackend/compare/v0.5.3...v0.5.4) (2021-04-24)
+
+
+### Bug Fixes
+
+* 🐛 update prisma lib and command ([4709bfc](https://github.com/yeukfei02/codersMojoBackend/commit/4709bfc7c2a92b677449b123f9c2a6a5ad74ed83))
+
+### [0.5.3](https://github.com/yeukfei02/codersMojoBackend/compare/v0.5.2...v0.5.3) (2021-04-17)
+
+### [0.5.2](https://github.com/yeukfei02/codersMojoBackend/compare/v0.5.1...v0.5.2) (2021-02-09)
+
+
+### Bug Fixes
+
+* 🐛 update prisma lib ([533cf19](https://github.com/yeukfei02/codersMojoBackend/commit/533cf19d9c9e578c8af60db12bf04b7f6216c618))
+
+### [0.5.1](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.36...v0.5.1) (2021-02-06)
+
+### [0.0.36](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.35...v0.0.36) (2021-02-06)
+
+
+### Bug Fixes
+
+* 🐛 remove not used file and update prisma lib ([50dc30d](https://github.com/yeukfei02/codersMojoBackend/commit/50dc30deedd4819747b1d4fa4990ec2866e3a0fc))
+
+### [0.0.35](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.34...v0.0.35) (2021-01-24)
+
+
+### Features
+
+* 🎸 update prisma lib ([121e273](https://github.com/yeukfei02/codersMojoBackend/commit/121e273a32cab39ee109bfbb1dd919dbff5d7352))
+
+### [0.0.34](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.33...v0.0.34) (2020-12-23)
+
+
+### Bug Fixes
+
+* 🐛 update prisma lib ([b2f4937](https://github.com/yeukfei02/codersMojoBackend/commit/b2f49373fa4bf86f4fdb2b5d43078b4f88de093d))
+
+### [0.0.33](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.32...v0.0.33) (2020-12-13)
+
+
+### Bug Fixes
+
+* 🐛 fix uploadFileToS3 to async await ([52653e2](https://github.com/yeukfei02/codersMojoBackend/commit/52653e2b5bdd32404932a6f9a529e357a3a30617))
+
+### [0.0.32](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.31...v0.0.32) (2020-12-09)
+
+
+### Bug Fixes
+
+* 🐛 use findUnique ([ed797b5](https://github.com/yeukfei02/codersMojoBackend/commit/ed797b5138df4f12e59e3fc6d3c0deb844cf00ef))
+
 ### [0.0.31](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.30...v0.0.31) (2020-11-18)
 
 ### [0.0.30](https://github.com/yeukfei02/codersMojoBackend/compare/v0.0.29...v0.0.30) (2020-11-01)
