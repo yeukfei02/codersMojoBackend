@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.7](https://github.com/yeukfei02/codersMojoBackend/compare/v0.5.6...v0.5.7) (2021-07-13)
+
+
+### Bug Fixes
+
+* 🐛 fix dev db url ([f7720af](https://github.com/yeukfei02/codersMojoBackend/commit/f7720afeda098d9ef0eac766d5f6323e500e17c8))
+* 🐛 fix package.json and readme.md ([2c9a3c3](https://github.com/yeukfei02/codersMojoBackend/commit/2c9a3c321e4dc496a6d204141ea84030301f6506))
+* 🐛 fix prod db url ([531b18c](https://github.com/yeukfei02/codersMojoBackend/commit/531b18cfb53a8603e6c082f9351f5b1012be4d6a))
+* 🐛 fix schema.prisma ([e0d9e20](https://github.com/yeukfei02/codersMojoBackend/commit/e0d9e20d5997799531abce832db4ffd360477194))
+* 🐛 format jest.config.js ([5bd38ac](https://github.com/yeukfei02/codersMojoBackend/commit/5bd38aca77c87846fd076cb94b7a5cc33cf18d32))
+* 🐛 update eslint and prettier lib ([124cfb2](https://github.com/yeukfei02/codersMojoBackend/commit/124cfb271d39bb6eb7b51f6c62896baec4e4626c))
+* 🐛 update prisma lib ([3c28d92](https://github.com/yeukfei02/codersMojoBackend/commit/3c28d92a6cdebb76e91e411c96663166cf03c36a))
+* 🐛 update typescript lib version ([32170d6](https://github.com/yeukfei02/codersMojoBackend/commit/32170d6b295f74137c61b0b026e5b459de943618))
+
 ### [0.5.6](https://github.com/yeukfei02/codersMojoBackend/compare/v0.5.5...v0.5.6) (2021-04-24)
 
 
