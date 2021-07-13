@@ -25,6 +25,9 @@ $ yarn run dev
 // production
 $ yarn run start
 
+// create dist folder
+$ yarn run build
+
 // run test case
 $ yarn run test
 
@@ -35,10 +38,7 @@ $ yarn run lint
 ```zsh
 every time table change needs to run:
 
-// pull the schema from an existing database, updating the Prisma schema
-$ yarn run pull:prisma
-
-// generate artifacts (e.g. Prisma Client)
+// pull the schema from an existing database, updating the Prisma schema, generate artifacts (e.g. Prisma Client)
 $ yarn run generate:prisma
 
 // Create migrations from your Prisma schema, apply them to the database, generate artifacts (e.g. Prisma Client)
