@@ -22,7 +22,9 @@ const fetchHackathonsDataFromGoogleSheet = async () => {
   const sheet = doc.sheetsByIndex[0];
   const rows = await sheet.getRows();
   if (rows) {
-    rows.forEach(async (item: any, i: number) => {
+    for (let index = 0; index < rows.length; index++) {
+      const item = rows[index];
+
       const rowData = item._rawData;
       const name = rowData[0];
       const mode = rowData[1];
@@ -33,7 +35,7 @@ const fetchHackathonsDataFromGoogleSheet = async () => {
 
       const existingHackathons = await getHackathonsByName(name);
       if (_.isEmpty(existingHackathons)) await createHackathons(name, mode, prize, details, dateTime, link);
-    });
+    }
   }
 };
 
