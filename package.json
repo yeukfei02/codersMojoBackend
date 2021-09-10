@@ -8,7 +8,7 @@
   "dependencies": {
     "@koa/cors": "^3.1.0",
     "@mailchimp/mailchimp_marketing": "^3.0.15",
-    "@prisma/client": "^2.30.0",
+    "@prisma/client": "^3.0.2",
     "aws-sdk": "^2.755.0",
     "axios": "^0.20.0",
     "babel-polyfill": "^6.26.0",
@@ -67,7 +67,7 @@
     "jest": "^26.4.2",
     "nodemon": "^2.0.12",
     "prettier": "^2.2.1",
-    "prisma": "^2.30.0",
+    "prisma": "^3.0.2",
     "rimraf": "^3.0.2",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.3.0",
@@ -81,12 +81,19 @@
     "build": "rimraf dist && tsc",
     "test": "jest --detectOpenHandles",
     "lint": "eslint '*/**/*.{ts,tsx}' --quiet --fix",
-    "generate:prisma": "cd ./prisma && npx prisma db pull && npx prisma generate",
-    "migrate:prisma": "cd ./prisma && npx prisma migrate dev",
-    "format:prisma": "cd ./prisma && npx prisma format",
+    "generate:prisma": "npx prisma db pull && npx prisma generate",
+    "format:prisma": "npx prisma format",
     "prisma-studio": "npx prisma studio",
+    "db:seed": "npx prisma db seed",
+    "db:migrate": "npx prisma migrate dev",
+    "db:migrate:status": "npx prisma migrate status",
+    "db:reset": "npx prisma db reset",
+    "db:push": "npx prisma db push",
     "commit": "git-cz",
     "release": "standard-version"
+  },
+  "prisma": {
+    "seed": "ts-node ./prisma/seed.ts"
   },
   "husky": {
     "hooks": {

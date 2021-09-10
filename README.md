@@ -33,19 +33,27 @@ $ yarn run test
 
 // use eslint and prettier to format code
 $ yarn run lint
-```
-
-```zsh
-every time table change needs to run:
 
 // pull the schema from an existing database, updating the Prisma schema, generate artifacts (e.g. Prisma Client)
 $ yarn run generate:prisma
 
-// Create migrations from your Prisma schema, apply them to the database, generate artifacts (e.g. Prisma Client)
-$ yarn run migrate:prisma
-
 // format schema.prisma
 $ yarn run format:prisma
+
+// load seed file to database
+$ yarn run db:seed
+
+// create migrations file and run migrations
+$ yarn run db:migrate
+
+// check migrations status
+$ yarn run db:migrate:status
+
+// reset database
+$ yarn run db:reset
+
+// push schema.prisma to database
+$ yarn run db:push
 
 // show preview feature
 $ npx prisma --preview-feature
