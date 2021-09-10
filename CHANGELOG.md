@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.5.8](https://github.com/yeukfei02/codersMojoBackend/compare/v0.5.7...v0.5.8) (2021-09-10)
+
+
+### Bug Fixes
+
+* 🐛 fix dockerfile ([49042ec](https://github.com/yeukfei02/codersMojoBackend/commit/49042ec2a9d07063f964709b986fdeb23e22f2e0))
+* 🐛 fix fetchHackathonsDataFromGoogleSheet for loop ([e22c9fc](https://github.com/yeukfei02/codersMojoBackend/commit/e22c9fc27d379b608257286d63f080a405780eb5))
+* 🐛 update dockerfile ([6be338d](https://github.com/yeukfei02/codersMojoBackend/commit/6be338d4438f9805d8711845fd5d28e3175a3eaa))
+* 🐛 update prisma lib ([d14e36d](https://github.com/yeukfei02/codersMojoBackend/commit/d14e36dfea1795808a159373eae2d19bedb9653d))
+* 🐛 update prisma version and scripts in package.json ([5ddb0c3](https://github.com/yeukfei02/codersMojoBackend/commit/5ddb0c3e7f183e06ec8d7ab83703de0433c03641))
+
 ### [0.5.7](https://github.com/yeukfei02/codersMojoBackend/compare/v0.5.6...v0.5.7) (2021-07-13)
 
 
